@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Estilos próprios da Cato ---------- */
+/* VOICE: próxima, direta, segura — parceira criativa de negócios locais
+   IDEA: o set de gravação / a timeline de Reels — cards verticais 9:16 como protagonistas
+   PICTURE: ondas orgânicas âmbar com o vermelho por dentro + grão, fotos dos fundadores e Reels
+   COLOUR and TYPE: preto/off-white alternados, âmbar dominante, vermelho só como ênfase; Lot (títulos) + Montserrat
+   LAYOUT: hero preto, faixa de clientes, sobre, vídeos, stop motion, serviços, simulador, contato */
+
+/* Lot (fonte de títulos do manual): usa a instalada no aparelho; sem ela, cai para Montserrat 900.
+   Para servir a fonte no site, adicione assets/fonts/Lot-Regular.woff2 e troque local('Lot') por url(...). */
+@font-face{font-family:'Lot';src:local('Lot');font-display:swap}
+:root{color-scheme:light}
+*{min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{overflow-x:clip;-webkit-font-smoothing:antialiased}
+.font-display{font-weight:900;font-synthesis:none;letter-spacing:-.01em;text-transform:uppercase}
+.grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+.label{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.star{clip-path:circle(50%)}
+/* entrada no scroll */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+/* brilho de carregamento */
+.ph{background:linear-gradient(115deg,#151515 30%,#232323 45%,#151515 60%);background-size:250% 100%;animation:sh 3.2s linear infinite}
+@keyframes sh{to{background-position:-150% 0}}
+.reel:hover .playb,.reel:focus-visible .playb{transform:scale(1.12);background:#FCA001;color:#000}
+.reel:hover .reel-in{transform:translateY(-6px)}
+.pulse{animation:pu 2s ease-out infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(252,160,1,.55)}100%{box-shadow:0 0 0 18px rgba(252,160,1,0)}}
+/* marquee */
+.mq{animation:mq 28s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* stop motion: bolinha quadro a quadro */
+.sm-ball{animation:hop 1.5s steps(12) infinite}
+@keyframes hop{0%{transform:translate(0,0)}25%{transform:translate(60px,-90px)}50%{transform:translate(120px,0)}75%{transform:translate(60px,-60px)}100%{transform:translate(0,0)}}
+.caret::after{content:'';display:inline-block;width:2px;height:1em;background:#000;margin-left:2px;vertical-align:-2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+input[type=range]{accent-color:#FCA001}
+input[type=range]::-webkit-slider-thumb{cursor:grab}
+:focus-visible{outline:3px solid #FCA001;outline-offset:3px}
+/* cabeçalho que troca de tom conforme a seção embaixo dele */
+[data-hdr]{color:#fff;transition:background-color .35s,color .35s,box-shadow .35s}
+[data-hdr].solid[data-tone=dark]{background:#000}
+[data-hdr][data-tone=light]{background:#F9FAFE;color:#000;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+[data-hdr] .logo img{transition:opacity .35s}
+[data-hdr] .logo-p{opacity:0}
+[data-hdr][data-tone=light] .logo-p{opacity:1}
+[data-hdr][data-tone=light] .logo-b{opacity:0}
+[data-hdr] .menu-btn{border-color:rgba(255,255,255,.3)}
+[data-hdr][data-tone=light] .menu-btn{border-color:rgba(0,0,0,.25)}
+[data-hdr] [data-menu]{background:#000;border-color:rgba(255,255,255,.1)}
+[data-hdr][data-tone=light] [data-menu]{background:#F9FAFE;border-color:rgba(0,0,0,.08)}
+[data-hdr][data-tone=light] nav a:not(.cta):hover{color:#B70223}
+[data-hdr][data-tone=light] :focus-visible{outline-color:#B70223}
+.err{border-color:#B70223!important}
+/* stop motions em destaque */
+.sm-strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}
+.sm-strip::-webkit-scrollbar{display:none}
+.sm-item{flex:0 0 min(64vw,240px);scroll-snap-align:start;margin:0}
+@media(min-width:1024px){.sm-strip{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible;gap:20px}.sm-item:nth-child(even){margin-top:40px}}
+.rec{animation:rec 1.2s steps(1) infinite}@keyframes rec{50%{opacity:.2}}
+/* linha do tempo de produção */
+.tl-steps{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+.tl-step{border-top:3px solid rgba(255,255,255,.18);background:#151515;border-radius:0 0 20px 20px;padding:20px;transition:border-color .4s}
+.tl-step .tl-n{color:rgba(255,255,255,.55);transition:color .4s}
+.tl-ruler{display:none}
+@media(min-width:900px){
+  .tl-steps{grid-template-columns:repeat(5,1fr)}
+  .tl-ruler{display:block;position:relative;height:26px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.3);
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 1px,transparent 1px 2%) bottom/100% 8px no-repeat,repeating-linear-gradient(90deg,rgba(255,255,255,.6) 0 1px,transparent 1px 20%) bottom/100% 16px no-repeat}
+  .tl-ruler span.tc{position:absolute;top:-4px;font:600 10px/1 ui-monospace,Menlo,monospace;color:rgba(255,255,255,.5)}
+}
+.tl-head{position:absolute;top:-8px;bottom:-6px;left:0;width:2px;background:#FCA001}
+.tl-head::before{content:'';position:absolute;top:0;left:-6px;border:7px solid transparent;border-top:9px solid #FCA001}
+.tl.in .tl-head{animation:playhead 4.2s cubic-bezier(.45,0,.2,1) forwards}
+@keyframes playhead{to{left:calc(90% - 1px)}}
+.tl.in .tl-step{animation:lit .5s forwards;animation-delay:calc(var(--i)*.8s + .2s)}
+@keyframes lit{to{border-color:#FCA001}}
+.tl.in .tl-step .tl-n{animation:litn .5s forwards;animation-delay:calc(var(--i)*.8s + .2s)}
+@keyframes litn{to{color:#FCA001}}
+/* portfólio */
+.tile video,.tile img,.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile:hover .tile-play{transform:scale(1.1);background:#FCA001}
+[data-lb-stage] img,[data-lb-stage] video{max-width:100%;max-height:100%;object-fit:contain;border-radius:16px}
+@media (prefers-reduced-motion:reduce){
+  .tl-step{border-color:#FCA001}.tl-head{left:calc(90% - 1px)}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}

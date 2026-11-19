@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cato Mídias | Home</title>
+<meta name="description" content="Cato Mídias: foto, vídeo e design com olhar estratégico e artístico para marcas, bares, restaurantes, artistas e projetos culturais. Ribeirão Preto, SP.">
+<meta property="og:title" content="Cato Mídias">
+<meta property="og:description" content="Foto, vídeo e design com olhar estratégico e artístico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="assets/cato-logo-preto.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- ============ HEADER ============ -->
+<header id="top" class="fixed inset-x-0 top-0 z-50" data-hdr data-tone="dark">
+  <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-3 md:py-4">
+    <a href="#top" class="logo relative block shrink-0 py-1" aria-label="Cato Mídias — início">
+      <!-- Logos do Google Drive (recortados no lettering, proporção original): fundo escuro → branco · fundo claro → preto -->
+      <img src="assets/cato-logo-branco.svg" alt="Cato Mídias" width="995" height="440" class="logo-b block h-10 w-auto md:h-12">
+      <img src="assets/cato-logo-preto.svg" alt="" aria-hidden="true" width="1250" height="562" class="logo-p absolute left-0 top-1 block h-10 w-auto md:h-12">
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-semibold md:flex" aria-label="Principal">
+      <a href="#sobre" class="hover:text-ambar transition-colors">Sobre</a>
+      <a href="#processo" class="hover:text-ambar transition-colors">Processo</a>
+      <a href="#portfolio" class="hover:text-ambar transition-colors">Portfólio</a>
+      <a href="#servicos" class="hover:text-ambar transition-colors">Serviços</a>
+      <a href="#simulador" class="hover:text-ambar transition-colors">Simulador</a>
+      <a href="#contato" class="hover:text-ambar transition-colors">Contato</a>
+      <a href="#simulador" class="cta rounded-full bg-verm px-5 py-2.5 text-white transition hover:-translate-y-0.5 hover:shadow-[0_6px_0_#FCA001]">Contrate já</a>
+    </nav>
+    <button class="menu-btn grid h-11 w-11 place-items-center rounded-full border md:hidden" aria-label="Abrir menu" aria-expanded="false" data-menu-btn>
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+  <nav class="hidden border-t px-5 pb-6 md:hidden" data-menu aria-label="Menu móvel">
+    <a href="#sobre" class="block py-3 text-lg font-semibold">Sobre</a>
+    <a href="#processo" class="block py-3 text-lg font-semibold">Processo</a>
+    <a href="#portfolio" class="block py-3 text-lg font-semibold">Portfólio</a>
+    <a href="#servicos" class="block py-3 text-lg font-semibold">Serviços</a>
+    <a href="#simulador" class="block py-3 text-lg font-semibold">Simulador</a>
+    <a href="#contato" class="block py-3 text-lg font-semibold">Contato</a>
+    <a href="#simulador" class="cta mt-3 block rounded-full bg-verm py-3 text-center font-bold text-white">Contrate já</a>
+  </nav>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden bg-black pt-28 md:pt-32" aria-labelledby="h-hero" data-tone="dark">
+  <!-- ondas orgânicas: âmbar por fora, vermelho por dentro, grão na borda -->
+  <svg class="pointer-events-none absolute -right-40 top-10 h-[760px] w-[760px] md:-right-24" viewBox="0 0 600 600" aria-hidden="true">
+    <path fill="#FCA001" d="M600 40C470 20 360 90 330 200s30 170-40 250-60 150 60 150h250Z"/>
+    <path fill="#B70223" d="M600 150c-90 0-160 50-170 130s40 120-10 180 0 140 70 140h110Z"/>
+  </svg>
+  <div class="grain pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" aria-hidden="true"></div>
+
+  <div class="relative mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 md:grid-cols-[1.1fr_1fr] md:items-center md:pb-28">
+    <div>
+      <div class="rv mb-8 inline-flex w-full max-w-md items-center gap-3 rounded-full bg-white px-5 py-3.5 text-black shadow-[0_8px_0_#FCA001]">
+        <i data-lucide="search" class="h-5 w-5 shrink-0"></i>
+        <span class="caret text-base font-semibold" data-type="Cato Mídias">Cato Mídias</span>
+      </div>
+      <h1 id="h-hero" class="rv d1 text-[clamp(46px,8.5vw,108px)] font-extrabold leading-[.95] tracking-tight [text-wrap:balance]">
+        Quem somos <span class="text-ambar">nós?</span>
+      </h1>
+      <p class="rv d2 mt-6 max-w-lg text-lg leading-relaxed text-white/80">
+        Foto, vídeo e design com olhar estratégico e artístico — para marcas, bares, restaurantes, artistas e projetos culturais.
+      </p>
+      <div class="rv d3 mt-9 flex flex-wrap items-center gap-3">
+        <a href="#simulador" class="inline-flex items-center gap-2 rounded-full bg-ambar px-7 py-4 font-bold text-black transition hover:-translate-y-1 hover:shadow-[0_8px_0_#B70223]">
+          Contrate já <i data-lucide="arrow-right" class="h-5 w-5"></i>
+        </a>
+        <a href="https://instagram.com/catomidias_" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-4 font-semibold transition hover:border-ambar hover:text-ambar">
+          <i data-lucide="instagram" class="h-5 w-5"></i> @catomidias_
+        </a>
+      </div>
+    </div>
+
+    <div class="relative grid grid-cols-2 gap-4 sm:gap-5">
+      <figure class="rv d1 mt-10">
+        <a href="https://instagram.com/_toridicarlo" class="group relative block aspect-[4/5] overflow-hidden rounded-[28px] bg-quase shadow-[10px_10px_0_#FCA001] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_14px_0_#B70223]" aria-label="Victoria de Carlos no Instagram, @_toridicarlo">
+          <img src="assets/fundadora-victoria.jpg" width="1080" height="1350" decoding="async" alt="Victoria de Carlos, cofundadora da Cato Mídias: creator mobile, fotógrafa, designer, produtora criativa e audiovisual. Instagram @_toridicarlo" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]">
+        </a>
+        <figcaption class="sr-only">Victoria de Carlos: creator mobile, fotógrafa, designer, produtora criativa e audiovisual</figcaption>
+      </figure>
+      <figure class="rv d2">
+        <a href="https://instagram.com/guerreirodeumaflecha" class="group relative block aspect-[4/5] overflow-hidden rounded-[28px] bg-quase shadow-[10px_10px_0_#FCA001] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_14px_0_#B70223]" aria-label="Cael no Instagram, @guerreirodeumaflecha">
+          <img src="assets/fundador-cael.jpg" width="1080" height="1350" decoding="async" alt="Cael, cofundador da Cato Mídias: profissional criativo, designer, social mídia e produtor audiovisual. Instagram @guerreirodeumaflecha" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]">
+        </a>
+        <figcaption class="sr-only">Cael: profissional criativo, designer, social mídia e produtor audiovisual</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- faixa de palavras-chave do segmento -->
+  <div class="relative border-y border-white/10 bg-ambar py-4 text-black" aria-label="O que a Cato faz" data-tone="light">
+    <div class="flex w-max mq gap-10 whitespace-nowrap text-lg font-extrabold uppercase tracking-wide" data-mq></div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre" class="relative bg-off text-black" aria-labelledby="h-sobre" data-tone="light">
+  <div class="grain pointer-events-none absolute inset-0 opacity-30" aria-hidden="true"></div>
+  <div class="relative mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:grid-cols-[.9fr_1.1fr] md:py-28">
+    <div class="rv">
+      <p class="label text-verm">Quem somos</p>
+      <h2 id="h-sobre" class="font-display mt-3 text-[clamp(64px,11vw,150px)] leading-[.9]">Nós<span class="text-ambar">.</span></h2>
+      <div class="mt-8 flex flex-wrap gap-2">
+        <span class="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white">Desde 2021</span>
+        <span class="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white">Ribeirão Preto, SP</span>
+        <span class="rounded-full bg-ambar px-4 py-2 text-sm font-semibold">Foto · Vídeo · Design</span>
+      </div>
+    </div>
+    <div class="rv d1 space-y-5 text-[17px] leading-[1.7]">
+      <p class="text-2xl font-bold leading-snug">Olá! Nós somos a Cato. Cael e Tori, criadores e fundadores.</p>
+      <p>A Cato é uma empresa de produção audiovisual e criação de conteúdo para marcas, juntando o olhar criativo com o que realmente funciona na prática.</p>
+      <p>A Victoria estuda marketing digital e o Cael, Publicidade e Propaganda, mas grande parte do que a gente faz vem da vivência: já trabalhamos com restaurantes, lojas, bares, artistas e negócios locais, acompanhando de perto como cada um se comunica e se posiciona.</p>
+      <p>A Cato Mídias nasce disso — da vontade de criar conteúdos que façam sentido, que tenham a ver com a realidade de cada marca e que conectem com as pessoas de verdade.</p>
+      <p class="border-l-4 border-verm pl-5 font-semibold">A gente gosta de construir junto, trocar ideia, entender o projeto e transformar isso em conteúdo que represente bem quem tá por trás.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO: PRODUÇÃO INTEGRAL ============ -->
+<section id="processo" class="relative overflow-hidden bg-black py-20 md:py-28" aria-labelledby="h-proc" data-tone="dark">
+  <div class="mx-auto max-w-[1240px] px-5">
+    <div class="rv flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="label text-ambar">Produção integral</p>
+        <h2 id="h-proc" class="mt-3 text-[clamp(32px,4.6vw,52px)] font-extrabold leading-[1.05] [text-wrap:balance]">Do briefing à entrega, tudo passa pelas nossas mãos</h2>
+      </div>
+      <p class="max-w-sm text-white/75">Cada foto, vídeo e stop motion do portfólio foi pensado, captado, tratado e editado pela Cato Mídias, nas cinco etapas.</p>
+    </div>
+    <div class="tl mt-14" data-tl>
+      <div class="tl-ruler" aria-hidden="true">
+        <span class="tc" style="left:0">00:00</span><span class="tc" style="left:20%">00:01</span><span class="tc" style="left:40%">00:02</span><span class="tc" style="left:60%">00:03</span><span class="tc" style="left:80%">00:04</span>
+        <span class="tl-head"></span>
+      </div>
+      <ol class="tl-steps" data-etapas></ol>
+    </div>
+    <div class="rv mt-10 flex items-start gap-4 rounded-3xl border border-ambar/40 p-6 sm:p-8">
+      <i data-lucide="badge-check" class="h-8 w-8 shrink-0 text-ambar"></i>
+      <div><p class="font-bold">Autoria exclusiva e legítimo uso</p><p class="mt-1 max-w-3xl text-white/75" data-aviso></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STOP MOTIONS EM DESTAQUE ============ -->
+<section id="stopmotion" class="relative overflow-hidden bg-ambar text-black" aria-labelledby="h-stop" data-tone="light">
+  <svg class="pointer-events-none absolute -left-32 bottom-0 h-[420px] w-[420px]" viewBox="0 0 400 400" aria-hidden="true">
+    <path fill="#B70223" d="M0 60c90 10 150 70 140 150s-80 120-40 190H0Z"/>
+  </svg>
+  <div class="relative mx-auto max-w-[1240px] px-5 py-20 md:py-24">
+    <div class="rv flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="label">Em destaque · quadro a quadro</p>
+        <h2 id="h-stop" class="font-display mt-3 text-[clamp(44px,6vw,80px)] leading-[.9]">Stop<br>motion</h2>
+      </div>
+      <div class="max-w-sm">
+        <p class="text-[17px] leading-relaxed">Cinco stop motions gastronômicos autorais. Produto, prato ou drink ganhando movimento, um quadro de cada vez.</p>
+        <a href="#simulador" class="mt-5 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3.5 font-bold text-white transition hover:-translate-y-1">Incluir no orçamento <i data-lucide="plus" class="h-5 w-5"></i></a>
+      </div>
+    </div>
+    <div class="sm-strip -mx-5 mt-10 px-5 lg:mx-0 lg:px-0" data-stops></div>
+  </div>
+</section>
+
+<!-- ============ PORTFÓLIO POR CASE ============ -->
+<section id="portfolio" class="bg-black py-20 md:py-28" aria-labelledby="h-port" data-tone="dark">
+  <div class="mx-auto max-w-[1240px] px-5">
+    <div class="rv flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="label text-ambar">Portfólio</p>
+        <h2 id="h-port" class="mt-3 max-w-2xl text-[clamp(32px,4.6vw,52px)] font-extrabold leading-[1.05] [text-wrap:balance]">Cases de bares e restaurantes</h2>
+        <p class="mt-3 max-w-xl text-white/70">Fotografia gastronômica, vídeo e stop motion para alimentos e bebidas. Escolha um cliente para ver o case completo.</p>
+      </div>
+      <div class="-mx-5 flex w-[calc(100%+40px)] gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none] md:mx-0 md:w-auto md:flex-wrap md:overflow-visible md:px-0" role="tablist" aria-label="Filtrar por cliente" data-filters></div>
+    </div>
+    <div class="mt-10" data-port role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section id="servicos" class="relative bg-off text-black" aria-labelledby="h-serv" data-tone="light">
+  <div class="grain pointer-events-none absolute inset-0 opacity-30" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-[1240px] px-5 py-20 md:py-28">
+    <div class="rv flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 id="h-serv" class="font-display text-[clamp(52px,8vw,110px)] leading-[.9]">Serviços</h2>
+        <p class="label mt-2">oferecidos</p>
+      </div>
+      <p class="max-w-sm text-[15px] leading-relaxed">Também sob consulta: cobertura de eventos (shows, casamentos, aniversários, eventos culturais, batizados e cerimônias), videoclipes, campanhas, edição para YouTube e identidade visual.</p>
+    </div>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-servs></div>
+  </div>
+</section>
+
+<!-- ============ SIMULADOR ============ -->
+<section id="simulador" class="relative overflow-hidden bg-black py-20 md:py-28" aria-labelledby="h-sim" data-tone="dark">
+  <div class="mx-auto max-w-[1240px] px-5">
+    <div class="rv max-w-2xl">
+      <p class="label text-ambar">Simulador de pacotes</p>
+      <h2 id="h-sim" class="mt-3 text-[clamp(32px,4.6vw,52px)] font-extrabold leading-[1.05] [text-wrap:balance]">Monte o seu pacote e veja a estimativa na hora</h2>
+      <p class="mt-4 text-white/75">Os valores dos serviços variam de acordo com a demanda, complexidade e necessidades de cada projeto. Aqui você vê o ponto de partida.</p>
+      <div class="mt-6 flex flex-wrap gap-2" data-presets>
+        <button class="rounded-full border border-white/25 px-4 py-2.5 text-sm font-semibold transition hover:border-ambar hover:text-ambar" data-preset="redes">Só redes sociais</button>
+        <button class="rounded-full border border-white/25 px-4 py-2.5 text-sm font-semibold transition hover:border-ambar hover:text-ambar" data-preset="video">Redes + vídeo</button>
+        <button class="rounded-full border border-white/25 px-4 py-2.5 text-sm font-semibold transition hover:border-ambar hover:text-ambar" data-preset="full">Pacote completo</button>
+        <button class="rounded-full px-4 py-2.5 text-sm font-semibold text-white/60 transition hover:text-white" data-preset="zero"><i data-lucide="rotate-ccw" class="mr-1 inline h-4 w-4"></i>Zerar</button>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-start">
+      <div class="space-y-6">
+        <!-- Social media -->
+        <fieldset class="rv rounded-3xl border border-white/15 p-6 sm:p-8">
+          <legend class="px-2 text-sm font-bold uppercase tracking-[.18em] text-ambar">Social Media · mensal</legend>
+          <label class="flex cursor-pointer items-center justify-between gap-4 rounded-2xl bg-quase p-4">
+            <span><span class="block font-bold">Gestão de redes sociais</span><span class="text-sm text-white/65">Planejamento, feed, programação, legendas, stories e interação · a partir de R$ 500/mês · contrato mínimo de 3 meses</span></span>
+            <span class="relative shrink-0">
+              <input type="checkbox" class="peer sr-only" data-k="gestao">
+              <span class="block h-8 w-14 rounded-full bg-white/20 transition peer-checked:bg-ambar"></span>
+              <span class="absolute left-1 top-1 h-6 w-6 rounded-full bg-white transition peer-checked:translate-x-6 peer-checked:bg-black"></span>
+            </span>
+          </label>
+          <div class="mt-5 rounded-2xl bg-quase p-4">
+            <div class="flex items-center justify-between gap-4">
+              <label for="artes" class="font-bold">Artes para redes por mês</label>
+              <output class="rounded-full bg-ambar px-3 py-1 text-sm font-extrabold text-black" data-out="artes">0</output>
+            </div>
+            <p class="text-sm text-white/65">Posts, stories, promocionais, cardápios e iFood · a partir de R$ 45 por arte</p>
+            <input id="artes" type="range" min="0" max="40" step="1" class="mt-4 h-11 w-full" data-k="artes">
+          </div>
+        </fieldset>
+
+        <!-- Produção -->
+        <fieldset class="rv d1 rounded-3xl border border-white/15 p-6 sm:p-8">
+          <legend class="px-2 text-sm font-bold uppercase tracking-[.18em] text-ambar">Foto · Vídeo · Stop motion · avulso</legend>
+          <div class="space-y-3" data-steppers></div>
+          <label class="mt-3 flex cursor-pointer items-center gap-4 rounded-2xl bg-quase p-4">
+            <input type="checkbox" class="h-6 w-6 shrink-0 accent-[#FCA001]" data-k="stop">
+            <span><span class="block font-bold">Stop motion</span><span class="text-sm text-white/65">Valor sob consulta — entra na mensagem para a gente orçar</span></span>
+          </label>
+          <label class="mt-3 flex cursor-pointer items-center gap-4 rounded-2xl bg-quase p-4">
+            <input type="checkbox" class="h-6 w-6 shrink-0 accent-[#B70223]" data-k="urg">
+            <span><span class="block font-bold">Preciso com urgência</span><span class="text-sm text-white/65">Prazo menor que a metade do padrão: acréscimo de 30% sobre os serviços avulsos</span></span>
+          </label>
+        </fieldset>
+      </div>
+
+      <!-- Resultado -->
+      <aside class="rv d2 rounded-3xl bg-ambar p-6 text-black sm:p-8 lg:sticky lg:top-24" aria-live="polite">
+        <p class="label">Sua estimativa</p>
+        <div class="mt-5 grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-sm font-semibold">Mensal, a partir de</p>
+            <p class="whitespace-nowrap text-[clamp(28px,4vw,40px)] font-black leading-tight" data-tot="m">R$ 0</p>
+            <p class="h-5 whitespace-nowrap text-sm font-semibold line-through decoration-2 opacity-70" data-sub="m"></p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">Avulso, a partir de</p>
+            <p class="whitespace-nowrap text-[clamp(28px,4vw,40px)] font-black leading-tight" data-tot="a">R$ 0</p>
+            <p class="h-5 whitespace-nowrap text-sm font-semibold line-through decoration-2 opacity-70" data-sub="a"></p>
+          </div>
+        </div>
+
+        <!-- desconto progressivo por quantidade de serviços -->
+        <div class="mt-5 rounded-2xl border-2 border-black bg-off p-4">
+          <ol class="grid grid-cols-4 gap-1.5" aria-label="Faixas de desconto" data-tiers></ol>
+          <p class="mt-3 flex items-start gap-2 text-sm font-bold" data-incent><i data-lucide="sparkles" class="mt-0.5 h-4 w-4 shrink-0"></i><span></span></p>
+        </div>
+
+        <dl class="mt-4 space-y-2 rounded-2xl bg-black p-4 text-[15px] text-white" data-resumo>
+          <div class="flex justify-between gap-3"><dt class="text-white/75">Subtotal</dt><dd class="text-right font-semibold" data-r="sub"></dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-white/75">Desconto aplicado</dt><dd class="text-right font-semibold" data-r="pct"></dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-white/75">Você economiza</dt><dd class="text-right font-bold text-ambar" data-r="eco"></dd></div>
+          <div class="flex justify-between gap-3 border-t border-white/20 pt-2"><dt class="font-bold">Valor final</dt><dd class="text-right font-extrabold" data-r="fin"></dd></div>
+        </dl>
+
+        <div class="mt-3 hidden rounded-2xl border-2 border-black px-4 py-3" data-contrato>
+          <div class="flex items-baseline justify-between gap-4">
+            <span class="text-sm font-semibold">Contrato mínimo · 3 meses</span>
+            <span class="whitespace-nowrap text-lg font-extrabold" data-tot="c">R$ 0</span>
+          </div>
+          <p class="mt-1 text-xs">Serviços mensais têm contrato mínimo de 3 meses. Valor já com desconto.</p>
+        </div>
+        <ul class="mt-5 space-y-2 text-[15px]" data-lines></ul>
+        <label for="sim-nome" class="mt-6 block text-sm font-bold">Seu nome ou do seu negócio (opcional)</label>
+        <input id="sim-nome" type="text" autocomplete="organization" class="mt-2 h-12 w-full rounded-xl border-2 border-black bg-white px-4 text-base outline-none focus:shadow-[0_0_0_3px_#B70223]" placeholder="Ex.: Bar do Centro" data-nome>
+        <a href="#" class="mt-5 flex items-center justify-center gap-2 rounded-full bg-black px-6 py-4 text-center font-bold text-white transition hover:-translate-y-1 hover:bg-verm" data-wa>
+          <i data-lucide="message-circle" class="h-5 w-5"></i> Enviar orçamento pelo WhatsApp
+        </a>
+        <button type="button" class="mt-3 flex w-full items-center justify-center gap-2 rounded-full border-2 border-black px-6 py-3 font-bold transition hover:bg-black hover:text-white" data-copy>
+          <i data-lucide="copy" class="h-5 w-5"></i> <span>Copiar resumo</span>
+        </button>
+        <p class="mt-5 text-[13px] leading-relaxed">Valores de referência, já com o desconto por quantidade de serviços. O orçamento final considera objetivo, quantidade de conteúdos, tempo de produção e nível de edição, e é fechado depois do briefing.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="relative overflow-hidden bg-off text-black" aria-labelledby="h-cont" data-tone="light">
+  <div class="grain pointer-events-none absolute inset-0 opacity-30" aria-hidden="true"></div>
+  <svg class="pointer-events-none absolute -right-28 -top-10 hidden h-[520px] w-[520px] lg:block" viewBox="0 0 400 400" aria-hidden="true">
+    <path fill="#FCA001" d="M400 0H220c-30 60 10 110 60 140s40 110 0 160 30 100 120 100Z"/>
+    <path fill="#B70223" d="M400 60c-60 10-90 60-60 110s20 100-10 140 20 90 70 90Z"/>
+  </svg>
+  <div class="relative mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:py-28 lg:grid-cols-[.9fr_1.1fr]">
+    <div class="rv">
+      <h2 id="h-cont" class="font-display text-[clamp(52px,8vw,110px)] leading-[.9]">Contato</h2>
+      <p class="mt-5 max-w-sm text-lg">Chama a gente. Respondemos em até 1 dia útil.</p>
+      <ul class="mt-8 space-y-4 text-[17px]">
+        <li><a href="https://wa.me/5516981367602" class="group inline-flex items-center gap-3 font-bold"><span class="grid h-11 w-11 place-items-center rounded-full bg-black text-ambar transition group-hover:bg-verm group-hover:text-white"><i data-lucide="message-circle" class="h-5 w-5"></i></span>(16) 98136-7602 <span class="text-sm font-medium text-black/60">comercial</span></a></li>
+        <li><span class="inline-flex items-center gap-3 font-bold"><span class="grid h-11 w-11 place-items-center rounded-full bg-black text-ambar"><i data-lucide="phone" class="h-5 w-5"></i></span>(16) 99454-2686</span></li>
+        <li><a href="mailto:catomidias@gmail.com" class="group inline-flex items-center gap-3 font-bold"><span class="grid h-11 w-11 place-items-center rounded-full bg-black text-ambar transition group-hover:bg-verm group-hover:text-white"><i data-lucide="mail" class="h-5 w-5"></i></span>catomidias@gmail.com</a></li>
+        <li><a href="https://instagram.com/catomidias_" class="group inline-flex items-center gap-3 font-bold"><span class="grid h-11 w-11 place-items-center rounded-full bg-black text-ambar transition group-hover:bg-verm group-hover:text-white"><i data-lucide="instagram" class="h-5 w-5"></i></span>@catomidias_</a></li>
+        <li class="inline-flex items-center gap-3 font-bold"><span class="grid h-11 w-11 place-items-center rounded-full bg-black text-ambar"><i data-lucide="map-pin" class="h-5 w-5"></i></span>Ribeirão Preto, SP</li>
+      </ul>
+    </div>
+
+    <form class="rv d1 rounded-3xl bg-black p-6 text-white shadow-[12px_12px_0_#FCA001] sm:p-8" novalidate data-form>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="f-nome" class="text-sm font-bold">Nome *</label>
+          <input id="f-nome" name="nome" required autocomplete="name" class="mt-2 h-12 w-full rounded-xl border-2 border-white/20 bg-quase px-4 text-base text-white outline-none transition focus:border-ambar">
+          <p class="mt-1 hidden text-sm text-[#ff8a9e]" data-e="nome">Conta pra gente o seu nome.</p>
+        </div>
+        <div>
+          <label for="f-tel" class="text-sm font-bold">WhatsApp *</label>
+          <input id="f-tel" name="tel" required inputmode="tel" autocomplete="tel" placeholder="(16) 90000-0000" class="mt-2 h-12 w-full rounded-xl border-2 border-white/20 bg-quase px-4 text-base text-white outline-none transition focus:border-ambar">
+          <p class="mt-1 hidden text-sm text-[#ff8a9e]" data-e="tel">Informe um número com DDD.</p>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-mail" class="text-sm font-bold">E-mail</label>
+          <input id="f-mail" name="mail" type="email" autocomplete="email" class="mt-2 h-12 w-full rounded-xl border-2 border-white/20 bg-quase px-4 text-base text-white outline-none transition focus:border-ambar">
+          <p class="mt-1 hidden text-sm text-[#ff8a9e]" data-e="mail">Esse e-mail parece incompleto.</p>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-serv" class="text-sm font-bold">Serviço de interesse</label>
+          <select id="f-serv" name="serv" class="mt-2 h-12 w-full rounded-xl border-2 border-white/20 bg-quase px-4 text-base text-white outline-none transition focus:border-ambar">
+            <option>Ainda não sei, quero conversar</option>
+            <option>Criação de conteúdo audiovisual</option>
+            <option>Design para redes sociais</option>
+            <option>Gestão de redes sociais</option>
+            <option>Fotografia</option>
+            <option>Produção de conteúdo 360°</option>
+            <option>Stop motion</option>
+            <option>Cobertura de evento</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-msg" class="text-sm font-bold">Mensagem *</label>
+          <textarea id="f-msg" name="msg" required rows="4" class="mt-2 w-full rounded-xl border-2 border-white/20 bg-quase px-4 py-3 text-base text-white outline-none transition focus:border-ambar" placeholder="Conta um pouco do seu projeto"></textarea>
+          <p class="mt-1 hidden text-sm text-[#ff8a9e]" data-e="msg">Escreve pelo menos uma frase sobre o projeto.</p>
+        </div>
+        <label class="flex cursor-pointer items-center gap-3 sm:col-span-2">
+          <input type="checkbox" name="sim" checked class="h-5 w-5 accent-[#FCA001]">
+          <span class="text-sm">Incluir minha simulação de pacote na mensagem</span>
+        </label>
+      </div>
+      <button type="submit" class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-ambar px-6 py-4 font-bold text-black transition hover:-translate-y-1 hover:shadow-[0_6px_0_#B70223]">
+        Preparar mensagem <i data-lucide="arrow-right" class="h-5 w-5"></i>
+      </button>
+      <div class="mt-5 hidden rounded-2xl border border-ambar/50 p-5" data-ok role="status">
+        <p class="font-bold text-ambar">Mensagem pronta.</p>
+        <p class="mt-1 text-sm text-white/75">Escolha por onde quer enviar:</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="#" class="inline-flex items-center gap-2 rounded-full bg-verm px-5 py-3 font-bold" data-ok-wa><i data-lucide="message-circle" class="h-5 w-5"></i>WhatsApp</a>
+          <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 font-bold" data-ok-mail><i data-lucide="mail" class="h-5 w-5"></i>E-mail</a>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Se o e-mail não abrir, envie para catomidias@gmail.com.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-black py-12" data-tone="dark">
+  <div class="mx-auto max-w-[1240px] px-5 text-sm text-white/70">
+    <div class="flex flex-wrap items-center justify-between gap-6">
+      <div>
+        <img src="assets/cato-logo-branco.svg" alt="Cato Mídias" width="995" height="440" class="block h-12 w-auto md:h-14">
+        <p class="mt-4">Foto, vídeo e design para marcas, artistas e projetos. Ribeirão Preto, SP.</p>
+      </div>
+      <p>© 2026 Cato Mídias · <a href="https://instagram.com/catomidias_" class="hover:text-ambar">@catomidias_</a></p>
+    </div>
+    <div class="mt-10 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[1fr_1.4fr]">
+      <div>
+        <p class="label text-ambar">Produção integral</p>
+        <p class="mt-3 leading-relaxed text-white/80" data-etapas-txt></p>
+      </div>
+      <p class="flex items-start gap-3 leading-relaxed"><i data-lucide="badge-check" class="mt-0.5 h-5 w-5 shrink-0 text-ambar"></i><span data-aviso></span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Galeria dos cases (lightbox) -->
+<div class="fixed inset-0 z-[60] hidden bg-black/95 backdrop-blur-sm" data-lb role="dialog" aria-modal="true" aria-labelledby="lb-tit">
+  <div class="mx-auto flex h-full max-w-[1400px] flex-col overflow-y-auto lg:flex-row lg:overflow-hidden">
+    <div class="relative flex shrink-0 flex-col lg:min-h-0 lg:flex-1">
+      <div class="flex items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <div class="min-w-0"><p id="lb-tit" class="truncate text-lg font-extrabold" data-lb-tit></p><p class="text-xs font-semibold text-white/60" data-lb-sub></p></div>
+        <button class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-black" aria-label="Fechar galeria" data-lb-close><i data-lucide="x"></i></button>
+      </div>
+      <div class="relative flex h-[64vh] items-center justify-center px-14 pb-4 lg:h-auto lg:min-h-0 lg:flex-1" data-lb-stage></div>
+      <button class="absolute left-2 top-1/2 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-ambar hover:text-black sm:left-4" aria-label="Anterior" data-lb-nav="-1"><i data-lucide="chevron-left"></i></button>
+      <button class="absolute right-2 top-1/2 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-ambar hover:text-black sm:right-4" aria-label="Próximo" data-lb-nav="1"><i data-lucide="chevron-right"></i></button>
+    </div>
+    <aside class="shrink-0 border-t border-white/10 p-6 text-white lg:w-[340px] lg:overflow-y-auto lg:border-l lg:border-t-0" data-lb-info></aside>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
