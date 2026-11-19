@@ -209,10 +209,10 @@ $('[data-steppers]').innerHTML=STEP.map(s=>`
     </div>
   </div>`).join('');
 
-/* Desconto progressivo por quantidade de serviços (regra definitiva, 18/11/2026) — teto de 15% */
-const TIERS=[{n:1,p:0},{n:2,p:.05},{n:3,p:.10},{n:4,p:.15}];
+/* Desconto progressivo por quantidade de serviços — teto de 10% (1 serviço: 0% · 2: 5% · 3 ou mais: 10%) */
+const TIERS=[{n:1,p:0},{n:2,p:.05},{n:3,p:.10}];
 const nServ=()=>[S.gestao,S.artes>0,S.bruto>0,S.c360>0,S.foto>0,S.stop].filter(Boolean).length;
-const pctDe=n=>n>=4?.15:n===3?.10:n===2?.05:0;
+const pctDe=n=>n>=3?.10:n===2?.05:0;
 const calc=()=>{
   const m=(S.gestao?PRECO.gestao:0)+S.artes*PRECO.arte;
   const base=S.bruto*PRECO.bruto+S.c360*PRECO.c360+S.foto*PRECO.foto;
@@ -223,7 +223,7 @@ const calc=()=>{
 const pctTxt=p=>Math.round(p*100)+'%';
 const par=(x,y)=>[x?brl(x)+'/mês':'',y?brl(y):''].filter(Boolean).join(' + ')||brl(0);
 const incentivo=n=>n===0?'Escolha um serviço para começar. A partir de 2 serviços, você ganha desconto.'
-  :n>=4?'Parabéns, você atingiu o desconto máximo de 15%!'
+  :n>=3?'Parabéns, você atingiu o desconto máximo de 10%!'
   :`Adicione mais 1 serviço para ganhar ${pctTxt(pctDe(n+1))} de desconto.`;
 const linhas=()=>{
   const L=[];
@@ -255,12 +255,12 @@ const render=()=>{
   tween($('[data-tot="m"]'),c.fm);tween($('[data-tot="a"]'),c.fa);
   $('[data-sub="m"]').textContent=c.dm?brl(c.m):'';$('[data-sub="a"]').textContent=c.da?brl(c.a):'';
   $('[data-contrato]').classList.toggle('hidden',!c.m);if(c.m)tween($('[data-tot="c"]'),c.fm*MESES_MIN);
-  $('[data-tiers]').innerHTML=TIERS.map(t=>{const on=c.n>=4?t.n===4:c.n===t.n;const ok=c.n>=t.n;
+  $('[data-tiers]').innerHTML=TIERS.map(t=>{const on=c.n>=3?t.n===3:c.n===t.n;const ok=c.n>=t.n;
     return `<li class="rounded-xl px-1 py-2 text-center transition ${on?'bg-black text-ambar scale-105':ok?'bg-ambar':'bg-black/10'}"${on?' aria-current="step"':''}>
-      <span class="block text-[11px] font-semibold leading-tight ${on?'text-white':''}">${t.n}${t.n===4?'+':''} serviço${t.n>1?'s':''}</span>
+      <span class="block text-[11px] font-semibold leading-tight ${on?'text-white':''}">${t.n}${t.n===3?'+':''} serviço${t.n>1?'s':''}</span>
       <span class="block text-base font-black leading-tight">${pctTxt(t.p)}</span></li>`}).join('');
   $('[data-incent] span').textContent=incentivo(c.n);
-  $('[data-incent]').classList.toggle('text-verm',c.n>=4);
+  $('[data-incent]').classList.toggle('text-verm',c.n>=3);
   $('[data-r="sub"]').textContent=par(c.m,c.a);
   $('[data-r="pct"]').textContent=c.n?`${pctTxt(c.pct)} · ${c.n} serviço${c.n>1?'s':''}`:'0%';
   $('[data-r="eco"]').textContent=c.pct?par(c.dm,c.da):brl(0);
