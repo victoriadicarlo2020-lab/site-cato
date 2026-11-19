@@ -74,7 +74,7 @@ const drawStops=()=>{
       <span class="absolute left-3 top-3 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[11px] font-bold text-ambar">SM 0${i+1}</span>
       <span class="rec absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-verm"></span>
     </button>
-    <figcaption class="mt-3 text-sm font-bold">Stop motion gastronômico 0${i+1}<span class="block text-xs font-medium text-black/70">Produção integral Cato Mídias</span></figcaption>
+    <figcaption class="sr-only">Stop motion gastronômico 0${i+1} · Produção integral Cato Mídias</figcaption>
   </figure>`).join('');
   $$('[data-stops] video').forEach(v=>{v.muted=true;if(!reduz)vis.observe(v)});
 };
