@@ -1,6 +1,7 @@
 {
   "agencia": "Cato Mídias",
   "especialidade": "Marketing, Audiovisual, Fotografia Gastronômica, Stop Motion e Social Media para Alimentos e Bebidas",
+  "repositorio": "victoriadicarlo2020-lab/site-cato",
   "autoria_e_direitos": {
     "producao_integral": true,
     "etapas": [
@@ -13,7 +14,7 @@
     "aviso_legal": "Todo o material audiovisual apresentado é de autoria exclusiva da Cato Mídias, que detém o legítimo uso e propriedade intelectual de todas as obras."
   },
   "stopmotions_avulsos": {
-    "pasta": "assets/stopmotions-destaque/",
+    "pasta": "assets/portfolio/stopmotions-destaque/",
     "quantidade": 5,
     "arquivos": [
       "stopmotion-gastronomico-01.mp4",
@@ -32,11 +33,11 @@
         "videos": ["video-01.mp4"],
         "stopmotions": ["stopmotion-01.mp4"],
         "fotos": [
-          "foto-01.jpg",
-          "foto-02.jpg",
-          "foto-03.jpg",
-          "foto-04.jpg",
-          "foto-05.jpg"
+          "foto-01.png",
+          "foto-02.png",
+          "foto-03.png",
+          "foto-04.png",
+          "foto-05.png"
         ]
       }
     },
@@ -50,14 +51,14 @@
           "video-apresentacao-02.mp4"
         ],
         "fotos_espaco_apresentacao": [
-          "foto-espaco-01.jpg",
-          "foto-espaco-02.jpg",
-          "foto-espaco-03.jpg",
-          "foto-espaco-04.jpg"
+          "foto-espaco-01.png",
+          "foto-espaco-02.png",
+          "foto-espaco-03.png",
+          "foto-espaco-04.png"
         ],
         "fotos_divulgacao": [
-          "foto-divulgacao-01.jpg",
-          "foto-divulgacao-02.jpg"
+          "foto-divulgacao-01.png",
+          "foto-divulgacao-02.png"
         ]
       }
     },
@@ -72,8 +73,33 @@
           "video-03.mp4",
           "video-04.mp4"
         ],
-        "fotos_total": 25,
-        "padrao_fotos": "foto-01.jpg até foto-25.jpg"
+        "fotos": [
+          "foto-01.png",
+          "foto-02.png",
+          "foto-03.png",
+          "foto-04.png",
+          "foto-05.png",
+          "foto-06.png",
+          "foto-07.png",
+          "foto-08.png",
+          "foto-09.png",
+          "foto-10.png",
+          "foto-11.png",
+          "foto-12.png",
+          "foto-13.png",
+          "foto-14.png",
+          "foto-15.png",
+          "foto-16.png",
+          "foto-17.png",
+          "foto-18.png",
+          "foto-19.png",
+          "foto-20.png",
+          "foto-21.png",
+          "foto-22.png",
+          "foto-23.png",
+          "foto-24.png",
+          "foto-25.png"
+        ]
       }
     },
     {
@@ -86,8 +112,25 @@
           "video-divulgacao-02.mp4",
           "video-divulgacao-03.mp4"
         ],
-        "fotos_total": 17,
-        "padrao_fotos": "foto-01.jpg até foto-17.jpg"
+        "fotos": [
+          "foto-01.png",
+          "foto-02.png",
+          "foto-03.png",
+          "foto-04.PNG",
+          "foto-05.png",
+          "foto-06.png",
+          "foto-07.png",
+          "foto-08.png",
+          "foto-09.png",
+          "foto-10.png",
+          "foto-11.png",
+          "foto-12.png",
+          "foto-13.png",
+          "foto-14.png",
+          "foto-15.png",
+          "foto-16.PNG",
+          "foto-17.png"
+        ]
       }
     }
   ]
