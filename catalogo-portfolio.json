@@ -1,0 +1,94 @@
+{
+  "agencia": "Cato Mídias",
+  "especialidade": "Marketing, Audiovisual, Fotografia Gastronômica, Stop Motion e Social Media para Alimentos e Bebidas",
+  "autoria_e_direitos": {
+    "producao_integral": true,
+    "etapas": [
+      "Concepção do Briefing",
+      "Captação de Imagens",
+      "Tratamento de Material",
+      "Edição Audiovisual",
+      "Apresentação Final"
+    ],
+    "aviso_legal": "Todo o material audiovisual apresentado é de autoria exclusiva da Cato Mídias, que detém o legítimo uso e propriedade intelectual de todas as obras."
+  },
+  "stopmotions_avulsos": {
+    "pasta": "assets/stopmotions-destaque/",
+    "quantidade": 5,
+    "arquivos": [
+      "stopmotion-gastronomico-01.mp4",
+      "stopmotion-gastronomico-02.mp4",
+      "stopmotion-gastronomico-03.mp4",
+      "stopmotion-gastronomico-04.mp4",
+      "stopmotion-gastronomico-05.mp4"
+    ]
+  },
+  "cases": [
+    {
+      "id": "emporio-cervejeiro",
+      "cliente": "Empório Cervejeiro",
+      "pasta": "assets/portfolio/emporio-cervejeiro/",
+      "entregas": {
+        "videos": ["video-01.mp4"],
+        "stopmotions": ["stopmotion-01.mp4"],
+        "fotos": [
+          "foto-01.jpg",
+          "foto-02.jpg",
+          "foto-03.jpg",
+          "foto-04.jpg",
+          "foto-05.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ponto-do-chopp",
+      "cliente": "Ponto do Chopp",
+      "pasta": "assets/portfolio/ponto-do-chopp/",
+      "entregas": {
+        "videos_apresentacao": [
+          "video-apresentacao-01.mp4",
+          "video-apresentacao-02.mp4"
+        ],
+        "fotos_espaco_apresentacao": [
+          "foto-espaco-01.jpg",
+          "foto-espaco-02.jpg",
+          "foto-espaco-03.jpg",
+          "foto-espaco-04.jpg"
+        ],
+        "fotos_divulgacao": [
+          "foto-divulgacao-01.jpg",
+          "foto-divulgacao-02.jpg"
+        ]
+      }
+    },
+    {
+      "id": "marmitaria-nova-brasa",
+      "cliente": "Marmitaria Nova Brasa",
+      "pasta": "assets/portfolio/marmitaria-nova-brasa/",
+      "entregas": {
+        "videos": [
+          "video-01.mp4",
+          "video-02.mp4",
+          "video-03.mp4",
+          "video-04.mp4"
+        ],
+        "fotos_total": 25,
+        "padrao_fotos": "foto-01.jpg até foto-25.jpg"
+      }
+    },
+    {
+      "id": "cascata-quintino-ii",
+      "cliente": "Cascata Quintino II",
+      "pasta": "assets/portfolio/cascata-quintino-ii/",
+      "entregas": {
+        "videos_divulgacao": [
+          "video-divulgacao-01.mp4",
+          "video-divulgacao-02.mp4",
+          "video-divulgacao-03.mp4"
+        ],
+        "fotos_total": 17,
+        "padrao_fotos": "foto-01.jpg até foto-17.jpg"
+      }
+    }
+  ]
+}
