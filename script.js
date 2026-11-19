@@ -209,22 +209,16 @@ $('[data-steppers]').innerHTML=STEP.map(s=>`
     </div>
   </div>`).join('');
 
-/* Desconto progressivo por quantidade de serviços — teto de 10% (1 serviço: 0% · 2: 5% · 3 ou mais: 10%) */
-const TIERS=[{n:1,p:0},{n:2,p:.05},{n:3,p:.10}];
+/* Valores do simulador: soma simples dos serviços escolhidos */
 const nServ=()=>[S.gestao,S.artes>0,S.bruto>0,S.c360>0,S.foto>0,S.stop].filter(Boolean).length;
-const pctDe=n=>n>=3?.10:n===2?.05:0;
 const calc=()=>{
   const m=(S.gestao?PRECO.gestao:0)+S.artes*PRECO.arte;
   const base=S.bruto*PRECO.bruto+S.c360*PRECO.c360+S.foto*PRECO.foto;
   const a=Math.round(base*(S.urg?1+PRECO.urg:1));
-  const n=nServ(),pct=pctDe(n),dm=Math.round(m*pct),da=Math.round(a*pct);
-  return{m,base,a,n,pct,dm,da,fm:m-dm,fa:a-da};
+  const n=nServ();
+  return{m,base,a,n,fm:m,fa:a};
 };
-const pctTxt=p=>Math.round(p*100)+'%';
 const par=(x,y)=>[x?brl(x)+'/mês':'',y?brl(y):''].filter(Boolean).join(' + ')||brl(0);
-const incentivo=n=>n===0?'Escolha um serviço para começar. A partir de 2 serviços, você ganha desconto.'
-  :n>=3?'Parabéns, você atingiu o desconto máximo de 10%!'
-  :`Adicione mais 1 serviço para ganhar ${pctTxt(pctDe(n+1))} de desconto.`;
 const linhas=()=>{
   const L=[];
   if(S.gestao)L.push(['Gestão de redes sociais',brl(PRECO.gestao)+'/mês']);
@@ -241,9 +235,6 @@ const mensagem=()=>{
   t+='\n'+linhas().map(([k,v])=>`• ${k}: ${v}`).join('\n');
   if(!linhas().length)t+='• Ainda não escolhi os serviços';
   t+=`\n\nServiços selecionados: ${c.n}`;
-  t+=`\nSubtotal: ${par(c.m,c.a)}`;
-  t+=`\nDesconto aplicado: ${pctTxt(c.pct)}`;
-  if(c.pct)t+=`\nEconomia: ${par(c.dm,c.da)}`;
   t+=`\nValor final: mensal a partir de ${brl(c.fm)} · avulso a partir de ${brl(c.fa)}`;
   if(c.m)t+=`\nContrato mínimo de ${MESES_MIN} meses: a partir de ${brl(c.fm*MESES_MIN)}`;
   return t;
@@ -253,17 +244,8 @@ const tween=(el,to)=>{const from=+(el.dataset.v||0);el.dataset.v=to;const t0=per
 const render=()=>{
   const c=calc();
   tween($('[data-tot="m"]'),c.fm);tween($('[data-tot="a"]'),c.fa);
-  $('[data-sub="m"]').textContent=c.dm?brl(c.m):'';$('[data-sub="a"]').textContent=c.da?brl(c.a):'';
   $('[data-contrato]').classList.toggle('hidden',!c.m);if(c.m)tween($('[data-tot="c"]'),c.fm*MESES_MIN);
-  $('[data-tiers]').innerHTML=TIERS.map(t=>{const on=c.n>=3?t.n===3:c.n===t.n;const ok=c.n>=t.n;
-    return `<li class="rounded-xl px-1 py-2 text-center transition ${on?'bg-black text-ambar scale-105':ok?'bg-ambar':'bg-black/10'}"${on?' aria-current="step"':''}>
-      <span class="block text-[11px] font-semibold leading-tight ${on?'text-white':''}">${t.n}${t.n===3?'+':''} serviço${t.n>1?'s':''}</span>
-      <span class="block text-base font-black leading-tight">${pctTxt(t.p)}</span></li>`}).join('');
-  $('[data-incent] span').textContent=incentivo(c.n);
-  $('[data-incent]').classList.toggle('text-verm',c.n>=3);
-  $('[data-r="sub"]').textContent=par(c.m,c.a);
-  $('[data-r="pct"]').textContent=c.n?`${pctTxt(c.pct)} · ${c.n} serviço${c.n>1?'s':''}`:'0%';
-  $('[data-r="eco"]').textContent=c.pct?par(c.dm,c.da):brl(0);
+  $('[data-r="n"]').textContent=c.n?`${c.n} serviço${c.n>1?'s':''}`:'Nenhum ainda';
   $('[data-r="fin"]').textContent=par(c.fm,c.fa);
   $('[data-k="gestao"]').checked=S.gestao;$('[data-k="stop"]').checked=S.stop;$('[data-k="urg"]').checked=S.urg;
   $('[data-k="artes"]').value=S.artes;$('[data-out="artes"]').textContent=S.artes;
