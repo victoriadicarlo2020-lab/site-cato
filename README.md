@@ -1,5 +1,3 @@
-# site-cato
-Site oficial e portfólio interativo da Cato Mídias.
 # Cato Mídias — Repositório Oficial do Site e Portfólio Interativo
 
 Este repositório armazena o código-fonte e o acervo audiovisual oficial do site da **Cato Mídias** (Marketing, Produção Audiovisual, Fotografia Gastronômica, Stop Motion e Social Media para Alimentos e Bebidas).
