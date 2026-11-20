@@ -52,15 +52,10 @@
 <main>
 <!-- ============ HERO ============ -->
 <section class="relative overflow-hidden bg-black pt-28 md:pt-32" aria-labelledby="h-hero" data-tone="dark">
-  <!-- ondas orgânicas: âmbar por fora, vermelho por dentro, grão na borda -->
-  <svg class="pointer-events-none absolute -right-40 top-10 h-[760px] w-[760px] md:-right-24" viewBox="0 0 600 600" aria-hidden="true">
-    <path fill="#FCA001" d="M600 40C470 20 360 90 330 200s30 170-40 250-60 150 60 150h250Z"/>
-    <path fill="#B70223" d="M600 150c-90 0-160 50-170 130s40 120-10 180 0 140 70 140h110Z"/>
-  </svg>
   <div class="grain pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay" aria-hidden="true"></div>
 
   <div class="relative mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 md:grid-cols-[1.1fr_1fr] md:items-center md:pb-28">
-    <div>
+    <div class="hero-text">
       <div class="rv mb-8 inline-flex w-full max-w-md items-center gap-3 rounded-full bg-white px-5 py-3.5 text-black shadow-[0_8px_0_#FCA001]">
         <i data-lucide="search" class="h-5 w-5 shrink-0"></i>
         <span class="caret text-base font-semibold" data-type="Cato Mídias">Cato Mídias</span>
@@ -81,7 +76,12 @@
       </div>
     </div>
 
-    <div class="relative grid grid-cols-2 gap-4 sm:gap-5">
+    <div class="hero-art relative grid grid-cols-2 gap-4 sm:gap-5">
+      <!-- ondas orgânicas (âmbar por fora, vermelho por dentro): fundo da coluna das fotos, nunca atrás do texto -->
+      <svg class="hero-blob" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+        <path fill="#FCA001" d="M600 40C470 20 360 90 330 200s30 170-40 250-60 150 60 150h250Z"/>
+        <path fill="#B70223" d="M600 150c-90 0-160 50-170 130s40 120-10 180 0 140 70 140h110Z"/>
+      </svg>
       <figure class="rv d1 mt-10">
         <a href="https://instagram.com/_toridicarlo" class="group relative block aspect-[4/5] overflow-hidden rounded-[28px] bg-quase shadow-[10px_10px_0_#FCA001] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_14px_0_#B70223]" aria-label="Victoria de Carlos no Instagram, @_toridicarlo">
           <img src="assets/fundadora-victoria.jpg" width="1080" height="1350" decoding="async" alt="Victoria de Carlos, cofundadora da Cato Mídias: creator mobile, fotógrafa, designer, produtora criativa e audiovisual. Instagram @_toridicarlo" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]">
