@@ -108,3 +108,8 @@ input[type=range]::-webkit-slider-thumb{cursor:grab}
 .contato-info{min-width:0}
 .contato-titulo{font-size:clamp(2.5rem,4.5vw,4.2rem)}
 @media (min-width:1024px){.contato-grid{column-gap:5rem}}
+
+/* celular: conteúdo com reveal (.rv) aparece sempre, sem depender do scroll/IntersectionObserver */
+@media (max-width:768px){
+  .rv,.js .rv,.js .rv.in{opacity:1!important;transform:none!important}
+}

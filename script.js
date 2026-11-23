@@ -215,7 +215,9 @@ const mb=$('[data-menu-btn]'),mn=$('[data-menu]');
 mb.addEventListener('click',()=>{const o=mn.classList.toggle('hidden');mb.setAttribute('aria-expanded',!o);onScroll()});
 $$('a',mn).forEach(a=>a.addEventListener('click',()=>{mn.classList.add('hidden');mb.setAttribute('aria-expanded','false')}));
 const ty=$('[data-type]');if(ty&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const w=ty.dataset.type;let i=0;ty.textContent='';const tick=()=>{ty.textContent=w.slice(0,++i);if(i<w.length)setTimeout(tick,110)};setTimeout(tick,500)}
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
-$$('.rv,[data-tl]').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.05});
+$$('.rv,[data-tl]').forEach(el=>io.observe(el));window.__rvOk=true;
+/* fallback: no celular, tudo recebe .in logo após carregar a página */
+if(matchMedia('(max-width: 768px)').matches)setTimeout(()=>$$('.rv,[data-tl]').forEach(el=>{el.classList.add('in');io.unobserve(el)}),600);
 icon();
 }
