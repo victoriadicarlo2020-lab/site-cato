@@ -101,7 +101,7 @@
 
   <!-- faixa de palavras-chave do segmento -->
   <div class="relative border-y border-white/10 bg-ambar py-4 text-black" aria-label="O que a Cato faz" data-tone="light">
-    <div class="flex w-max mq gap-10 whitespace-nowrap text-lg font-extrabold uppercase tracking-wide" data-mq></div>
+    <div class="mq-wrap" data-mq></div>
   </div>
 </section>
 
@@ -138,9 +138,15 @@
       <p class="max-w-sm text-white/75">Você não precisa contratar fotógrafo, editor e social media separados. Cada foto, vídeo e stop motion do portfólio foi pensado, captado, tratado e editado pela Cato, em cinco etapas.</p>
     </div>
     <div class="tl mt-14" data-tl>
+      <!-- timeline de edição: a agulha percorre a régua em loop de 10 s, o timecode (HH:MM:SS:QQ, 24 quadros/s) acompanha e o card da etapa acende -->
+      <div class="tl-bar" aria-hidden="true">
+        <span class="tl-tc"><span class="rec tl-rec"></span><span data-tc>00:00:00:00</span></span>
+        <span class="tl-now" data-now></span>
+      </div>
+      <div class="tl-prog" aria-hidden="true"><i data-prog></i></div>
       <div class="tl-ruler" aria-hidden="true">
-        <span class="tc" style="left:0">00:00</span><span class="tc" style="left:20%">00:01</span><span class="tc" style="left:40%">00:02</span><span class="tc" style="left:60%">00:03</span><span class="tc" style="left:80%">00:04</span>
-        <span class="tl-head"></span>
+        <span class="tc" style="left:0">00:00</span><span class="tc" style="left:20%">00:02</span><span class="tc" style="left:40%">00:04</span><span class="tc" style="left:60%">00:06</span><span class="tc" style="left:80%">00:08</span>
+        <span class="tl-head" data-head></span>
       </div>
       <ol class="tl-steps" data-etapas></ol>
     </div>

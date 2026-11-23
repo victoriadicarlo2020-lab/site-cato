@@ -39,7 +39,7 @@ const icon=()=>{try{lucide.createIcons()}catch(e){}};
 
 /* ---------- Marquee ---------- */
 const mqItem=SEGMENTOS.map(c=>`<span>${c}</span><span aria-hidden="true">✦</span>`).join('');
-$('[data-mq]').innerHTML=mqItem+`<span aria-hidden="true" class="contents">${mqItem}</span>`;
+$('[data-mq]').innerHTML=`<div class="mq-track">${mqItem}</div><div class="mq-track" aria-hidden="true">${mqItem}</div>`;
 
 /* ---------- Mídia: caminhos relativos à raiz do site (assets/...) ---------- */
 const srcDe=p=>p;
@@ -63,6 +63,7 @@ const drawAutoria=()=>{
     </li>`}).join('');
   $$('[data-aviso]').forEach(el=>el.textContent=CAT.autoria_e_direitos.aviso_legal);
   $('[data-etapas-txt]').textContent=E.join(' → ');
+  if(window.__tlReset)window.__tlReset();
 };
 
 /* ---------- Stop motions em destaque ---------- */
@@ -77,7 +78,7 @@ const drawStops=()=>{
     </button>
     <figcaption class="sr-only">Stop motion gastronômico 0${i+1} · Produção integral Cato Mídias</figcaption>
   </figure>`).join('');
-  $$('[data-stops] video').forEach(v=>{v.muted=true;if(!reduz)vis.observe(v)});
+  $$('[data-stops] video').forEach(v=>{v.muted=true;v.defaultMuted=true;if(!reduz)vis.observe(v)});
 };
 const stopCase=()=>({id:'stopmotions',cliente:'Stop motions em destaque',pasta:CAT.stopmotions_avulsos.pasta,entregas:{stopmotions:CAT.stopmotions_avulsos.arquivos}});
 $('[data-stops]').addEventListener('click',e=>{const b=e.target.closest('[data-stop]');if(b)abrirLB(stopCase(),+b.dataset.stop)});
@@ -91,11 +92,11 @@ const drawFilters=()=>{
 };
 const tile=(x,i,c)=>`
   <button type="button" class="tile group relative aspect-[4/5] overflow-hidden rounded-2xl bg-quase text-left" data-i="${i}" aria-label="Abrir ${esc(x.rot.toLowerCase())} ${x.n} de ${x.tot} · ${esc(c.cliente)}">
-    ${x.v?`<video muted loop playsinline preload="metadata" src="${srcDe(x.p)}#t=0.1"></video>`
+    ${x.v?`<video ${reduz?'':'autoplay'} muted loop playsinline preload="metadata" data-auto src="${srcDe(x.p)}#t=0.1"></video>`
          :`<img loading="lazy" decoding="async" alt="${esc(x.rot)} ${x.n} · ${esc(c.cliente)}" src="${srcDe(x.p)}">`}
     <span class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></span>
     <span class="absolute left-2.5 top-2.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider ${x.v?'bg-ambar text-black':'bg-black/70 text-white'}">${esc(x.rot)}</span>
-    ${x.v?`<span class="tile-play absolute bottom-3 right-3 grid h-11 w-11 place-items-center rounded-full bg-white text-black transition"><i data-lucide="play" class="ml-0.5 h-5 w-5"></i></span>`:''}
+    ${x.v?`<span class="tile-play absolute bottom-3 right-3 grid h-11 w-11 place-items-center rounded-full bg-white text-black transition"><i data-lucide="maximize-2" class="h-5 w-5"></i></span>`:''}
     <span class="absolute bottom-3 left-3 font-mono text-[11px] font-bold text-white/85">${String(x.n).padStart(2,'0')}/${String(x.tot).padStart(2,'0')}</span>
   </button>`;
 const etapasLista=()=>`<ul class="mt-3 space-y-2">${CAT.autoria_e_direitos.etapas.map(n=>`<li class="flex items-center gap-2 text-sm"><i data-lucide="check" class="h-4 w-4 shrink-0 text-ambar"></i>${esc(n)}</li>`).join('')}</ul>`;
@@ -108,6 +109,7 @@ const fichaCase=(c,botao)=>`
   <p class="mt-6 flex items-start gap-2 border-t border-white/10 pt-4 text-xs leading-relaxed text-white/65"><i data-lucide="badge-check" class="h-4 w-4 shrink-0 text-ambar"></i><span>${esc(CAT.autoria_e_direitos.aviso_legal)}</span></p>
   ${botao?`<button type="button" class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-ambar px-5 py-3.5 font-bold text-black transition hover:-translate-y-0.5" data-abrir="0"><i data-lucide="images" class="h-5 w-5"></i>Abrir galeria</button>`:''}`;
 const drawPort=()=>{
+  $$('[data-port] video').forEach(v=>vis.unobserve(v));
   if(filtro==='todos'){
     pBox.innerHTML=`<div class="grid gap-5 sm:grid-cols-2">${CAT.cases.map(c=>{const cp=capa(c);return `
       <button type="button" class="case group relative block aspect-[4/3] overflow-hidden rounded-3xl bg-quase text-left" data-case="${c.id}">
@@ -126,6 +128,8 @@ const drawPort=()=>{
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">${it.map((x,i)=>tile(x,i,c)).join('')}</div>
     </div>`;
   }
+  /* vídeos do portfólio rodam sozinhos (mudos, em loop) só enquanto aparecem na tela */
+  $$('[data-port] video').forEach(v=>{v.muted=true;v.defaultMuted=true;if(!reduz)vis.observe(v)});
   icon();
 };
 fBox.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;filtro=b.dataset.g;drawFilters();drawPort()});
@@ -135,8 +139,7 @@ pBox.addEventListener('click',e=>{
   const t=e.target.closest('[data-i],[data-abrir]');
   if(t)abrirLB(CAT.cases.find(x=>x.id===filtro),+(t.dataset.i??t.dataset.abrir));
 });
-pBox.addEventListener('mouseover',e=>{const t=e.target.closest('.tile');const v=t&&t.querySelector('video');if(v&&v.paused)v.play().catch(()=>{})});
-pBox.addEventListener('mouseout',e=>{const t=e.target.closest('.tile');if(t&&!t.contains(e.relatedTarget)){const v=t.querySelector('video');if(v)v.pause()}});
+
 
 /* ---------- Galeria (lightbox) ---------- */
 const lb=$('[data-lb]'),stage=$('[data-lb-stage]');let LB={c:null,it:[],i:0},lastFocus=null;
@@ -279,6 +282,43 @@ form.addEventListener('submit',e=>{
   $('[data-ok]').classList.remove('hidden');$('[data-ok-wa]').focus();
 });
 
+
+/* ---------- Timeline de edição (seção Processo) ----------
+   Loop de 10 s: a agulha cruza a régua, o timecode conta em tempo real (24 quadros/s)
+   e o card da etapa sob a agulha acende. Só roda enquanto a seção está na tela. */
+{
+  const tl=$('[data-tl]');
+  if(tl){
+    const DUR=10000,FPS=24,head=$('[data-head]',tl),ruler=$('.tl-ruler',tl),tc=$('[data-tc]',tl),now=$('[data-now]',tl),prog=$('[data-prog]',tl);
+    const p2=n=>String(n).padStart(2,'0');
+    let t0=null,off=0,raf=0,visivel=false,atual=-1,W=0;
+    const medir=()=>{W=ruler.offsetParent?ruler.clientWidth-2:0};
+    const etapa=i=>{
+      const st=$$('[data-etapas] .tl-step'),E=CAT.autoria_e_direitos.etapas;
+      st.forEach((el,k)=>{el.classList.toggle('on',k===i);el.classList.toggle('done',k<i)});
+      now.textContent=i<0?`${E.length} etapas`:`Etapa ${p2(i+1)} · ${E[i]||''}`;
+      atual=i;
+    };
+    const pintar=ms=>{
+      const p=ms/DUR,s=Math.floor(ms/1000),q=Math.floor((ms%1000)*FPS/1000);
+      head.style.transform=`translateX(${(p*W).toFixed(1)}px)`;
+      prog.style.transform=`scaleX(${p.toFixed(4)})`;
+      tc.textContent=`00:00:${p2(s)}:${p2(q)}`;
+      const i=Math.min(4,Math.floor(p*5));if(i!==atual)etapa(i);
+    };
+    const quadro=ts=>{if(t0===null)t0=ts-off;off=(ts-t0)%DUR;pintar(off);raf=requestAnimationFrame(quadro)};
+    const ligar=()=>{if(!raf&&visivel&&!document.hidden){t0=null;raf=requestAnimationFrame(quadro)}};
+    const desligar=()=>{cancelAnimationFrame(raf);raf=0};
+    window.__tlReset=()=>{atual=-1;if(reduz){$$('[data-etapas] .tl-step').forEach(el=>el.classList.add('done'));now.textContent=`${CAT.autoria_e_direitos.etapas.length} etapas`}else pintar(off)};
+    medir();addEventListener('resize',()=>{medir();if(!raf)pintar(off)});
+    if(reduz){tc.textContent='00:00:10:00';head.style.transform=`translateX(${W}px)`;prog.style.transform='scaleX(1)';window.__tlReset()}
+    else{
+      pintar(0);
+      new IntersectionObserver(es=>{visivel=es[0].isIntersecting;visivel?ligar():desligar()},{threshold:.15}).observe(tl);
+      document.addEventListener('visibilitychange',()=>document.hidden?desligar():ligar());
+    }
+  }
+}
 
 /* ---------- Header, menu, digitação, reveal ---------- */
 const hdr=$('[data-hdr]');
