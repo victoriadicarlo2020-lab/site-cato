@@ -678,12 +678,12 @@ video {
   margin-right: auto;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
-.ml-0\.5 {
-  margin-left: 0.125rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mr-1 {
@@ -756,10 +756,6 @@ video {
 
 .grid {
   display: grid;
-}
-
-.contents {
-  display: contents;
 }
 
 .hidden {
@@ -878,11 +874,6 @@ video {
   width: 100%;
 }
 
-.w-max {
-  width: -moz-max-content;
-  width: max-content;
-}
-
 .min-w-0 {
   min-width: 0px;
 }
@@ -925,6 +916,10 @@ video {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -977,10 +972,6 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
-}
-
-.gap-10 {
-  gap: 2.5rem;
 }
 
 .gap-12 {
@@ -1557,10 +1548,6 @@ video {
   letter-spacing: -0.025em;
 }
 
-.tracking-wide {
-  letter-spacing: 0.025em;
-}
-
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -1837,15 +1824,51 @@ body{
   }
 }
 
-/* marquee */
+/* marquee: duas faixas iguais lado a lado, cada uma anda 100% da própria largura.
+   Faixas menores evitam a camada gigante que o Safari do iPhone deixa de desenhar. */
 
-.mq{
-  animation:mq 28s linear infinite
+.mq-wrap{
+  display:flex;
+  width:100%;
+  overflow:hidden
+}
+
+.mq-track{
+  display:flex;
+  flex:none;
+  align-items:center;
+  gap:2.5rem;
+  padding-right:2.5rem;
+  white-space:nowrap;
+  font-size:18px;
+  line-height:28px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.025em;
+  animation:mq 32s linear infinite;
+  will-change:transform;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform:translate3d(0,0,0)
 }
 
 @keyframes mq{
+  from{
+    transform:translate3d(0,0,0)
+  }
+
   to{
-    transform:translateX(-50%)
+    transform:translate3d(-100%,0,0)
+  }
+}
+
+@media(max-width:767px){
+  .mq-track{
+    font-size:14px;
+    line-height:22px;
+    gap:1.5rem;
+    padding-right:1.5rem;
+    animation-duration:26s
   }
 }
 
@@ -2076,12 +2099,80 @@ input[type=range]::-webkit-slider-thumb{
   background:#151515;
   border-radius:0 0 20px 20px;
   padding:20px;
-  transition:border-color .4s
+  transition:border-color .35s,background-color .35s,transform .35s,box-shadow .35s
 }
 
 .tl-step .tl-n{
   color:rgba(255,255,255,.55);
-  transition:color .4s
+  transition:color .35s
+}
+
+.tl-step.done{
+  border-color:rgba(252,160,1,.45)
+}
+
+.tl-step.on{
+  border-color:#FCA001;
+  background:#1d1d1d;
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px -12px rgba(252,160,1,.35)
+}
+
+.tl-step.on .tl-n{
+  color:#FCA001
+}
+
+.tl-bar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px 16px;
+  margin-bottom:12px
+}
+
+.tl-tc{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border-radius:8px;
+  background:#151515;
+  font:700 14px/1 ui-monospace,Menlo,monospace;
+  letter-spacing:.04em;
+  color:#FCA001;
+  font-variant-numeric:tabular-nums
+}
+
+.tl-rec{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#B70223
+}
+
+.tl-now{
+  font:600 12px/1.3 ui-monospace,Menlo,monospace;
+  color:rgba(255,255,255,.7);
+  text-transform:uppercase;
+  letter-spacing:.06em
+}
+
+.tl-prog{
+  height:3px;
+  margin-bottom:14px;
+  border-radius:3px;
+  background:rgba(255,255,255,.15);
+  overflow:hidden
+}
+
+.tl-prog i{
+  display:block;
+  height:100%;
+  background:#FCA001;
+  transform-origin:left;
+  transform:scaleX(0);
+  will-change:transform
 }
 
 .tl-ruler{
@@ -2089,6 +2180,10 @@ input[type=range]::-webkit-slider-thumb{
 }
 
 @media(min-width:900px){
+  .tl-prog{
+    display:none
+  }
+
   .tl-steps{
     grid-template-columns:repeat(5,1fr)
   }
@@ -2116,7 +2211,9 @@ input[type=range]::-webkit-slider-thumb{
   bottom:-6px;
   left:0;
   width:2px;
-  background:#FCA001
+  background:#FCA001;
+  will-change:transform;
+  box-shadow:0 0 12px rgba(252,160,1,.6)
 }
 
 .tl-head::before{
@@ -2126,38 +2223,6 @@ input[type=range]::-webkit-slider-thumb{
   left:-6px;
   border:7px solid transparent;
   border-top:9px solid #FCA001
-}
-
-.tl.in .tl-head{
-  animation:playhead 4.2s cubic-bezier(.45,0,.2,1) forwards
-}
-
-@keyframes playhead{
-  to{
-    left:calc(90% - 1px)
-  }
-}
-
-.tl.in .tl-step{
-  animation:lit .5s forwards;
-  animation-delay:calc(var(--i)*.8s + .2s)
-}
-
-@keyframes lit{
-  to{
-    border-color:#FCA001
-  }
-}
-
-.tl.in .tl-step .tl-n{
-  animation:litn .5s forwards;
-  animation-delay:calc(var(--i)*.8s + .2s)
-}
-
-@keyframes litn{
-  to{
-    color:#FCA001
-  }
 }
 
 /* portfólio */
@@ -2187,10 +2252,6 @@ input[type=range]::-webkit-slider-thumb{
 @media (prefers-reduced-motion:reduce){
   .tl-step{
     border-color:#FCA001
-  }
-
-  .tl-head{
-    left:calc(90% - 1px)
   }
 
   *,*::before,*::after{
