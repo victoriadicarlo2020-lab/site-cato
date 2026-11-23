@@ -207,15 +207,10 @@ form.addEventListener('submit',e=>{
 
 /* ---------- Header, menu, digitação, reveal ---------- */
 const hdr=$('[data-hdr]');
-const onScroll=()=>{
-  hdr.classList.toggle('solid',scrollY>40||!$('[data-menu]').classList.contains('hidden'));
-  const y=Math.min(innerHeight-1,hdr.offsetHeight/2);
-  const el=document.elementsFromPoint(innerWidth/2,y).find(n=>!hdr.contains(n));
-  const z=el&&el.closest('[data-tone]');
-  hdr.dataset.tone=scrollY<40?'dark':(z?z.dataset.tone:'dark');
-};
-addEventListener('resize',onScroll);
-addEventListener('scroll',onScroll,{passive:true});onScroll();
+/* header fica só no topo da página (position:absolute) e não acompanha a rolagem;
+   o fundo preto aparece apenas com o menu do celular aberto */
+const onScroll=()=>{hdr.classList.toggle('solid',!$('[data-menu]').classList.contains('hidden'))};
+onScroll();
 const mb=$('[data-menu-btn]'),mn=$('[data-menu]');
 mb.addEventListener('click',()=>{const o=mn.classList.toggle('hidden');mb.setAttribute('aria-expanded',!o);onScroll()});
 $$('a',mn).forEach(a=>a.addEventListener('click',()=>{mn.classList.add('hidden');mb.setAttribute('aria-expanded','false')}));
