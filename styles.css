@@ -1824,53 +1824,14 @@ body{
   }
 }
 
-/* marquee: duas faixas iguais lado a lado, cada uma anda 100% da própria largura.
-   Faixas menores evitam a camada gigante que o Safari do iPhone deixa de desenhar. */
-
-.mq-wrap{
-  display:flex;
-  width:100%;
-  overflow:hidden
-}
-
-.mq-track{
-  display:flex;
-  flex:none;
-  align-items:center;
-  gap:2.5rem;
-  padding-right:2.5rem;
-  white-space:nowrap;
-  font-size:18px;
-  line-height:28px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.025em;
-  animation:mq 32s linear infinite;
-  will-change:transform;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  transform:translate3d(0,0,0)
-}
-
-@keyframes mq{
-  from{
-    transform:translate3d(0,0,0)
-  }
-
-  to{
-    transform:translate3d(-100%,0,0)
-  }
-}
-
-@media(max-width:767px){
-  .mq-track{
-    font-size:14px;
-    line-height:22px;
-    gap:1.5rem;
-    padding-right:1.5rem;
-    animation-duration:26s
-  }
-}
+/* faixa âmbar: uma linha fina contínua, idêntica no PC e no celular.
+   Dois blocos iguais no trilho; o trilho anda -50% e o loop fecha sem emenda. */
+.marquee-faixa{position:relative;width:100%;overflow:hidden;background-color:#FCA001;padding:12px 0;display:flex;align-items:center}
+.marquee-track{display:flex;width:max-content;flex-shrink:0;animation:marqueeLoop 25s linear infinite;will-change:transform}
+.marquee-content{display:flex;align-items:center;white-space:nowrap;flex-shrink:0;
+  color:#111111;font-family:Montserrat,system-ui,sans-serif;font-size:13px;line-height:1.2;letter-spacing:.08em;font-weight:700;text-transform:uppercase}
+.marquee-content .sep{margin:0 24px}
+@keyframes marqueeLoop{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* stop motion: bolinha quadro a quadro */
 

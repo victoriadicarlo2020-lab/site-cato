@@ -3,8 +3,6 @@
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 
 /* ---------- Dados (Canva "CATO. Institucional") ---------- */
-/* Palavras-chave do segmento (faixa âmbar abaixo do topo) — tiradas dos serviços e nichos do manual */
-const SEGMENTOS=['Bares e restaurantes','Fotografia gastronômica','Stop motion','Reels e vídeos de venda','Gestão de redes sociais','Design para redes','Produção audiovisual','Alimentos e bebidas','Cobertura de eventos','Negócios locais'];
 /* ---------- Catálogo do portfólio ----------
    Fonte da verdade: catalogo-portfolio.json (lido ao carregar a página).
    Esta cópia só é usada quando o JSON não pode ser lido, por exemplo ao abrir index.html direto do disco. */
@@ -37,9 +35,7 @@ const WA='5516981367602';
 const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const icon=()=>{try{lucide.createIcons()}catch(e){}};
 
-/* ---------- Marquee ---------- */
-const mqItem=SEGMENTOS.map(c=>`<span>${c}</span><span aria-hidden="true">✦</span>`).join('');
-$('[data-mq]').innerHTML=`<div class="mq-track">${mqItem}</div><div class="mq-track" aria-hidden="true">${mqItem}</div>`;
+/* ---------- Marquee: faixa âmbar escrita direto no index.html (.marquee-faixa) ---------- */
 
 /* ---------- Mídia: caminhos relativos à raiz do site (assets/...) ---------- */
 const srcDe=p=>p;
