@@ -8,21 +8,22 @@ const SEGMENTOS=['Bares e restaurantes','Fotografia gastronômica','Stop motion'
 /* ---------- Catálogo do portfólio ----------
    Fonte da verdade: catalogo-portfolio.json (lido ao carregar a página).
    Esta cópia só é usada quando o JSON não pode ser lido, por exemplo ao abrir index.html direto do disco. */
-let CAT={"agencia":"Cato Mídias","especialidade":"Marketing, Audiovisual, Fotografia Gastronômica, Stop Motion e Social Media para Alimentos e Bebidas","repositorio":"victoriadicarlo2020-lab/site-cato","autoria_e_direitos":{"producao_integral":true,"etapas":["Concepção do Briefing","Captação de Imagens","Tratamento de Material","Edição Audiovisual","Apresentação Final"],"aviso_legal":"Todo o material audiovisual apresentado é de autoria exclusiva da Cato Mídias, que detém o legítimo uso e propriedade intelectual de todas as obras."},"stopmotions_avulsos":{"pasta":"assets/portfolio/stopmotions-destaque/","quantidade":5,"arquivos":["stopmotion-gastronomico-01.mp4","stopmotion-gastronomico-03.mp4","stopmotion-gastronomico-02.mp4","stopmotion-gastronomico-04.mp4","stopmotion-gastronomico-05.mp4"]},"cases":[{"id":"emporio-cervejeiro","cliente":"Empório Cervejeiro","pasta":"assets/portfolio/emporio-cervejeiro/","entregas":{"videos":["video-01.mp4"],"stopmotions":["stopmotion-01.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg"]}},{"id":"ponto-do-chopp","cliente":"Ponto do Chopp","pasta":"assets/portfolio/ponto-do-chopp/","entregas":{"videos_apresentacao":["video-apresentacao-01.mp4","video-apresentacao-02.mp4"],"fotos_espaco_apresentacao":["foto-espaco-01.jpg","foto-espaco-02.jpg","foto-espaco-03.jpg","foto-espaco-04.jpg"],"fotos_divulgacao":["foto-divulgacao-01.jpg","foto-divulgacao-02.jpg"]}},{"id":"marmitaria-nova-brasa","cliente":"Marmitaria Nova Brasa","pasta":"assets/portfolio/marmitaria-nova-brasa/","entregas":{"videos":["video-01.mp4","video-02.mp4","video-03.mp4","video-04.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg","foto-06.jpg","foto-07.jpg","foto-08.jpg","foto-09.jpg","foto-10.jpg","foto-11.jpg","foto-12.jpg","foto-13.jpg","foto-14.jpg","foto-15.jpg","foto-16.jpg","foto-17.jpg","foto-18.jpg","foto-19.jpg","foto-20.jpg","foto-21.jpg","foto-22.jpg","foto-23.jpg","foto-24.jpg","foto-25.jpg"]}},{"id":"cascata-quintino-ii","cliente":"Cascata Quintino II","pasta":"assets/portfolio/cascata-quintino-ii/","entregas":{"videos_divulgacao":["video-divulgacao-01.mp4","video-divulgacao-02.mp4","video-divulgacao-03.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg","foto-06.jpg","foto-07.jpg","foto-08.jpg","foto-09.jpg","foto-10.jpg","foto-11.jpg","foto-12.jpg","foto-13.jpg","foto-14.jpg","foto-15.jpg","foto-16.jpg","foto-17.jpg"]}}]};
+let CAT={"agencia":"Cato Mídias","especialidade":"Marketing, Audiovisual, Fotografia Gastronômica, Stop Motion e Social Media para Alimentos e Bebidas","repositorio":"victoriadicarlo2020-lab/site-cato","autoria_e_direitos":{"producao_integral":true,"etapas":["Concepção do briefing","Captação de imagens","Tratamento de material","Edição audiovisual","Apresentação final"],"aviso_legal":"Todo o material audiovisual apresentado é de autoria exclusiva da Cato Mídias, que detém o legítimo uso e propriedade intelectual de todas as obras."},"stopmotions_avulsos":{"pasta":"assets/portfolio/stopmotions-destaque/","quantidade":5,"arquivos":["stopmotion-gastronomico-01.mp4","stopmotion-gastronomico-03.mp4","stopmotion-gastronomico-02.mp4","stopmotion-gastronomico-04.mp4","stopmotion-gastronomico-05.mp4"]},"cases":[{"id":"emporio-cervejeiro","cliente":"Empório Cervejeiro","pasta":"assets/portfolio/emporio-cervejeiro/","entregas":{"videos":["video-01.mp4"],"stopmotions":["stopmotion-01.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg"]}},{"id":"ponto-do-chopp","cliente":"Ponto do Chopp","pasta":"assets/portfolio/ponto-do-chopp/","entregas":{"videos_apresentacao":["video-apresentacao-01.mp4","video-apresentacao-02.mp4"],"fotos_espaco_apresentacao":["foto-espaco-01.jpg","foto-espaco-02.jpg","foto-espaco-03.jpg","foto-espaco-04.jpg"],"fotos_divulgacao":["foto-divulgacao-01.jpg","foto-divulgacao-02.jpg"]}},{"id":"marmitaria-nova-brasa","cliente":"Marmitaria Nova Brasa","pasta":"assets/portfolio/marmitaria-nova-brasa/","entregas":{"videos":["video-01.mp4","video-02.mp4","video-03.mp4","video-04.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg","foto-06.jpg","foto-07.jpg","foto-08.jpg","foto-09.jpg","foto-10.jpg","foto-11.jpg","foto-12.jpg","foto-13.jpg","foto-14.jpg","foto-15.jpg","foto-16.jpg","foto-17.jpg","foto-18.jpg","foto-19.jpg","foto-20.jpg","foto-21.jpg","foto-22.jpg","foto-23.jpg","foto-24.jpg","foto-25.jpg"]}},{"id":"cascata-quintino-ii","cliente":"Cascata Quintino II","pasta":"assets/portfolio/cascata-quintino-ii/","entregas":{"videos_divulgacao":["video-divulgacao-01.mp4","video-divulgacao-02.mp4","video-divulgacao-03.mp4"],"fotos":["foto-01.jpg","foto-02.jpg","foto-03.jpg","foto-04.jpg","foto-05.jpg","foto-06.jpg","foto-07.jpg","foto-08.jpg","foto-09.jpg","foto-10.jpg","foto-11.jpg","foto-12.jpg","foto-13.jpg","foto-14.jpg","foto-15.jpg","foto-16.jpg","foto-17.jpg"]}}]};
 const ETAPA_INFO=[
-  {i:'clipboard-list',d:'A gente entende o negócio, o público e o objetivo, e transforma isso em roteiro e direção criativa.'},
-  {i:'camera',d:'Direção de arte, luz e captação de foto e vídeo no local, com câmera ou mobile.'},
-  {i:'sliders-horizontal',d:'Seleção, tratamento das fotos, color grading e pós-produção.'},
-  {i:'clapperboard',d:'Montagem, ritmo, motion e stop motion quadro a quadro, no formato de cada rede.'},
-  {i:'presentation',d:'Material organizado, apresentado ao cliente e pronto para publicar.'}
+  {i:'clipboard-list',d:'Entendemos o negócio, o público e o objetivo e transformamos tudo isso em roteiro e direção criativa.'},
+  {i:'camera',d:'Direção de arte, luz e captação de foto e vídeo no seu espaço, com câmera ou celular.'},
+  {i:'sliders-horizontal',d:'Seleção, tratamento das fotos, correção de cor e pós-produção.'},
+  {i:'clapperboard',d:'Montagem, ritmo, motion e stop motion quadro a quadro, no formato certo para cada rede.'},
+  {i:'presentation',d:'Material revisado, apresentado a você e pronto para publicar.'}
 ];
 const ROT={videos:['Vídeo','vídeos'],stopmotions:['Stop motion','stop motions'],fotos:['Foto','fotos'],videos_apresentacao:['Vídeo de apresentação','vídeos de apresentação'],fotos_espaco_apresentacao:['Foto do espaço','fotos do espaço'],fotos_divulgacao:['Foto de divulgação','fotos de divulgação'],videos_divulgacao:['Vídeo de divulgação','vídeos de divulgação']};
+/* s = nome do serviço (rótulo) · n = benefício para o cliente (título do card) */
 const SERVS=[
-  {n:'Criação de conteúdo audiovisual',d:'Reels orgânicos e institucionais, vídeos de venda, conteúdos de tendência, bastidores e banco de imagens. Roteiro, direção, captação (câmera ou mobile) e edição.',p:'Captação de vídeos brutos a partir de R$ 250',i:'video'},
-  {n:'Design para redes sociais',d:'Artes para posts e stories, peças promocionais, materiais para restaurantes e delivery, incluindo cardápios e artes para iFood.',p:'A partir de R$ 45 por arte',i:'pen-tool'},
-  {n:'Gestão de redes sociais',d:'Planejamento de postagens, organização do feed, programação, legendas, stories, reposts e interação com o público.',p:'A partir de R$ 500/mês',i:'calendar-check'},
-  {n:'Fotografia',d:'Ensaios, fotografia institucional, retratos, registros de equipe e fotografia de produtos para redes e comunicação.',p:'A partir de R$ 350',i:'camera'},
-  {n:'Produção de conteúdo 360°',d:'Planejamento, roteirização, direção criativa, captação de vídeos e fotos e edição final, com materiais prontos para as redes.',p:'A partir de R$ 650',i:'aperture'}
+  {s:'Criação de conteúdo audiovisual',n:'Vídeos que mostram por que vale a pena pedir',d:'Reels, vídeos de venda, bastidores e conteúdos de tendência que apresentam seu produto do jeito certo. A gente roteiriza, dirige, grava (com câmera ou celular) e edita.',p:'Captação de vídeos brutos a partir de R$ 250',i:'video'},
+  {s:'Design para redes sociais',n:'Um perfil com cara de marca, post após post',d:'Posts, stories, promoções, cardápios e artes para iFood com a sua identidade visual, entregues em até 2 dias úteis depois do briefing.',p:'A partir de R$ 45 por arte',i:'pen-tool'},
+  {s:'Gestão de redes sociais',n:'Seu Instagram sempre ativo, sem tomar o seu tempo',d:'Planejamento do mês, feed organizado, legendas, stories e interação com o público. Você aprova o calendário e a gente cuida da frequência.',p:'A partir de R$ 500/mês',i:'calendar-check'},
+  {s:'Fotografia',n:'Fotos que passam confiança antes da primeira visita',d:'Fotografia de produto e gastronômica, institucional, de equipe e retratos, tratadas e prontas para redes, cardápio e divulgação.',p:'A partir de R$ 350',i:'camera'},
+  {s:'Produção de conteúdo 360°',n:'Um time inteiro, do planejamento à edição',d:'Planejamento, roteiro, direção criativa, captação de foto e vídeo e edição final. Você recebe tudo pronto para postar.',p:'A partir de R$ 650',i:'aperture'}
 ];
 /* Preços de referência (validados com a Cato em 17/11/2026) */
 const PRECO={gestao:500,arte:45,bruto:250,c360:650,foto:350,urg:.30};
@@ -181,7 +182,7 @@ $('[data-servs]').innerHTML=SERVS.map((s,i)=>`
   <article class="rv d${i%3} group flex flex-col overflow-hidden rounded-3xl transition duration-300 hover:-translate-y-2 hover:shadow-[0_14px_0_#B70223]">
     <header class="flex items-center gap-4 bg-black p-5 text-white">
       <span class="star grid h-14 w-14 shrink-0 place-items-center bg-ambar text-xl font-black text-black transition duration-500 group-hover:rotate-45"><span class="transition duration-500 group-hover:-rotate-45">${i+1}</span></span>
-      <h3 class="text-lg font-extrabold leading-tight">${s.n}</h3>
+      <div><p class="text-[11px] font-bold uppercase tracking-[.14em] text-ambar">${s.s}</p><h3 class="mt-1 text-lg font-extrabold leading-tight">${s.n}</h3></div>
     </header>
     <div class="flex flex-1 flex-col bg-ambar p-6">
       <p class="flex-1 text-[15px] leading-relaxed">${s.d}</p>
@@ -190,8 +191,8 @@ $('[data-servs]').innerHTML=SERVS.map((s,i)=>`
   </article>`).join('')+`
   <a href="#simulador" class="rv d2 group flex flex-col justify-between rounded-3xl bg-black p-6 text-white transition duration-300 hover:-translate-y-2 hover:shadow-[0_14px_0_#FCA001]">
     <i data-lucide="calculator" class="h-10 w-10 text-ambar"></i>
-    <div class="mt-10"><p class="text-2xl font-extrabold leading-tight">Para um orçamento alinhado com o seu projeto, entre em contato.</p>
-    <p class="mt-4 inline-flex items-center gap-2 font-bold text-ambar">Simular agora <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></p></div>
+    <div class="mt-10"><p class="text-2xl font-extrabold leading-tight">Monte seu pacote e veja o valor de referência na hora.</p>
+    <p class="mt-4 inline-flex items-center gap-2 font-bold text-ambar">Simular meu orçamento <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></p></div>
   </a>`;
 const pts=[];for(let i=0;i<24;i++){const a=i/24*Math.PI*2-Math.PI/2,r=i%2?42:50;pts.push(`${(50+r*Math.cos(a)).toFixed(1)}% ${(50+r*Math.sin(a)).toFixed(1)}%`)}
 $$('.star').forEach(e=>e.style.clipPath=`polygon(${pts.join(',')})`);
@@ -230,7 +231,7 @@ const linhas=()=>{
 };
 const mensagem=()=>{
   const c=calc(),nome=$('[data-nome]').value.trim();
-  let t='Olá, Cato! Fiz uma simulação no site e quero um orçamento.\n';
+  let t='Olá, Cato! Fiz uma simulação no site e quero receber um orçamento.\n';
   if(nome)t+=`\nNome/negócio: ${nome}\n`;
   t+='\n'+linhas().map(([k,v])=>`• ${k}: ${v}`).join('\n');
   if(!linhas().length)t+='• Ainda não escolhi os serviços';
