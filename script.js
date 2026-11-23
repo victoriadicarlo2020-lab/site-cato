@@ -25,14 +25,6 @@ const SERVS=[
   {s:'Fotografia',n:'Fotos que passam confiança antes da primeira visita',d:'Fotografia de produto e gastronômica, institucional, de equipe e retratos, tratadas e prontas para redes, cardápio e divulgação.',p:'A partir de R$ 350',i:'camera'},
   {s:'Produção de conteúdo 360°',n:'Um time inteiro, do planejamento à edição',d:'Planejamento, roteiro, direção criativa, captação de foto e vídeo e edição final. Você recebe tudo pronto para postar.',p:'A partir de R$ 650',i:'aperture'}
 ];
-/* Preços de referência (validados com a Cato em 17/11/2026) */
-const PRECO={gestao:500,arte:45,bruto:250,c360:650,foto:350,urg:.30};
-const MESES_MIN=3;
-const STEP=[
-  {k:'bruto',n:'Captação de vídeos brutos',u:'diária',sub:'a partir de R$ 250 cada'},
-  {k:'c360',n:'Produção de conteúdo 360°',u:'pacote',sub:'a partir de R$ 650 cada'},
-  {k:'foto',n:'Fotografia',u:'sessão',sub:'a partir de R$ 350 cada'}
-];
 const WA='5516981367602';
 const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const icon=()=>{try{lucide.createIcons()}catch(e){}};
@@ -189,79 +181,13 @@ $('[data-servs]').innerHTML=SERVS.map((s,i)=>`
       <p class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold"><i data-lucide="${s.i}" class="h-5 w-5"></i>${s.p}</p>
     </div>
   </article>`).join('')+`
-  <a href="#simulador" class="rv d2 group flex flex-col justify-between rounded-3xl bg-black p-6 text-white transition duration-300 hover:-translate-y-2 hover:shadow-[0_14px_0_#FCA001]">
-    <i data-lucide="calculator" class="h-10 w-10 text-ambar"></i>
-    <div class="mt-10"><p class="text-2xl font-extrabold leading-tight">Monte seu pacote e veja o valor de referência na hora.</p>
-    <p class="mt-4 inline-flex items-center gap-2 font-bold text-ambar">Simular meu orçamento <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></p></div>
+  <a href="#contato" class="rv d2 group flex flex-col justify-between rounded-3xl bg-black p-6 text-white transition duration-300 hover:-translate-y-2 hover:shadow-[0_14px_0_#FCA001]">
+    <i data-lucide="message-circle" class="h-10 w-10 text-ambar"></i>
+    <div class="mt-10"><p class="text-2xl font-extrabold leading-tight">Conte o que você precisa e receba um orçamento sem compromisso.</p>
+    <p class="mt-4 inline-flex items-center gap-2 font-bold text-ambar">Pedir meu orçamento <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></p></div>
   </a>`;
 const pts=[];for(let i=0;i<24;i++){const a=i/24*Math.PI*2-Math.PI/2,r=i%2?42:50;pts.push(`${(50+r*Math.cos(a)).toFixed(1)}% ${(50+r*Math.sin(a)).toFixed(1)}%`)}
 $$('.star').forEach(e=>e.style.clipPath=`polygon(${pts.join(',')})`);
-
-/* ---------- Simulador ---------- */
-const S={gestao:true,artes:8,bruto:0,c360:1,foto:0,stop:false,urg:false};
-const PRESETS={redes:{gestao:true,artes:12,bruto:0,c360:0,foto:0,stop:false,urg:false},video:{gestao:true,artes:8,bruto:1,c360:1,foto:0,stop:false,urg:false},full:{gestao:true,artes:16,bruto:1,c360:1,foto:1,stop:true,urg:false},zero:{gestao:false,artes:0,bruto:0,c360:0,foto:0,stop:false,urg:false}};
-$('[data-steppers]').innerHTML=STEP.map(s=>`
-  <div class="flex items-center justify-between gap-4 rounded-2xl bg-quase p-4">
-    <div><p class="font-bold">${s.n}</p><p class="text-sm text-white/65">${s.sub}</p></div>
-    <div class="flex shrink-0 items-center gap-1 rounded-full border border-white/20 p-1">
-      <button type="button" class="grid h-10 w-10 place-items-center rounded-full transition hover:bg-white/10" aria-label="Menos ${s.n}" data-st="${s.k}" data-d="-1"><i data-lucide="minus" class="h-4 w-4"></i></button>
-      <output class="w-8 text-center text-lg font-extrabold" data-out="${s.k}">0</output>
-      <button type="button" class="grid h-10 w-10 place-items-center rounded-full bg-ambar text-black transition hover:scale-105" aria-label="Mais ${s.n}" data-st="${s.k}" data-d="1"><i data-lucide="plus" class="h-4 w-4"></i></button>
-    </div>
-  </div>`).join('');
-
-/* Valores do simulador: soma simples dos serviços escolhidos */
-const nServ=()=>[S.gestao,S.artes>0,S.bruto>0,S.c360>0,S.foto>0,S.stop].filter(Boolean).length;
-const calc=()=>{
-  const m=(S.gestao?PRECO.gestao:0)+S.artes*PRECO.arte;
-  const base=S.bruto*PRECO.bruto+S.c360*PRECO.c360+S.foto*PRECO.foto;
-  const a=Math.round(base*(S.urg?1+PRECO.urg:1));
-  const n=nServ();
-  return{m,base,a,n,fm:m,fa:a};
-};
-const par=(x,y)=>[x?brl(x)+'/mês':'',y?brl(y):''].filter(Boolean).join(' + ')||brl(0);
-const linhas=()=>{
-  const L=[];
-  if(S.gestao)L.push(['Gestão de redes sociais',brl(PRECO.gestao)+'/mês']);
-  if(S.artes)L.push([`${S.artes} arte${S.artes>1?'s':''} por mês`,brl(S.artes*PRECO.arte)+'/mês']);
-  STEP.forEach(s=>{if(S[s.k])L.push([`${s.n} · ${S[s.k]} ${S[s.k]>1?(s.u==='sessão'?'sessões':s.u+'s'):s.u}`,brl(S[s.k]*PRECO[s.k])])});
-  if(S.stop)L.push(['Stop motion','sob consulta']);
-  if(S.urg&&calc().base)L.push(['Urgência (+30% no avulso)',brl(calc().a-calc().base)]);
-  return L;
-};
-const mensagem=()=>{
-  const c=calc(),nome=$('[data-nome]').value.trim();
-  let t='Olá, Cato! Fiz uma simulação no site e quero receber um orçamento.\n';
-  if(nome)t+=`\nNome/negócio: ${nome}\n`;
-  t+='\n'+linhas().map(([k,v])=>`• ${k}: ${v}`).join('\n');
-  if(!linhas().length)t+='• Ainda não escolhi os serviços';
-  t+=`\n\nServiços selecionados: ${c.n}`;
-  t+=`\nValor final: mensal a partir de ${brl(c.fm)} · avulso a partir de ${brl(c.fa)}`;
-  if(c.m)t+=`\nContrato mínimo de ${MESES_MIN} meses: a partir de ${brl(c.fm*MESES_MIN)}`;
-  return t;
-};
-const tween=(el,to)=>{const from=+(el.dataset.v||0);el.dataset.v=to;const t0=performance.now(),dur=450;
-  const f=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=brl(Math.round(from+(to-from)*e));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
-const render=()=>{
-  const c=calc();
-  tween($('[data-tot="m"]'),c.fm);tween($('[data-tot="a"]'),c.fa);
-  $('[data-contrato]').classList.toggle('hidden',!c.m);if(c.m)tween($('[data-tot="c"]'),c.fm*MESES_MIN);
-  $('[data-r="n"]').textContent=c.n?`${c.n} serviço${c.n>1?'s':''}`:'Nenhum ainda';
-  $('[data-r="fin"]').textContent=par(c.fm,c.fa);
-  $('[data-k="gestao"]').checked=S.gestao;$('[data-k="stop"]').checked=S.stop;$('[data-k="urg"]').checked=S.urg;
-  $('[data-k="artes"]').value=S.artes;$('[data-out="artes"]').textContent=S.artes;
-  STEP.forEach(s=>$(`[data-out="${s.k}"]`).textContent=S[s.k]);
-  const L=linhas();
-  $('[data-lines]').innerHTML=L.length?L.map(([k,v])=>`<li class="flex justify-between gap-4 border-b border-black/15 pb-2"><span>${k}</span><span class="whitespace-nowrap font-bold">${v}</span></li>`).join(''):'<li class="text-black/70">Escolha pelo menos um serviço ao lado.</li>';
-  $('[data-wa]').href=`https://wa.me/${WA}?text=${encodeURIComponent(mensagem())}`;
-};
-$('#simulador').addEventListener('input',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;S[k]=e.target.type==='checkbox'?e.target.checked:+e.target.value;render()});
-$('#simulador').addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(k&&e.target.type==='checkbox'){S[k]=e.target.checked;render()}});
-$('[data-nome]').addEventListener('input',render);
-$('[data-steppers]').addEventListener('click',e=>{const b=e.target.closest('[data-st]');if(!b)return;const k=b.dataset.st;S[k]=Math.max(0,Math.min(20,S[k]+ +b.dataset.d));render()});
-$('[data-presets]').addEventListener('click',e=>{const b=e.target.closest('[data-preset]');if(!b)return;Object.assign(S,PRESETS[b.dataset.preset]);render()});
-$('[data-copy]').addEventListener('click',async e=>{const sp=$('span',e.currentTarget);try{await navigator.clipboard.writeText(mensagem());sp.textContent='Resumo copiado'}catch(err){sp.textContent='Não deu para copiar'}setTimeout(()=>sp.textContent='Copiar resumo',2200)});
-render();
 
 /* ---------- Formulário ---------- */
 const form=$('[data-form]');
@@ -273,7 +199,6 @@ form.addEventListener('submit',e=>{
   Object.entries(v).forEach(([n,b])=>showErr(n,b));
   const first=Object.keys(v).find(n=>v[n]);if(first){f[first].focus();return}
   let t=`Olá, Cato! Meu nome é ${f.nome.value.trim()}.\nWhatsApp: ${f.tel.value}`+(f.mail.value.trim()?`\nE-mail: ${f.mail.value.trim()}`:'')+`\nInteresse: ${f.serv.value}\n\n${f.msg.value.trim()}`;
-  if(f.sim.checked)t+='\n\n— Minha simulação —\n'+mensagem().split('\n').slice(1).join('\n').trim();
   $('[data-ok-wa]').href=`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
   $('[data-ok-mail]').href=`mailto:catomidias@gmail.com?subject=${encodeURIComponent('Orçamento pelo site — '+f.nome.value.trim())}&body=${encodeURIComponent(t)}`;
   $('[data-ok]').classList.remove('hidden');$('[data-ok-wa]').focus();
