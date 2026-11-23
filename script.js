@@ -64,7 +64,6 @@ const drawStops=()=>{
   <figure class="sm-item">
     <button type="button" class="relative block aspect-[4/5] w-full overflow-hidden rounded-2xl bg-black shadow-[8px_8px_0_#000] transition hover:-translate-y-1" data-stop="${i}" aria-label="Ampliar stop motion gastronômico 0${i+1}">
       <video class="absolute inset-0 h-full w-full object-cover" ${reduz?'':'autoplay'} loop muted playsinline preload="metadata" data-auto src="${srcDe(s.pasta+f)}"></video>
-      <span class="absolute left-3 top-3 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[11px] font-bold text-ambar">SM 0${i+1}</span>
       <span class="rec absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-verm"></span>
     </button>
     <figcaption class="sr-only">Stop motion gastronômico 0${i+1} · Produção integral Cato Mídias</figcaption>
