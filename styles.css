@@ -1447,12 +1447,12 @@ video {
   font-size: clamp(32px,4.6vw,52px);
 }
 
-.text-\[clamp\(44px\2c 6vw\2c 80px\)\] {
-  font-size: clamp(44px,6vw,80px);
+.text-\[clamp\(40px\2c 6\.2vw\2c 80px\)\] {
+  font-size: clamp(40px,6.2vw,80px);
 }
 
-.text-\[clamp\(46px\2c 8\.5vw\2c 108px\)\] {
-  font-size: clamp(46px,8.5vw,108px);
+.text-\[clamp\(44px\2c 6vw\2c 80px\)\] {
+  font-size: clamp(44px,6vw,80px);
 }
 
 .text-\[clamp\(52px\2c 8vw\2c 110px\)\] {
@@ -1517,10 +1517,6 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.leading-\[\.95\] {
-  line-height: .95;
-}
-
 .leading-\[\.9\] {
   line-height: .9;
 }
@@ -1533,6 +1529,10 @@ video {
   line-height: 1.7;
 }
 
+.leading-\[1\] {
+  line-height: 1;
+}
+
 .leading-relaxed {
   line-height: 1.625;
 }
@@ -1543,6 +1543,10 @@ video {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.tracking-\[\.14em\] {
+  letter-spacing: .14em;
 }
 
 .tracking-\[\.18em\] {
