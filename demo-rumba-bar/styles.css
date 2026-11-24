@@ -1,0 +1,56 @@
+/* Cato Mídias · Modelo Bar (estilo noturno/industrial) — styles.css
+   Complementa o Tailwind via CDN: só o que as classes utilitárias não resolvem.
+   Mobile-first: tudo foi pensado para 360–430px e só abre em colunas a partir de 640px. */
+:root{--grafite:#16161A;--grafite2:#212126;--ouro:#F2B441;--creme:#F3EDE2;color-scheme:dark}
+*{min-width:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;-webkit-font-smoothing:antialiased;background:var(--grafite)}
+.font-display{font-family:'Oswald','Montserrat',Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+.label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+
+/* textura industrial (grade fina) */
+.grade{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:28px 28px}
+/* véu do hero: foto aparece no topo e some no grafite */
+.veu{background:linear-gradient(180deg,rgba(22,22,26,.35) 0%,rgba(22,22,26,.6) 50%,var(--grafite) 100%)}
+
+/* fotos: brilho enquanto carregam */
+.foto{position:relative;overflow:hidden;background:linear-gradient(115deg,#212126 30%,#2c2c33 45%,#212126 60%);background-size:250% 100%;animation:brilho 2.6s linear infinite}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@keyframes brilho{to{background-position:-150% 0}}
+
+/* destaques: carrossel com encaixe no celular, grade no desktop */
+.trilho{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;padding:4px 20px 16px;scrollbar-width:none}
+.trilho::-webkit-scrollbar{display:none}
+.trilho>*{flex:0 0 80%;scroll-snap-align:start}
+@media(min-width:640px){.trilho{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible;padding-inline:0}.trilho>*{flex-basis:auto}}
+@media(min-width:1024px){.trilho{grid-template-columns:repeat(3,1fr)}}
+
+/* foto que não carregou: fica um fundo temático em vez do brilho infinito */
+.foto.sem-foto{animation:none;background:radial-gradient(circle at 30% 30%,rgba(242,180,65,.35),transparent 60%),linear-gradient(135deg,#3a1f12,#212126)}
+.foto.sem-foto::after{content:'🌮';position:absolute;inset:0;display:grid;place-items:center;font-size:56px;opacity:.85}
+
+/* abas do cardápio */
+.aba{flex:none;border-radius:999px;border:1px solid rgba(243,237,226,.2);padding:12px 18px;font-size:14px;font-weight:700;color:rgba(243,237,226,.8);white-space:nowrap;transition:background .2s,color .2s}
+.aba[aria-selected=true]{background:var(--ouro);border-color:var(--ouro);color:var(--grafite)}
+
+/* formulário de reserva (sobre o fundo âmbar) */
+.campo{display:block;width:100%;margin-top:6px;border-radius:16px;border:2px solid transparent;background:#FFFBF3;padding:14px 16px;font-size:16px;font-weight:600;color:var(--grafite);min-height:52px;-webkit-appearance:none;appearance:none}
+.campo:focus{outline:none;border-color:var(--grafite)}
+.campo.erro{border-color:#B70223}
+select.campo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2316161A' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.opcao span{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:16px;border:2px solid rgba(22,22,26,.25);padding:10px;text-align:center;font-size:14px;font-weight:800;cursor:pointer;transition:background .2s,color .2s}
+.opcao input:checked+span{background:var(--grafite);border-color:var(--grafite);color:var(--creme)}
+.opcao input:focus-visible+span{outline:3px solid var(--grafite);outline-offset:2px}
+
+/* "aberto agora" */
+.ponto{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.ponto.vivo{animation:pulso 2s ease-out infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}100%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
+
+/* barra fixa do WhatsApp: entra quando o botão principal sai da tela */
+.barra-zap{transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.barra-zap.on{transform:none}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rumba Bar | O verdadeiro rodízio mexicano de Ribeirão Preto</title>
+<meta name="description" content="Rumba Bar: o verdadeiro rodízio mexicano de Ribeirão Preto, com drinks especiais e espaço kids. Reserve sua mesa pelo WhatsApp (16) 98182-2125.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16161A">
+<!-- garante a barra no fim da rota (/demo-rumba-bar/) para os caminhos relativos funcionarem em qualquer hospedagem -->
+<script>if(!/\/$|\.html$/.test(location.pathname))location.replace(location.pathname+'/'+location.search+location.hash)</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{
+  colors:{grafite:'#16161A',grafite2:'#212126',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
+  fontFamily:{sans:['Montserrat','Arial','sans-serif']}
+}}};
+</script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-grafite font-sans text-creme">
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative isolate overflow-hidden" aria-labelledby="h-hero">
+  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1200&q=75"
+       onerror="this.onerror=null;this.remove()"
+       alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" fetchpriority="high">
+  <div class="veu absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div class="mx-auto flex min-h-[88svh] max-w-5xl flex-col justify-end px-5 pb-10 pt-6">
+    <div class="mb-auto flex items-center justify-between gap-3">
+      <span class="font-display text-2xl tracking-wider">Rumba<span class="text-ouro"> Bar</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1.5 text-xs font-semibold backdrop-blur" data-status>
+        <span class="ponto text-creme/50"></span>Seg a sáb, a partir das 18h
+      </span>
+    </div>
+
+    <p class="label mt-24 text-ouro">Rodízio mexicano · Ribeirão Preto</p>
+    <h1 id="h-hero" class="font-display mt-3 text-[clamp(42px,12vw,92px)] leading-[.92] [text-wrap:balance]">
+      O verdadeiro <span class="text-ouro">rodízio mexicano</span> de Ribeirão Preto.
+    </h1>
+    <p class="mt-5 max-w-md text-base leading-relaxed text-creme/80">
+      Tacos, nachos e burritos à vontade, drinks especiais para brindar e espaço kids para a família inteira curtir a noite.
+    </p>
+
+    <a href="#" data-zap data-cta-principal
+       class="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-ouro px-6 py-5 text-lg font-extrabold text-grafite shadow-[0_8px_0_#B70223] transition active:translate-y-1 active:shadow-[0_4px_0_#B70223] sm:w-auto sm:self-start">
+      <i data-lucide="message-circle" class="h-6 w-6"></i> Chamar no WhatsApp
+    </a>
+    <a href="#reserva" class="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-creme/30 bg-black/30 px-6 py-4 font-bold backdrop-blur sm:w-auto sm:self-start">
+      <i data-lucide="calendar-check" class="h-5 w-5 text-ouro"></i> Reserve sua mesa em 10 segundos
+    </a>
+    <ul class="mt-6 grid grid-cols-3 gap-2 text-center text-[12px] font-semibold leading-tight text-creme/85">
+      <li class="rounded-2xl bg-black/40 px-2 py-3 backdrop-blur"><i data-lucide="utensils" class="mx-auto mb-1.5 h-5 w-5 text-ouro"></i>Rodízio mexicano</li>
+      <li class="rounded-2xl bg-black/40 px-2 py-3 backdrop-blur"><i data-lucide="martini" class="mx-auto mb-1.5 h-5 w-5 text-ouro"></i>Drinks especiais</li>
+      <li class="rounded-2xl bg-black/40 px-2 py-3 backdrop-blur"><i data-lucide="baby" class="mx-auto mb-1.5 h-5 w-5 text-ouro"></i>Espaço kids</li>
+    </ul>
+    <a href="#" data-maps class="mt-5 inline-flex items-center gap-1.5 self-start text-sm text-creme/75">
+      <i data-lucide="star" class="h-4 w-4 fill-ouro text-ouro"></i><b class="text-creme">4.5</b> no Google Maps · +2.300 avaliações
+    </a>
+  </div>
+</section>
+
+<!-- ============ CARDÁPIO EM ABAS ============ -->
+<section id="cardapio" class="grade py-14" aria-labelledby="h-cardapio">
+  <div class="mx-auto max-w-5xl">
+    <div class="px-5">
+      <p class="label text-ouro">Vitrine do cardápio</p>
+      <h2 id="h-cardapio" class="font-display mt-2 text-4xl">Bateu a fome?</h2>
+      <p class="mt-2 text-sm text-creme/60">Escolha uma categoria, arraste para o lado e chame a gente no WhatsApp.</p>
+    </div>
+
+    <div class="mt-6 flex gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none]" role="tablist" aria-label="Categorias do cardápio" data-abas>
+      <button type="button" role="tab" class="aba" aria-selected="true" aria-controls="aba-rodizio" id="t-rodizio">Rodízio Completo</button>
+      <button type="button" role="tab" class="aba" aria-selected="false" aria-controls="aba-nachos" id="t-nachos" tabindex="-1">Nachos &amp; Burritos</button>
+      <button type="button" role="tab" class="aba" aria-selected="false" aria-controls="aba-drinks" id="t-drinks" tabindex="-1">Drinks &amp; Margaritas</button>
+    </div>
+
+    <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-rodizio" aria-labelledby="t-rodizio" data-painel="rodizio"></div>
+    <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-nachos" aria-labelledby="t-nachos" data-painel="nachos" hidden></div>
+    <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-drinks" aria-labelledby="t-drinks" data-painel="drinks" hidden></div>
+
+    <div class="px-5">
+      <a href="#" data-zap data-msg="Olá, Rumba Bar! Pode me enviar o cardápio completo e o valor do rodízio?" class="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-ouro/60 px-6 py-4 font-bold text-ouro sm:inline-flex sm:w-auto">
+        <i data-lucide="book-open" class="h-5 w-5"></i> Receber o cardápio completo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROVA SOCIAL ============ -->
+<section class="px-5 pt-14" aria-labelledby="h-aval">
+  <div class="mx-auto max-w-5xl">
+    <a href="#" data-maps class="flex items-center gap-4 rounded-3xl border border-white/10 bg-grafite2 p-5 sm:p-6">
+      <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white text-2xl font-extrabold text-[#4285F4]" aria-hidden="true">G</span>
+      <span class="flex-1">
+        <span class="label block text-creme/60">Avaliação no Google Maps</span>
+        <span id="h-aval" class="mt-1 flex flex-wrap items-baseline gap-x-2">
+          <b class="font-display text-4xl leading-none text-ouro">4.5 ★</b>
+          <span class="text-sm font-semibold text-creme/80">+2.300 avaliações</span>
+        </span>
+        <span class="mt-1 flex gap-0.5 text-ouro" aria-label="4,5 de 5 estrelas">
+          <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star-half" class="h-4 w-4 fill-current"></i>
+        </span>
+      </span>
+      <i data-lucide="arrow-up-right" class="h-6 w-6 shrink-0 text-ouro"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ============ RESERVA RÁPIDA ============ -->
+<section id="reserva" class="px-5 py-14" aria-labelledby="h-reserva">
+  <div class="mx-auto max-w-xl">
+    <form class="rounded-3xl bg-ouro p-6 text-grafite shadow-[0_10px_0_#B70223] sm:p-8" novalidate data-reserva>
+      <p class="label text-grafite/70">Sem fila, sem ligação</p>
+      <h2 id="h-reserva" class="font-display mt-2 text-4xl leading-[.95]">Reserve sua mesa em 10 segundos</h2>
+      <p class="mt-2 text-sm font-medium text-grafite/75">Preencha e toque em confirmar: a reserva vai pronta para o nosso WhatsApp.</p>
+
+      <div class="mt-6 grid gap-4">
+        <label class="block">
+          <span class="text-sm font-bold">Nome</span>
+          <input name="nome" type="text" autocomplete="name" required placeholder="Seu nome" class="campo">
+        </label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="block">
+            <span class="text-sm font-bold">Data</span>
+            <input name="data" type="date" required class="campo">
+          </label>
+          <label class="block">
+            <span class="text-sm font-bold">Horário</span>
+            <select name="hora" required class="campo" data-horas></select>
+          </label>
+        </div>
+        <div>
+          <span class="text-sm font-bold" id="l-pessoas">Número de pessoas</span>
+          <div class="mt-1.5 flex items-center justify-between rounded-2xl bg-grafite px-2 py-2 text-creme" role="group" aria-labelledby="l-pessoas">
+            <button type="button" class="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-2xl font-bold" data-menos aria-label="Menos uma pessoa">−</button>
+            <output name="pessoas" class="font-display text-2xl" aria-live="polite">2</output>
+            <button type="button" class="grid h-11 w-11 place-items-center rounded-xl bg-ouro text-2xl font-bold text-grafite" data-mais aria-label="Mais uma pessoa">+</button>
+          </div>
+        </div>
+        <fieldset>
+          <legend class="text-sm font-bold">Opção</legend>
+          <div class="mt-1.5 grid grid-cols-2 gap-2">
+            <label class="opcao"><input type="radio" name="opcao" value="Rodízio Completo" checked class="sr-only"><span>Rodízio Completo</span></label>
+            <label class="opcao"><input type="radio" name="opcao" value="À la carte" class="sr-only"><span>À la carte</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <p class="mt-4 hidden rounded-xl bg-verm px-4 py-3 text-sm font-semibold text-white" role="alert" data-erro></p>
+      <button type="submit" class="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-grafite px-6 py-5 text-lg font-extrabold text-creme transition active:translate-y-0.5">
+        <i data-lucide="message-circle" class="h-6 w-6 text-zap"></i> Confirmar Reserva no WhatsApp
+      </button>
+      <p class="mt-3 text-center text-xs font-medium text-grafite/70">A reserva é confirmada pela equipe no WhatsApp.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ LOCALIZAÇÃO + CONTATO ============ -->
+<section id="local" class="px-5 pb-16" aria-labelledby="h-local">
+  <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-[1.2fr_1fr]">
+    <div class="overflow-hidden rounded-3xl border border-white/10 bg-grafite2">
+      <div class="aspect-[4/3] w-full bg-black/40 md:aspect-auto md:h-full md:min-h-[360px]">
+        <iframe title="Mapa: Rumba Bar, R. Prof. Mário Roxo, 248 - Alto da Boa Vista, Ribeirão Preto - SP" data-mapa
+                class="h-full w-full border-0 [filter:grayscale(.2)_contrast(1.05)]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="flex flex-col rounded-3xl border border-white/10 bg-grafite2 p-6">
+      <h2 id="h-local" class="font-display text-3xl">Vem pro Rumba</h2>
+      <ul class="mt-5 grid gap-4 text-sm">
+        <li class="flex gap-3">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+          <address class="not-italic leading-relaxed text-creme/85" data-endereco></address>
+        </li>
+        <li class="flex gap-3">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="clock" class="h-5 w-5"></i></span>
+          <span class="leading-relaxed"><b class="block text-creme">Segunda a sábado, a partir das 18h</b><span class="inline-flex items-center gap-2 text-creme/70" data-status></span></span>
+        </li>
+        <li class="flex gap-3">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="phone" class="h-5 w-5"></i></span>
+          <a href="#" data-zap class="self-center font-bold text-creme underline decoration-ouro underline-offset-4">(16) 98182-2125 <span class="font-medium text-creme/60 no-underline">WhatsApp</span></a>
+        </li>
+        <li class="flex gap-3">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="instagram" class="h-5 w-5"></i></span>
+          <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="self-center font-bold text-creme underline decoration-ouro underline-offset-4">@rumbabaroficial</a>
+        </li>
+      </ul>
+      <div class="mt-auto grid gap-3 pt-6">
+        <a href="#" data-rota class="flex items-center justify-center gap-2 rounded-2xl bg-creme px-6 py-5 text-lg font-extrabold text-grafite">
+          <i data-lucide="navigation" class="h-5 w-5"></i> Abrir Rota no Google Maps
+        </a>
+        <a href="#reserva" class="flex items-center justify-center gap-2 rounded-2xl border border-white/20 px-6 py-4 font-bold">
+          <i data-lucide="calendar-check" class="h-5 w-5 text-ouro"></i> Reservar mesa
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="border-t border-white/10 bg-black px-5 pb-28 pt-12 md:pb-10">
+  <div class="mx-auto max-w-5xl">
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <p class="font-display text-3xl tracking-wider">Rumba<span class="text-ouro"> Bar</span></p>
+        <p class="mt-2 max-w-xs text-sm text-creme/60">O verdadeiro rodízio mexicano de Ribeirão Preto. Drinks especiais e espaço kids.</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="#" data-zap class="grid h-12 w-12 place-items-center rounded-full bg-zap text-grafite" aria-label="WhatsApp do Rumba Bar"><i data-lucide="message-circle" class="h-5 w-5"></i></a>
+        <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="grid h-12 w-12 place-items-center rounded-full bg-ouro text-grafite" aria-label="Instagram @rumbabaroficial"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+      </div>
+    </div>
+    <div class="mt-8 grid gap-1 text-sm text-creme/70">
+      <p>R. Prof. Mário Roxo, 248 - Alto da Boa Vista, Ribeirão Preto - SP</p>
+      <p>Segunda a sábado, a partir das 18h · <a href="#" data-zap class="hover:text-ouro">(16) 98182-2125</a> · <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="hover:text-ouro">@rumbabaroficial</a></p>
+    </div>
+    <p class="mt-10 border-t border-white/10 pt-5 text-center text-[11px] text-creme/40">
+      Prévia exclusiva desenvolvida pela <a href="https://instagram.com/catomidias_" target="_blank" rel="noopener" class="hover:text-ambar">Cato Mídias</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Barra fixa do WhatsApp (celular) -->
+<div class="barra-zap fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-grafite/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 backdrop-blur md:hidden" data-barra-zap>
+  <a href="#" data-zap class="flex items-center justify-center gap-2 rounded-2xl bg-ouro py-4 text-base font-extrabold text-grafite">
+    <i data-lucide="message-circle" class="h-5 w-5"></i> Reservar pelo WhatsApp
+  </a>
+</div>
+
+<script>
+/* ===== Dados do Rumba Bar: troque aqui ===== */
+const MODELO={
+  nome:'Rumba Bar',
+  wa:'5516981822125',                       /* (16) 98182-2125 — DDI + DDD, só números */
+  endereco:'R. Prof. Mário Roxo, 248 - Alto da Boa Vista, Ribeirão Preto - SP',
+  abre:'18:00', dias:[1,2,3,4,5,6],          /* segunda a sábado, a partir das 18h (0 = domingo) */
+  horasReserva:['18:00','18:30','19:00','19:30','20:00','20:30','21:00','21:30','22:00'],
+  /* Vitrine: f = foto (Unsplash), n = nome, d = descrição */
+  cardapio:{
+    rodizio:[
+      {f:'photo-1551504734-5ee1c4a1479b',n:'Tacos à vontade',d:'Tortilhas quentinhas com recheios que giram a noite toda: carne, frango, porco desfiado, cebola roxa, coentro e limão.'},
+      {f:'photo-1618040996337-56904b7850b9',n:'Quesadillas',d:'Tortilha dourada na chapa, queijo puxando e recheio caprichado. Sai da cozinha e vem direto pra sua mesa.'},
+      {f:'photo-1600335895229-6e75511892c8',n:'Guacamole & molhos',d:'Abacate amassado na hora, pico de gallo fresquinho e molhos da casa do suave ao bem apimentado.'}
+    ],
+    nachos:[
+      {f:'photo-1513456852971-30c0b8199d4d',n:'Nachos supremos',d:'Montanha de tortilhas crocantes com queijo derretido, carne, feijão, sour cream, guacamole e jalapeño.'},
+      {f:'photo-1626700051175-6818013e1d4f',n:'Burritos recheados',d:'Tortilha grande enrolada com arroz, feijão, carne temperada e queijo. Pra quem chegou com fome de verdade.'},
+      {f:'photo-1599974579688-8dbdd335c77f',n:'Combinados mexicanos',d:'Um pouco de tudo pra dividir com a galera: tacos, nachos e molhos no centro da mesa.'}
+    ],
+    drinks:[
+      {f:'photo-1556855810-ac404aa91e85',n:'Margarita clássica',d:'Tequila, licor de laranja e limão espremido na hora, com a borda de sal que todo mundo ama.'},
+      {f:'photo-1551538827-9c037cb4f32a',n:'Margaritas de frutas',d:'Versões geladas e coloridas com frutas, perfeitas pra brindar o começo da noite.'},
+      {f:'photo-1514362545857-3bc16c4c7d1b',n:'Drinks especiais',d:'Criações da casa com muito gelo, cor e sabor. Peça a sugestão do bartender.'}
+    ]
+  }
+};
+
+{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const zap=txt=>`https://wa.me/${MODELO.wa}?text=${encodeURIComponent(txt)}`;
+const abre=(a,url)=>{a.href=url;a.target='_blank';a.rel='noopener'};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- vitrine em abas ---------- */
+Object.entries(MODELO.cardapio).forEach(([aba,itens])=>{
+  $(`[data-painel="${aba}"]`).innerHTML=itens.map(i=>`
+    <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2">
+      <div class="foto aspect-[4/3]"><img src="https://images.unsplash.com/${i.f}?auto=format&fit=crop&w=700&q=70" alt="${esc(i.n)}" loading="lazy"
+        onerror="this.onerror=null;this.parentNode.classList.add('sem-foto');this.remove()"></div>
+      <div class="flex flex-1 flex-col p-5">
+        <h3 class="font-display text-2xl">${esc(i.n)}</h3>
+        <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">${esc(i.d)}</p>
+        <a href="${zap(`Olá, Rumba Bar! Vi no site e quero saber mais sobre: ${i.n}.`)}" target="_blank" rel="noopener"
+           class="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="message-circle" class="h-4 w-4"></i>Quero esse</a>
+      </div>
+    </article>`).join('');
+});
+const abas=$$('[role=tab]');
+const ativa=t=>{abas.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on})};
+abas.forEach((b,i)=>{
+  b.addEventListener('click',()=>ativa(b));
+  b.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=abas[(i+k+abas.length)%abas.length];ativa(n);n.focus()}});
+});
+
+/* ---------- links ---------- */
+$$('[data-zap]').forEach(a=>abre(a,zap(a.dataset.msg||'Olá, Rumba Bar! Vim pelo site e quero fazer uma reserva.')));
+$$('[data-rota]').forEach(a=>abre(a,'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent('Rumba Bar, '+MODELO.endereco)));
+$$('[data-maps]').forEach(a=>abre(a,'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Rumba Bar '+MODELO.endereco)));
+$$('[data-endereco]').forEach(el=>el.textContent=MODELO.endereco);
+$$('[data-mapa]').forEach(f=>f.src='https://www.google.com/maps?q='+encodeURIComponent('Rumba Bar, '+MODELO.endereco)+'&output=embed');
+
+/* ---------- aberto agora (fuso de Brasília) ---------- */
+const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+const hoje=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), agoraMin=(+p.hour%24)*60+(+p.minute);
+const [ah,am]=MODELO.abre.split(':').map(Number), abreMin=ah*60+am, abreTxt=am?`${ah}h${am}`:`${ah}h`;
+const DIAS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+let st;
+if(MODELO.dias.includes(hoje))st=agoraMin>=abreMin?{on:1,t:`Aberto hoje desde as ${abreTxt}`}:{on:0,t:`Abre hoje às ${abreTxt}`};
+else{let d=1;while(!MODELO.dias.includes((hoje+d)%7)&&d<7)d++;st={on:0,t:`Fechado hoje · abre ${d===1?'amanhã':DIAS[(hoje+d)%7]} às ${abreTxt}`}}
+$$('[data-status]').forEach(el=>el.innerHTML=`<span class="ponto ${st.on?'vivo text-zap':'text-creme/40'}"></span><span>${st.t}</span>`);
+
+/* ---------- reserva em 10 segundos ---------- */
+const form=$('[data-reserva]');
+if(form){
+  const hojeISO=`${p.year}-${p.month}-${p.day}`;
+  form.data.min=hojeISO;
+  /* sugere a próxima data em que o bar abre */
+  let d0=new Date(hojeISO+'T12:00:00');if(!MODELO.dias.includes(hoje)||agoraMin>=22*60)do{d0.setDate(d0.getDate()+1)}while(!MODELO.dias.includes(d0.getDay()));
+  form.data.value=d0.toISOString().slice(0,10);
+  form.hora.innerHTML=MODELO.horasReserva.map(h=>`<option value="${h}"${h==='20:00'?' selected':''}>${h.replace(':00','h').replace(':','h')}</option>`).join('');
+  const out=form.querySelector('output');let n=2;
+  const set=v=>{n=Math.max(1,Math.min(40,v));out.value=out.textContent=n};
+  form.querySelector('[data-menos]').onclick=()=>set(n-1);
+  form.querySelector('[data-mais]').onclick=()=>set(n+1);
+  const erro=form.querySelector('[data-erro]');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const nome=form.nome.value.trim(), data=form.data.value, hora=form.hora.value, opcao=form.opcao.value;
+    const dt=data&&new Date(data+'T12:00:00');
+    const msg=!nome?'Coloque o seu nome para a gente reservar.':!data?'Escolha a data da reserva.':data<hojeISO?'Escolha uma data a partir de hoje.':!MODELO.dias.includes(dt.getDay())?'Aos domingos o Rumba não abre. Escolha de segunda a sábado.':'';
+    [form.nome,form.data].forEach(c=>c.classList.remove('erro'));
+    if(msg){erro.textContent=msg;erro.classList.remove('hidden');(!nome?form.nome:form.data).classList.add('erro');(!nome?form.nome:form.data).focus();return}
+    erro.classList.add('hidden');
+    const dataTxt=dt.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});
+    const texto=`Olá, Rumba Bar! Quero reservar uma mesa 🌮\n\n`+
+      `👤 Nome: ${nome}\n📅 Data: ${dataTxt}\n⏰ Horário: ${hora.replace(':00','h').replace(':','h')}\n👥 Pessoas: ${n}\n🍽️ Opção: ${opcao}\n\nAguardo a confirmação. Obrigado!`;
+    location.href=zap(texto);
+  });
+}
+
+/* ---------- barra fixa do WhatsApp: aparece depois do botão principal e some no rodapé ---------- */
+const barra=$('[data-barra-zap]'), alvo=$('[data-cta-principal]');
+if(barra&&alvo&&'IntersectionObserver'in window){
+  let passou=false, rodape=false;
+  const at=()=>barra.classList.toggle('on',passou&&!rodape);
+  new IntersectionObserver(([e])=>{passou=!e.isIntersecting&&e.boundingClientRect.top<0;at()}).observe(alvo);
+  new IntersectionObserver(([e])=>{rodape=e.isIntersecting;at()}).observe($('footer'));
+}
+try{lucide.createIcons()}catch(e){}
+}
+</script>
+</body>
+</html>
