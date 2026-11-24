@@ -91,15 +91,9 @@ tailwind.config={theme:{extend:{
     <!-- Espaço Kids: painel fixo (não vem da lista do cardápio) -->
     <div class="mt-5 px-5" role="tabpanel" id="aba-kids" aria-labelledby="t-kids" hidden>
       <article class="overflow-hidden rounded-3xl border border-ouro/40 bg-grafite2 md:grid md:grid-cols-2">
-        <!-- Sem foto real da área infantil ainda: destaque ilustrado. Quando chegar, troque por
-             <div class="foto aspect-[4/3]"><img src="imagens/espaco-kids.jpg" alt="Espaço Kids do Rumba Bar"></div> -->
-        <div class="kids-arte relative grid aspect-[4/3] place-items-center md:aspect-auto md:min-h-[340px]" aria-hidden="true">
+        <div class="foto aspect-[3/2] md:aspect-auto md:min-h-[340px]">
+          <img src="imagens/espaco-kids.jpg" width="750" height="495" alt="Espaço Kids do Rumba Bar: brinquedão com escorregador, cama elástica e paredes coloridas" loading="lazy">
           <span class="absolute left-3 top-3 rounded-full bg-ouro px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-grafite">Para a família toda</span>
-          <div class="flex items-end gap-3 text-ouro">
-            <i data-lucide="puzzle" class="h-14 w-14 -rotate-12"></i>
-            <i data-lucide="baby" class="h-24 w-24"></i>
-            <i data-lucide="party-popper" class="h-14 w-14 rotate-12"></i>
-          </div>
         </div>
         <div class="flex flex-col p-6">
           <p class="label text-ouro">Espaço Kids</p>

@@ -13,8 +13,8 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased;background:transparent}
    ignora o attachment fixed. O efeito é o mesmo: a foto fica parada e o conteúdo rola por cima.
    Para trocar a foto (ex.: quando chegar uma foto ampla do ambiente), mude só o url() abaixo. */
 body::before{content:'';position:fixed;inset:-24px;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(14,14,16,.55),rgba(14,14,16,.72)),url('imagens/papas-recheadas.jpg') center/cover no-repeat;
-  background-attachment:fixed;filter:blur(5px) saturate(1.15)}
+  background:linear-gradient(180deg,rgba(14,14,16,.5),rgba(14,14,16,.68)),url('imagens/fachada-noite.jpg') center 70%/cover no-repeat;
+  background-attachment:fixed;filter:blur(2px) saturate(1.1)}
 
 /* cartões de vidro fosco: a foto de fundo aparece por trás com o texto legível */
 .bg-grafite2{-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
@@ -44,8 +44,6 @@ body::before{content:'';position:fixed;inset:-24px;z-index:-1;pointer-events:non
 /* foto que não carregou: fica um fundo temático em vez do brilho infinito */
 .foto.sem-foto{animation:none;background:radial-gradient(circle at 30% 30%,rgba(242,180,65,.35),transparent 60%),linear-gradient(135deg,#3a1f12,#212126)}
 .foto.sem-foto::after{content:'\1F32E';position:absolute;inset:0;display:grid;place-items:center;font-size:56px;opacity:.85}
-/* Espaço Kids sem foto: arte com as cores da casa */
-.kids-arte{background:radial-gradient(circle at 25% 25%,rgba(242,180,65,.35),transparent 55%),radial-gradient(circle at 80% 80%,rgba(183,2,35,.45),transparent 55%),rgba(22,22,26,.35)}
 
 /* abas do cardápio */
 .aba{flex:none;border-radius:999px;border:1px solid rgba(243,237,226,.2);padding:12px 18px;font-size:14px;font-weight:700;color:rgba(243,237,226,.8);white-space:nowrap;transition:background .2s,color .2s}
