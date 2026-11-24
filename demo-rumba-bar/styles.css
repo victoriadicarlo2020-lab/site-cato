@@ -28,6 +28,10 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased}
 .veu{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.3) 60%,rgba(0,0,0,0) 100%)}
 #h-hero{text-shadow:0 2px 18px rgba(0,0,0,.55)}
 
+/* blocos e textos soltos por cima da fachada: vidro escuro para leitura 100% nítida */
+.vidro{background:rgba(15,15,18,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.texto-solto{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 14px rgba(0,0,0,.75)}
+
 /* fotos: brilho enquanto carregam */
 .foto{position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(33,33,38,.6) 30%,rgba(60,60,68,.6) 45%,rgba(33,33,38,.6) 60%);background-size:250% 100%;animation:brilho 2.6s linear infinite}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -45,7 +49,7 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased}
 .foto.sem-foto::after{content:'\1F32E';position:absolute;inset:0;display:grid;place-items:center;font-size:56px;opacity:.85}
 
 /* abas do cardápio */
-.aba{flex:none;border-radius:999px;border:1px solid rgba(243,237,226,.2);padding:12px 18px;font-size:14px;font-weight:700;color:rgba(243,237,226,.8);white-space:nowrap;transition:background .2s,color .2s}
+.aba{flex:none;border-radius:999px;border:1px solid rgba(243,237,226,.2);background:rgba(15,15,18,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:12px 18px;font-size:14px;font-weight:700;color:rgba(243,237,226,.8);white-space:nowrap;transition:background .2s,color .2s}
 .aba[aria-selected=true]{background:var(--ouro);border-color:var(--ouro);color:var(--grafite)}
 
 /* formulário de reserva (sobre o fundo âmbar) */
