@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galpão 16 · Bar &amp; Burger | Prévia Cato Mídias</title>
+<meta name="description" content="Modelo de site para bares, choperias e hamburguerias. Prévia desenvolvida pela Cato Mídias.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16161A">
+<!-- garante a barra no fim da rota (/modelo-bar/) para os caminhos relativos funcionarem em qualquer hospedagem -->
+<script>if(!/\/$|\.html$/.test(location.pathname))location.replace(location.pathname+'/'+location.search+location.hash)</script>
+<link rel="icon" href="../assets/cato-logo-preto.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{
+  colors:{grafite:'#16161A',grafite2:'#212126',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
+  fontFamily:{sans:['Montserrat','Arial','sans-serif']}
+}}};
+</script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-grafite font-sans text-creme">
+
+<!-- ============ PRÉVIA ============ -->
+<a href="../" class="block bg-black px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-creme/60 hover:text-ambar">
+  Prévia exclusiva desenvolvida pela <span class="text-ambar">Cato Mídias</span>
+</a>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative isolate overflow-hidden" aria-labelledby="h-hero">
+  <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=75"
+       onerror="this.onerror=null;this.src='../assets/portfolio/ponto-do-chopp/foto-espaco-01.jpg'"
+       alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" fetchpriority="high">
+  <div class="veu absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div class="mx-auto flex min-h-[88svh] max-w-5xl flex-col justify-end px-5 pb-10 pt-8">
+    <div class="mb-auto flex items-center justify-between">
+      <span class="font-display text-xl tracking-wider">Galpão<span class="text-ouro">16</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1.5 text-xs font-semibold backdrop-blur" data-status>
+        <span class="ponto text-creme/50"></span>Horários abaixo
+      </span>
+    </div>
+
+    <p class="label mt-24 text-ouro">Bar · Chopp · Burger artesanal</p>
+    <h1 id="h-hero" class="font-display mt-3 text-[clamp(44px,13vw,96px)] leading-[.92] [text-wrap:balance]">
+      Chopp trincando,<br><span class="text-ouro">burger na brasa.</span>
+    </h1>
+    <p class="mt-5 max-w-md text-base leading-relaxed text-creme/80">
+      O ponto de encontro de Ribeirão. Peça agora pelo WhatsApp e receba quentinho, ou vem pro balcão que a sua mesa tá esperando.
+    </p>
+
+    <a href="#" data-zap data-cta-principal
+       class="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-ouro px-6 py-5 text-lg font-extrabold text-grafite shadow-[0_8px_0_#B70223] transition active:translate-y-1 active:shadow-[0_4px_0_#B70223] sm:w-auto sm:self-start">
+      <i data-lucide="message-circle" class="h-6 w-6"></i> Pedir no WhatsApp
+    </a>
+    <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-creme/70">
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="star" class="h-4 w-4 fill-ouro text-ouro"></i><b class="text-creme">4.8</b> no Google</span>
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="bike" class="h-4 w-4 text-ouro"></i>Delivery e retirada</span>
+      <a href="#cardapio" class="inline-flex items-center gap-1.5 underline decoration-ouro underline-offset-4">Ver destaques <i data-lucide="arrow-down" class="h-4 w-4"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESTAQUES DO CARDÁPIO ============ -->
+<section id="cardapio" class="grade py-14" aria-labelledby="h-cardapio">
+  <div class="mx-auto max-w-5xl">
+    <div class="px-5">
+      <p class="label text-ouro">Os mais pedidos</p>
+      <h2 id="h-cardapio" class="font-display mt-2 text-4xl">Destaques do cardápio</h2>
+      <p class="mt-2 text-sm text-creme/60">Arraste para o lado e toque em <b class="text-creme">Pedir</b>: a mensagem já vai pronta.</p>
+    </div>
+
+    <div class="trilho mt-6 sm:px-5">
+      <!-- Cada card: troque foto, nome, descrição e preço. data-prato/data-preco montam a mensagem do WhatsApp. -->
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Smash Duplo da Casa" data-preco="R$ 34,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/emporio-cervejeiro/foto-01.jpg'" alt="Hambúrguer duplo com queijo derretido" loading="lazy">
+          <span class="absolute left-3 top-3 rounded-full bg-verm px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">Mais pedido</span>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Smash Duplo da Casa</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">Dois blends de 90g prensados na chapa até a borda ficar crocante, cheddar escorrendo, cebola caramelizada e pão brioche selado na manteiga.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 34,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Chopp Pilsen 500 ml" data-preco="R$ 14,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/ponto-do-chopp/foto-divulgacao-01.jpg'" alt="Copos de chopp gelado com colarinho" loading="lazy">
+          <span class="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ouro backdrop-blur">-2 °C na torneira</span>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Chopp Pilsen 500 ml</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">Tirado na hora, colarinho cremoso de dois dedos e caneca congelada. Leve, refrescante e perigoso de pedir só um.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 14,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Fritas Cheddar & Bacon" data-preco="R$ 29,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/emporio-cervejeiro/foto-02.jpg'" alt="Porção de batata frita crocante" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Fritas Cheddar &amp; Bacon</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">Batata rústica dupla fritura, sequinha por fora e macia por dentro, coberta com cheddar cremoso e bacon em cubos crocante. Serve 2.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 29,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Bacon Monster" data-preco="R$ 39,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/emporio-cervejeiro/foto-03.jpg'" alt="Hambúrguer alto com bacon e queijo" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Bacon Monster</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">Blend de 180g no ponto da casa, fatias grossas de bacon defumado, queijo prato duplo e maionese de alho assado. Pra chegar com fome.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 39,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Asinhas Barbecue" data-preco="R$ 36,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/emporio-cervejeiro/foto-04.jpg'" alt="Asinhas de frango com molho barbecue" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Asinhas Barbecue</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">12 asinhas marinadas por 24h, assadas e glaceadas no barbecue defumado da casa. Acompanha molho ranch para mergulhar.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 36,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2" data-prato="Gin Tônica da Casa" data-preco="R$ 24,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/ponto-do-chopp/foto-divulgacao-02.jpg'" alt="Drinks coloridos no balcão do bar" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl">Gin Tônica da Casa</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-creme/70">Gin seco, tônica artesanal, especiarias e casca de laranja queimada na hora. Taça grande, muito gelo e aroma que chega antes.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-ouro">R$ 24,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-ouro px-5 py-3 text-sm font-bold text-grafite"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="px-5">
+      <a href="#" data-zap class="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-ouro/60 px-6 py-4 font-bold text-ouro sm:w-auto sm:inline-flex">
+        <i data-lucide="book-open" class="h-5 w-5"></i> Pedir o cardápio completo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÃO GOOGLE ============ -->
+<section class="px-5 py-14" aria-labelledby="h-aval">
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-3xl border border-white/10 bg-grafite2 p-6 sm:p-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="label text-creme/60">Avaliação no Google Maps</p>
+          <h2 id="h-aval" class="mt-3 flex items-end gap-3">
+            <span class="font-display text-6xl leading-none text-ouro">4.8</span>
+            <span class="pb-1">
+              <span class="flex gap-0.5 text-ouro" aria-label="4,8 de 5 estrelas">
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star-half" class="h-5 w-5 fill-current"></i>
+              </span>
+              <span class="mt-1 block text-sm text-creme/60">312 avaliações</span>
+            </span>
+          </h2>
+        </div>
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-xl font-extrabold text-[#4285F4]" aria-hidden="true">G</span>
+      </div>
+
+      <ul class="mt-6 grid gap-3 sm:grid-cols-3">
+        <li class="rounded-2xl bg-black/30 p-4">
+          <p class="text-sm leading-relaxed text-creme/85">“Melhor smash da cidade e o chopp vem trincando. Virou nosso bar de sexta.”</p>
+          <p class="mt-3 text-xs font-semibold text-creme/50">Mariana S. · ★★★★★</p>
+        </li>
+        <li class="rounded-2xl bg-black/30 p-4">
+          <p class="text-sm leading-relaxed text-creme/85">“Pedi pelo WhatsApp e chegou rápido e quentinho. Atendimento nota 10.”</p>
+          <p class="mt-3 text-xs font-semibold text-creme/50">Rafael T. · ★★★★★</p>
+        </li>
+        <li class="rounded-2xl bg-black/30 p-4">
+          <p class="text-sm leading-relaxed text-creme/85">“Ambiente lindo, música boa e as asinhas são viciantes. Volto com certeza.”</p>
+          <p class="mt-3 text-xs font-semibold text-creme/50">Juliana M. · ★★★★★</p>
+        </li>
+      </ul>
+      <a href="#" data-maps class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ouro underline underline-offset-4">
+        Ver avaliações no Google <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+      </a>
+      <p class="mt-3 text-[11px] text-creme/40">Nota e comentários ilustrativos desta prévia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORÁRIO + ENDEREÇO ============ -->
+<section class="px-5 pb-16" aria-labelledby="h-visita">
+  <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
+    <h2 id="h-visita" class="sr-only">Horário e endereço</h2>
+    <div class="rounded-3xl border border-white/10 bg-grafite2 p-6">
+      <div class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="clock" class="h-5 w-5"></i></span>
+        <h3 class="font-display text-2xl">Horário de funcionamento</h3>
+      </div>
+      <p class="mt-4 inline-flex items-center gap-2 text-sm font-semibold" data-status></p>
+      <ul class="mt-3 text-sm" data-horarios></ul>
+    </div>
+
+    <div class="flex flex-col rounded-3xl border border-white/10 bg-grafite2 p-6">
+      <div class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-ouro text-grafite"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+        <h3 class="font-display text-2xl">Onde estamos</h3>
+      </div>
+      <address class="mt-4 not-italic leading-relaxed text-creme/80" data-endereco></address>
+      <p class="mt-2 text-sm text-creme/50">Estacionamento na rua · Pet friendly na área externa</p>
+      <div class="mt-auto grid gap-3 pt-6">
+        <a href="#" data-rota class="flex items-center justify-center gap-2 rounded-2xl bg-creme px-6 py-4 font-extrabold text-grafite">
+          <i data-lucide="navigation" class="h-5 w-5"></i> Como chegar
+        </a>
+        <a href="#" data-zap class="flex items-center justify-center gap-2 rounded-2xl border border-white/20 px-6 py-4 font-bold">
+          <i data-lucide="calendar-check" class="h-5 w-5"></i> Reservar mesa
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ RODAPÉ COMERCIAL CATO ============ -->
+<footer class="border-t border-white/10 bg-black px-5 pb-28 pt-12 md:pb-12">
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-3xl bg-ambar p-6 text-black shadow-[0_8px_0_#B70223]">
+      <p class="label">Gostou desta prévia?</p>
+      <p class="mt-2 text-2xl font-extrabold leading-tight">Este site pode ser do seu bar, com as fotos e vídeos do seu cardápio.</p>
+      <a href="#" data-cato class="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-black px-6 py-4 font-bold text-white sm:inline-flex">
+        <i data-lucide="message-circle" class="h-5 w-5"></i> Quero o meu com a Cato
+      </a>
+    </div>
+    <div class="mt-10 flex flex-wrap items-end justify-between gap-6 text-sm text-white/60">
+      <div>
+        <img src="../assets/cato-logo-branco.svg" alt="Cato Mídias" width="995" height="440" class="block h-10 w-auto">
+        <p class="mt-3 max-w-xs">Foto, vídeo, stop motion, social media e sites para bares, restaurantes e marcas de alimentos e bebidas. Ribeirão Preto, SP.</p>
+      </div>
+      <p>© 2026 Cato Mídias · <a href="https://instagram.com/catomidias_" class="hover:text-ambar" target="_blank" rel="noopener">@catomidias_</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra fixa do WhatsApp (celular) -->
+<div class="barra-zap fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-grafite/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 backdrop-blur md:hidden" data-barra-zap>
+  <a href="#" data-zap class="flex items-center justify-center gap-2 rounded-2xl bg-ouro py-4 text-base font-extrabold text-grafite">
+    <i data-lucide="message-circle" class="h-5 w-5"></i> Pedir no WhatsApp
+  </a>
+</div>
+
+<script>
+/* ===== Dados do cliente: troque aqui para adaptar o modelo ===== */
+const MODELO={
+  nome:'Galpão 16',
+  wa:'5516981367602',                       /* WhatsApp com DDI + DDD, só números */
+  endereco:'Rua Álvares Cabral, 1600 - Centro, Ribeirão Preto - SP',
+  horarios:{                                 /* 0 = domingo · fechar depois da meia-noite funciona */
+    0:[['17:00','23:00']], 1:[], 2:[['18:00','00:00']], 3:[['18:00','00:00']],
+    4:[['18:00','00:00']], 5:[['18:00','02:00']], 6:[['18:00','02:00']]
+  }
+};
+
+{
+const $$=s=>[...document.querySelectorAll(s)];
+const zap=(num,txt)=>`https://wa.me/${num}?text=${encodeURIComponent(txt)}`;
+const abre=(a,url)=>{a.href=url;a.target='_blank';a.rel='noopener'};
+
+/* links */
+$$('[data-zap]').forEach(a=>abre(a,zap(MODELO.wa,`Olá, ${MODELO.nome}! Quero fazer um pedido.`)));
+$$('[data-pedir]').forEach(a=>{const p=a.closest('[data-prato]');abre(a,zap(MODELO.wa,`Olá, ${MODELO.nome}! Quero pedir: ${p.dataset.prato} (${p.dataset.preco}).`))});
+$$('[data-cato]').forEach(a=>abre(a,zap('5516981367602','Olá, Cato! Vi a prévia do modelo de bar e quero um site assim para o meu negócio.')));
+$$('[data-rota]').forEach(a=>abre(a,'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(MODELO.endereco)));
+$$('[data-maps]').forEach(a=>abre(a,'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(MODELO.nome+' '+MODELO.endereco)));
+$$('[data-endereco]').forEach(el=>el.textContent=MODELO.endereco);
+
+/* horário + "aberto agora" no fuso de Brasília */
+const DIAS=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+const min=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
+const fmt=t=>{const[h,m]=t.split(':');return m==='00'?`${+h}h`:`${+h}h${m}`};
+const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+const hoje=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), SEM=10080, ja=hoje*1440+(+p.hour%24)*60+(+p.minute);
+const faixas=[];
+for(let d=0;d<7;d++)(MODELO.horarios[d]||[]).forEach(([a,b])=>{const s=d*1440+min(a);let e=d*1440+min(b);if(e<=s)e+=1440;faixas.push({d,s,e,a,b})});
+const aberta=faixas.find(f=>(ja>=f.s&&ja<f.e)||(ja+SEM>=f.s&&ja+SEM<f.e));
+let txt;
+if(aberta)txt=`Aberto agora · fecha às ${fmt(aberta.b)}`;
+else{
+  const prox=faixas.map(f=>({...f,dist:((f.s-ja)%SEM+SEM)%SEM})).sort((x,y)=>x.dist-y.dist)[0];
+  if(prox){const dd=(prox.d-hoje+7)%7;txt=`Fechado agora · abre ${dd===0?'hoje':dd===1?'amanhã':DIAS[prox.d].toLowerCase()} às ${fmt(prox.a)}`}
+}
+if(txt)$$('[data-status]').forEach(el=>el.innerHTML=`<span class="ponto ${aberta?'vivo text-zap':'text-creme/40'}"></span><span>${txt}</span>`);
+$$('[data-horarios]').forEach(ul=>ul.innerHTML=[1,2,3,4,5,6,0].map(d=>{
+  const f=MODELO.horarios[d]||[], h=d===hoje;
+  return `<li class="flex items-center justify-between gap-4 border-b border-white/10 py-3 ${h?'font-bold text-creme':'text-creme/60'}">
+    <span>${DIAS[d]}${h?' <span class="ml-1 rounded-full bg-ouro px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-grafite">hoje</span>':''}</span>
+    <span class="text-right">${f.length?f.map(([a,b])=>`${fmt(a)} às ${fmt(b)}`).join(' · '):'Fechado'}</span></li>`;
+}).join(''));
+
+/* barra fixa do WhatsApp: aparece depois do botão principal e some no rodapé */
+const barra=document.querySelector('[data-barra-zap]'), alvo=document.querySelector('[data-cta-principal]');
+if(barra&&alvo&&'IntersectionObserver'in window){
+  let passou=false, rodape=false;
+  const at=()=>barra.classList.toggle('on',passou&&!rodape);
+  new IntersectionObserver(([e])=>{passou=!e.isIntersecting&&e.boundingClientRect.top<0;at()}).observe(alvo);
+  new IntersectionObserver(([e])=>{rodape=e.isIntersecting;at()}).observe(document.querySelector('footer'));
+}
+try{lucide.createIcons()}catch(e){}
+}
+</script>
+</body>
+</html>

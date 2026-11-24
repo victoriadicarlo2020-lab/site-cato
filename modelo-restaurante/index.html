@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Oliva · Cozinha de Família | Prévia Cato Mídias</title>
+<meta name="description" content="Modelo de site para restaurantes, pizzarias e cafeterias. Prévia desenvolvida pela Cato Mídias.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6EFE2">
+<!-- garante a barra no fim da rota (/modelo-restaurante/) para os caminhos relativos funcionarem em qualquer hospedagem -->
+<script>if(!/\/$|\.html$/.test(location.pathname))location.replace(location.pathname+'/'+location.search+location.hash)</script>
+<link rel="icon" href="../assets/cato-logo-preto.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{
+  colors:{creme:'#F6EFE2',papel:'#FFFBF3',oliva:'#5E6B3A',olivaesc:'#46512A',terra:'#B4643C',tinta:'#2B2921',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
+  fontFamily:{sans:['Montserrat','Arial','sans-serif']}
+}}};
+</script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-creme font-sans text-tinta">
+
+<!-- ============ PRÉVIA ============ -->
+<a href="../" class="block bg-tinta px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-creme/70 hover:text-ambar">
+  Prévia exclusiva desenvolvida pela <span class="text-ambar">Cato Mídias</span>
+</a>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative isolate overflow-hidden" aria-labelledby="h-hero">
+  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=75"
+       onerror="this.onerror=null;this.src='../assets/portfolio/cascata-quintino-ii/foto-01.jpg'"
+       alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" fetchpriority="high">
+  <div class="veu absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div class="mx-auto flex min-h-[86svh] max-w-5xl flex-col justify-end px-5 pb-12 pt-8 text-papel">
+    <div class="mb-auto flex items-center justify-between">
+      <span class="font-display text-2xl italic">Casa <span class="not-italic">Oliva</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-papel/90 px-3 py-1.5 text-xs font-semibold text-tinta backdrop-blur" data-status>
+        <span class="ponto text-tinta/40"></span>Horários abaixo
+      </span>
+    </div>
+
+    <p class="label mt-24 text-[#E9D9A8]">Cozinha de família · Massas · Pizza de longa fermentação</p>
+    <h1 id="h-hero" class="font-display mt-3 text-[clamp(42px,12vw,88px)] leading-[.98] [text-wrap:balance]">
+      Comida com cheiro de <em class="text-[#E9D9A8]">casa de vó.</em>
+    </h1>
+    <p class="mt-5 max-w-md text-base leading-relaxed text-papel/85">
+      Massa fresca feita todo dia, molho de tomate que cozinha devagar e mesa grande pra família toda. Peça pelo WhatsApp ou venha almoçar com a gente.
+    </p>
+
+    <a href="#" data-zap data-cta-principal
+       class="mt-8 flex w-full items-center justify-center gap-3 rounded-full bg-oliva px-6 py-5 text-lg font-extrabold text-papel shadow-[0_8px_0_#B4643C] transition active:translate-y-1 active:shadow-[0_4px_0_#B4643C] sm:w-auto sm:self-start">
+      <i data-lucide="message-circle" class="h-6 w-6"></i> Pedir no WhatsApp
+    </a>
+    <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-papel/80">
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="star" class="h-4 w-4 fill-[#E9D9A8] text-[#E9D9A8]"></i><b class="text-papel">4.8</b> no Google</span>
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="baby" class="h-4 w-4 text-[#E9D9A8]"></i>Espaço kids</span>
+      <a href="#cardapio" class="inline-flex items-center gap-1.5 underline decoration-[#E9D9A8] underline-offset-4">Ver destaques <i data-lucide="arrow-down" class="h-4 w-4"></i></a>
+    </div>
+  </div>
+  <svg class="onda absolute inset-x-0 -bottom-px" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 28V14C150 0 300 0 450 12s300 14 450 2 225-12 300-6v20Z"/></svg>
+</section>
+
+<!-- ============ DESTAQUES DO CARDÁPIO ============ -->
+<section id="cardapio" class="papel py-14" aria-labelledby="h-cardapio">
+  <div class="mx-auto max-w-5xl">
+    <div class="px-5">
+      <p class="label text-terra">Feitos com carinho</p>
+      <h2 id="h-cardapio" class="font-display mt-2 text-4xl">Destaques do cardápio</h2>
+      <p class="mt-2 text-sm text-tinta/60">Arraste para o lado e toque em <b class="text-tinta">Pedir</b>: a mensagem já vai pronta.</p>
+    </div>
+
+    <div class="trilho mt-6 sm:px-5">
+      <!-- Cada card: troque foto, nome, descrição e preço. data-prato/data-preco montam a mensagem do WhatsApp. -->
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Pizza Margherita de Longa Fermentação" data-preco="R$ 59,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/marmitaria-nova-brasa/foto-01.jpg'" alt="Pizza margherita com manjericão fresco" loading="lazy">
+          <span class="absolute left-3 top-3 rounded-full bg-terra px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-papel">Mais pedida</span>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Pizza Margherita</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Massa de 48h de fermentação, borda alta e aerada, molho de tomate pelado, muçarela de búfala e manjericão colhido na hora. Grande, 8 fatias.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 59,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Lasanha da Nonna" data-preco="R$ 48,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/marmitaria-nova-brasa/foto-02.jpg'" alt="Lasanha gratinada servida quente" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Lasanha da Nonna</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Camadas de massa fresca, ragu de carne cozido por 6 horas, bechamel cremoso e parmesão gratinado até dourar. Serve bem uma pessoa com fome.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 48,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Fettuccine ao Funghi" data-preco="R$ 52,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/marmitaria-nova-brasa/foto-03.jpg'" alt="Prato de massa fresca com molho" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Fettuccine ao Funghi</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Fettuccine feito aqui, envolvido num creme de cogumelos secos e frescos, finalizado com azeite trufado e lascas de parmesão.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 52,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Risoto de Limão Siciliano" data-preco="R$ 54,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/marmitaria-nova-brasa/foto-04.jpg'" alt="Risoto cremoso servido no prato" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Risoto de Limão Siciliano</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Arroz arbóreo no ponto certo, raspas de limão siciliano, manteiga e parmesão. Leve, cremoso e perfumado. Opção com camarão.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 54,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Cappuccino + Bolo do Dia" data-preco="R$ 22,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/cascata-quintino-ii/foto-02.jpg'" alt="Cappuccino com arte no leite" loading="lazy">
+          <span class="absolute left-3 top-3 rounded-full bg-oliva px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-papel">Café da tarde</span>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Cappuccino + Bolo do Dia</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Café especial da região, leite vaporizado bem cremoso e uma fatia generosa do bolo caseiro que saiu do forno hoje.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 22,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex flex-col overflow-hidden rounded-[28px] bg-papel shadow-[0_10px_30px_-12px_rgba(43,41,33,.25)] ring-1 ring-tinta/5" data-prato="Tiramisù da Casa" data-preco="R$ 26,90">
+        <div class="foto aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=70" onerror="this.onerror=null;this.src='../assets/portfolio/cascata-quintino-ii/foto-03.jpg'" alt="Fatia de tiramisù com cacau" loading="lazy">
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-display text-2xl leading-tight">Tiramisù da Casa</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-tinta/70">Biscoito embebido em café coado, creme de mascarpone aerado e cacau polvilhado na hora. A sobremesa que fecha o almoço de domingo.</p>
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <span class="font-display text-2xl text-oliva">R$ 26,90</span>
+            <a href="#" data-pedir class="inline-flex items-center gap-2 rounded-full bg-oliva px-5 py-3 text-sm font-bold text-papel"><i data-lucide="plus" class="h-4 w-4"></i>Pedir</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="px-5">
+      <a href="#" data-zap class="mt-4 flex w-full items-center justify-center gap-2 rounded-full border-2 border-oliva px-6 py-4 font-bold text-oliva sm:inline-flex sm:w-auto">
+        <i data-lucide="book-open" class="h-5 w-5"></i> Pedir o cardápio completo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÃO GOOGLE ============ -->
+<section class="px-5 py-14" aria-labelledby="h-aval">
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-[28px] bg-oliva p-6 text-papel sm:p-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="label text-papel/70">Avaliação no Google Maps</p>
+          <h2 id="h-aval" class="mt-3 flex items-end gap-3">
+            <span class="font-display text-6xl leading-none">4.8</span>
+            <span class="pb-1">
+              <span class="flex gap-0.5 text-[#E9D9A8]" aria-label="4,8 de 5 estrelas">
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star-half" class="h-5 w-5 fill-current"></i>
+              </span>
+              <span class="mt-1 block text-sm text-papel/70">486 avaliações</span>
+            </span>
+          </h2>
+        </div>
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-xl font-extrabold text-[#4285F4]" aria-hidden="true">G</span>
+      </div>
+
+      <ul class="mt-6 grid gap-3 sm:grid-cols-3">
+        <li class="rounded-2xl bg-papel p-4 text-tinta">
+          <p class="text-sm leading-relaxed">“A lasanha é igualzinha à da minha avó. Almoço de domingo agora é aqui.”</p>
+          <p class="mt-3 text-xs font-semibold text-tinta/50">Cláudia R. · ★★★★★</p>
+        </li>
+        <li class="rounded-2xl bg-papel p-4 text-tinta">
+          <p class="text-sm leading-relaxed">“Pizza de massa leve, chegou quentinha pelo delivery. Atendimento muito carinhoso.”</p>
+          <p class="mt-3 text-xs font-semibold text-tinta/50">Paulo H. · ★★★★★</p>
+        </li>
+        <li class="rounded-2xl bg-papel p-4 text-tinta">
+          <p class="text-sm leading-relaxed">“Ambiente aconchegante, ótimo pra ir com criança. O tiramisù é obrigatório.”</p>
+          <p class="mt-3 text-xs font-semibold text-tinta/50">Fernanda L. · ★★★★★</p>
+        </li>
+      </ul>
+      <a href="#" data-maps class="mt-6 inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4">
+        Ver avaliações no Google <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+      </a>
+      <p class="mt-3 text-[11px] text-papel/50">Nota e comentários ilustrativos desta prévia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORÁRIO + ENDEREÇO ============ -->
+<section class="px-5 pb-16" aria-labelledby="h-visita">
+  <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
+    <h2 id="h-visita" class="sr-only">Horário e endereço</h2>
+    <div class="rounded-[28px] bg-papel p-6 ring-1 ring-tinta/5">
+      <div class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-terra text-papel"><i data-lucide="clock" class="h-5 w-5"></i></span>
+        <h3 class="font-display text-2xl">Horário de funcionamento</h3>
+      </div>
+      <p class="mt-4 inline-flex items-center gap-2 text-sm font-semibold" data-status></p>
+      <ul class="mt-3 text-sm" data-horarios></ul>
+    </div>
+
+    <div class="flex flex-col rounded-[28px] bg-papel p-6 ring-1 ring-tinta/5">
+      <div class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-terra text-papel"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+        <h3 class="font-display text-2xl">Onde estamos</h3>
+      </div>
+      <address class="mt-4 not-italic leading-relaxed text-tinta/80" data-endereco></address>
+      <p class="mt-2 text-sm text-tinta/55">Estacionamento conveniado · Acessível para cadeirantes</p>
+      <div class="mt-auto grid gap-3 pt-6">
+        <a href="#" data-rota class="flex items-center justify-center gap-2 rounded-full bg-tinta px-6 py-4 font-extrabold text-papel">
+          <i data-lucide="navigation" class="h-5 w-5"></i> Como chegar
+        </a>
+        <a href="#" data-zap class="flex items-center justify-center gap-2 rounded-full border-2 border-tinta/15 px-6 py-4 font-bold">
+          <i data-lucide="calendar-check" class="h-5 w-5"></i> Reservar mesa
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ RODAPÉ COMERCIAL CATO MÍDIAS ============ -->
+<footer class="bg-tinta px-5 pb-28 pt-12 md:pb-12">
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-3xl bg-ambar p-6 text-black shadow-[0_8px_0_#B70223]">
+      <p class="label">Gostou desta prévia?</p>
+      <p class="mt-2 text-2xl font-extrabold leading-tight">Este site pode ser do seu restaurante, com as fotos e vídeos do seu cardápio.</p>
+      <a href="#" data-cato class="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-black px-6 py-4 font-bold text-white sm:inline-flex">
+        <i data-lucide="message-circle" class="h-5 w-5"></i> Quero o meu com a Cato Mídias
+      </a>
+    </div>
+    <div class="mt-10 flex flex-wrap items-end justify-between gap-6 text-sm text-white/60">
+      <div>
+        <img src="../assets/cato-logo-branco.svg" alt="Cato Mídias" width="995" height="440" class="block h-10 w-auto">
+        <p class="mt-3 max-w-xs">Foto, vídeo, stop motion, social media e sites para bares, restaurantes e marcas de alimentos e bebidas. Ribeirão Preto, SP.</p>
+      </div>
+      <p>© 2026 Cato Mídias · <a href="https://instagram.com/catomidias_" class="hover:text-ambar" target="_blank" rel="noopener">@catomidias_</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra fixa do WhatsApp (celular) -->
+<div class="barra-zap fixed inset-x-0 bottom-0 z-50 border-t border-tinta/10 bg-creme/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 backdrop-blur md:hidden" data-barra-zap>
+  <a href="#" data-zap class="flex items-center justify-center gap-2 rounded-full bg-oliva py-4 text-base font-extrabold text-papel">
+    <i data-lucide="message-circle" class="h-5 w-5"></i> Pedir no WhatsApp
+  </a>
+</div>
+
+<script>
+/* ===== Dados do cliente: troque aqui para adaptar o modelo ===== */
+const MODELO={
+  nome:'Casa Oliva',
+  wa:'5516981367602',                       /* WhatsApp com DDI + DDD, só números */
+  endereco:'Rua Garibaldi, 1200 - Centro, Ribeirão Preto - SP',
+  horarios:{                                 /* 0 = domingo · pode ter almoço e jantar no mesmo dia */
+    0:[['11:30','16:00']], 1:[],
+    2:[['11:30','15:00'],['18:30','23:00']], 3:[['11:30','15:00'],['18:30','23:00']],
+    4:[['11:30','15:00'],['18:30','23:00']], 5:[['11:30','15:00'],['18:30','23:30']],
+    6:[['11:30','23:30']]
+  }
+};
+
+{
+const $$=s=>[...document.querySelectorAll(s)];
+const zap=(num,txt)=>`https://wa.me/${num}?text=${encodeURIComponent(txt)}`;
+const abre=(a,url)=>{a.href=url;a.target='_blank';a.rel='noopener'};
+
+/* links */
+$$('[data-zap]').forEach(a=>abre(a,zap(MODELO.wa,`Olá, ${MODELO.nome}! Quero fazer um pedido.`)));
+$$('[data-pedir]').forEach(a=>{const p=a.closest('[data-prato]');abre(a,zap(MODELO.wa,`Olá, ${MODELO.nome}! Quero pedir: ${p.dataset.prato} (${p.dataset.preco}).`))});
+$$('[data-cato]').forEach(a=>abre(a,zap('5516981367602','Olá, Cato Mídias! Vi a prévia do modelo de restaurante e quero um site assim para o meu negócio.')));
+$$('[data-rota]').forEach(a=>abre(a,'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(MODELO.endereco)));
+$$('[data-maps]').forEach(a=>abre(a,'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(MODELO.nome+' '+MODELO.endereco)));
+$$('[data-endereco]').forEach(el=>el.textContent=MODELO.endereco);
+
+/* horário + "aberto agora" no fuso de Brasília */
+const DIAS=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+const min=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
+const fmt=t=>{const[h,m]=t.split(':');return m==='00'?`${+h}h`:`${+h}h${m}`};
+const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+const hoje=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), SEM=10080, ja=hoje*1440+(+p.hour%24)*60+(+p.minute);
+const faixas=[];
+for(let d=0;d<7;d++)(MODELO.horarios[d]||[]).forEach(([a,b])=>{const s=d*1440+min(a);let e=d*1440+min(b);if(e<=s)e+=1440;faixas.push({d,s,e,a,b})});
+const aberta=faixas.find(f=>(ja>=f.s&&ja<f.e)||(ja+SEM>=f.s&&ja+SEM<f.e));
+let txt;
+if(aberta)txt=`Aberto agora · fecha às ${fmt(aberta.b)}`;
+else{
+  const prox=faixas.map(f=>({...f,dist:((f.s-ja)%SEM+SEM)%SEM})).sort((x,y)=>x.dist-y.dist)[0];
+  if(prox){const dd=(prox.d-hoje+7)%7;txt=`Fechado agora · abre ${dd===0?'hoje':dd===1?'amanhã':DIAS[prox.d].toLowerCase()} às ${fmt(prox.a)}`}
+}
+if(txt)$$('[data-status]').forEach(el=>el.innerHTML=`<span class="ponto ${aberta?'vivo text-zap':'text-tinta/40'}"></span><span>${txt}</span>`);
+$$('[data-horarios]').forEach(ul=>ul.innerHTML=[1,2,3,4,5,6,0].map(d=>{
+  const f=MODELO.horarios[d]||[], h=d===hoje;
+  return `<li class="flex items-center justify-between gap-4 border-b border-tinta/10 py-3 ${h?'font-bold text-tinta':'text-tinta/60'}">
+    <span>${DIAS[d]}${h?' <span class="ml-1 rounded-full bg-oliva px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-papel">hoje</span>':''}</span>
+    <span class="text-right">${f.length?f.map(([a,b])=>`${fmt(a)} às ${fmt(b)}`).join('<br>'):'Fechado'}</span></li>`;
+}).join(''));
+
+/* barra fixa do WhatsApp: aparece depois do botão principal e some no rodapé */
+const barra=document.querySelector('[data-barra-zap]'), alvo=document.querySelector('[data-cta-principal]');
+if(barra&&alvo&&'IntersectionObserver'in window){
+  let passou=false, rodape=false;
+  const at=()=>barra.classList.toggle('on',passou&&!rodape);
+  new IntersectionObserver(([e])=>{passou=!e.isIntersecting&&e.boundingClientRect.top<0;at()}).observe(alvo);
+  new IntersectionObserver(([e])=>{rodape=e.isIntersecting;at()}).observe(document.querySelector('footer'));
+}
+try{lucide.createIcons()}catch(e){}
+}
+</script>
+</body>
+</html>
