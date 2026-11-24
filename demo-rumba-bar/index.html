@@ -81,11 +81,36 @@ tailwind.config={theme:{extend:{
       <button type="button" role="tab" class="aba" aria-selected="true" aria-controls="aba-rodizio" id="t-rodizio">Rodízio Completo</button>
       <button type="button" role="tab" class="aba" aria-selected="false" aria-controls="aba-nachos" id="t-nachos" tabindex="-1">Nachos &amp; Burritos</button>
       <button type="button" role="tab" class="aba" aria-selected="false" aria-controls="aba-drinks" id="t-drinks" tabindex="-1">Drinks &amp; Margaritas</button>
+      <button type="button" role="tab" class="aba" aria-selected="false" aria-controls="aba-kids" id="t-kids" tabindex="-1"><i data-lucide="baby" class="mr-1 inline h-4 w-4 align-[-3px]"></i>Espaço Kids</button>
     </div>
 
     <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-rodizio" aria-labelledby="t-rodizio" data-painel="rodizio"></div>
     <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-nachos" aria-labelledby="t-nachos" data-painel="nachos" hidden></div>
     <div class="trilho mt-5 sm:px-5" role="tabpanel" id="aba-drinks" aria-labelledby="t-drinks" data-painel="drinks" hidden></div>
+    <!-- Espaço Kids: painel fixo (não vem da lista do cardápio) -->
+    <div class="mt-5 px-5" role="tabpanel" id="aba-kids" aria-labelledby="t-kids" hidden>
+      <article class="overflow-hidden rounded-3xl border border-ouro/40 bg-grafite2 md:grid md:grid-cols-2">
+        <div class="foto kids aspect-[4/3] md:aspect-auto md:min-h-[340px]">
+          <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=900&q=70" alt="Crianças brincando em espaço infantil colorido" loading="lazy"
+               onerror="this.onerror=null;this.parentNode.classList.add('sem-foto');this.remove()">
+          <span class="absolute left-3 top-3 rounded-full bg-ouro px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-grafite">Para a família toda</span>
+        </div>
+        <div class="flex flex-col p-6">
+          <p class="label text-ouro">Espaço Kids</p>
+          <h3 class="font-display mt-2 text-3xl leading-tight">Os pequenos brincam, você aproveita.</h3>
+          <p class="mt-3 leading-relaxed text-creme/80">Diversão garantida para as crianças com monitoramento enquanto você aproveita o rodízio mexicano com tranquilidade.</p>
+          <ul class="mt-5 grid gap-2 text-sm text-creme/85">
+            <li class="flex items-center gap-2"><i data-lucide="shield-check" class="h-5 w-5 shrink-0 text-ouro"></i>Área infantil com monitoramento</li>
+            <li class="flex items-center gap-2"><i data-lucide="puzzle" class="h-5 w-5 shrink-0 text-ouro"></i>Brincadeiras para a criançada</li>
+            <li class="flex items-center gap-2"><i data-lucide="heart" class="h-5 w-5 shrink-0 text-ouro"></i>Noite tranquila para os adultos</li>
+          </ul>
+          <div class="mt-6 grid gap-3">
+            <a href="#reserva" class="flex items-center justify-center gap-2 rounded-2xl bg-ouro px-6 py-4 font-extrabold text-grafite"><i data-lucide="calendar-check" class="h-5 w-5"></i> Reservar mesa para a família</a>
+            <a href="#" data-zap data-msg="Olá, Rumba Bar! Quero saber mais sobre o Espaço Kids." class="flex items-center justify-center gap-2 rounded-2xl border border-white/20 px-6 py-4 font-bold"><i data-lucide="message-circle" class="h-5 w-5"></i> Tirar dúvidas no WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    </div>
 
     <div class="px-5">
       <a href="#" data-zap data-msg="Olá, Rumba Bar! Pode me enviar o cardápio completo e o valor do rodízio?" class="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-ouro/60 px-6 py-4 font-bold text-ouro sm:inline-flex sm:w-auto">
