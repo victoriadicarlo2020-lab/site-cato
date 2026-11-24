@@ -18,7 +18,7 @@
 <script>
 tailwind.config={theme:{extend:{
   /* grafite2 = cartões de vidro fosco (translúcidos; o desfoque está no styles.css) */
-  colors:{grafite:'#16161A',grafite2:'rgba(22,22,26,.58)',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
+  colors:{grafite:'#16161A',grafite2:'rgba(22,22,26,.42)',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
   fontFamily:{sans:['Montserrat','Arial','sans-serif']}
 }}};
 </script>
@@ -26,6 +26,9 @@ tailwind.config={theme:{extend:{
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="font-sans text-creme">
+<!-- Fundo fixo: fachada do Rumba ocupando a tela toda, atrás de tudo (sem desfoque) + véu leve para leitura -->
+<img src="imagens/fachada-noite.jpg" width="1200" height="1433" alt="" aria-hidden="true" class="fundo-fixo" fetchpriority="high">
+<div class="fundo-veu" aria-hidden="true"></div>
 
 <main>
 <!-- ============ HERO ============ -->

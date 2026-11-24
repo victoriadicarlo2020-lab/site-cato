@@ -5,19 +5,20 @@
 *{min-width:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-html{background:var(--grafite)} /* só aparece enquanto a foto de fundo carrega */
-body{overflow-x:clip;-webkit-font-smoothing:antialiased;background:transparent}
+html{background:#000} /* só aparece no instante antes da foto de fundo carregar */
+/* corpo e seções 100% transparentes: nada pode tampar a foto da fachada */
+body,main,section{background-color:transparent!important}
+body{overflow-x:clip;-webkit-font-smoothing:antialiased}
 
 /* ---------- Foto de fundo fixa atrás do site inteiro ----------
-   Camada position:fixed em vez de background-attachment:fixed, porque o Safari do iPhone
-   ignora o attachment fixed. O efeito é o mesmo: a foto fica parada e o conteúdo rola por cima.
-   Para trocar a foto (ex.: quando chegar uma foto ampla do ambiente), mude só o url() abaixo. */
-body::before{content:'';position:fixed;inset:-24px;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(14,14,16,.5),rgba(14,14,16,.68)),url('imagens/fachada-noite.jpg') center 70%/cover no-repeat;
-  background-attachment:fixed;filter:blur(2px) saturate(1.1)}
+   Uma <img> com position:fixed (funciona igual no iPhone, onde background-attachment:fixed falha).
+   Sem desfoque; o véu escurece no máximo 35% só para os textos ficarem legíveis.
+   Para trocar a foto, mude o src da <img class="fundo-fixo"> no index.html. */
+.fundo-fixo{position:fixed;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:blur(0px);pointer-events:none}
+.fundo-veu{position:fixed;inset:0;z-index:-1;background:rgba(0,0,0,.35);pointer-events:none}
 
-/* cartões de vidro fosco: a foto de fundo aparece por trás com o texto legível */
-.bg-grafite2{-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+/* cartões translúcidos leves: a fachada aparece por trás e o texto continua legível */
+.bg-grafite2{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 /* foto do topo some suavemente para dentro do fundo */
 .hero-foto{-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
 .font-display{font-family:'Oswald','Montserrat',Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em}
