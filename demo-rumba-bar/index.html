@@ -17,21 +17,22 @@
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <script>
 tailwind.config={theme:{extend:{
-  colors:{grafite:'#16161A',grafite2:'#212126',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
+  /* grafite2 = cartões de vidro fosco (translúcidos; o desfoque está no styles.css) */
+  colors:{grafite:'#16161A',grafite2:'rgba(22,22,26,.58)',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
   fontFamily:{sans:['Montserrat','Arial','sans-serif']}
 }}};
 </script>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-grafite font-sans text-creme">
+<body class="font-sans text-creme">
 
 <main>
 <!-- ============ HERO ============ -->
 <section class="relative isolate overflow-hidden" aria-labelledby="h-hero">
-  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1200&q=75"
+  <img src="imagens/empanados-com-molhos.jpg" width="1024" height="1280"
        onerror="this.onerror=null;this.remove()"
-       alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" fetchpriority="high">
+       alt="" class="hero-foto absolute inset-0 -z-20 h-full w-full object-cover" fetchpriority="high">
   <div class="veu absolute inset-0 -z-10" aria-hidden="true"></div>
 
   <div class="mx-auto flex min-h-[88svh] max-w-5xl flex-col justify-end px-5 pb-10 pt-6">
@@ -90,10 +91,15 @@ tailwind.config={theme:{extend:{
     <!-- Espaço Kids: painel fixo (não vem da lista do cardápio) -->
     <div class="mt-5 px-5" role="tabpanel" id="aba-kids" aria-labelledby="t-kids" hidden>
       <article class="overflow-hidden rounded-3xl border border-ouro/40 bg-grafite2 md:grid md:grid-cols-2">
-        <div class="foto kids aspect-[4/3] md:aspect-auto md:min-h-[340px]">
-          <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=900&q=70" alt="Crianças brincando em espaço infantil colorido" loading="lazy"
-               onerror="this.onerror=null;this.parentNode.classList.add('sem-foto');this.remove()">
+        <!-- Sem foto real da área infantil ainda: destaque ilustrado. Quando chegar, troque por
+             <div class="foto aspect-[4/3]"><img src="imagens/espaco-kids.jpg" alt="Espaço Kids do Rumba Bar"></div> -->
+        <div class="kids-arte relative grid aspect-[4/3] place-items-center md:aspect-auto md:min-h-[340px]" aria-hidden="true">
           <span class="absolute left-3 top-3 rounded-full bg-ouro px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-grafite">Para a família toda</span>
+          <div class="flex items-end gap-3 text-ouro">
+            <i data-lucide="puzzle" class="h-14 w-14 -rotate-12"></i>
+            <i data-lucide="baby" class="h-24 w-24"></i>
+            <i data-lucide="party-popper" class="h-14 w-14 rotate-12"></i>
+          </div>
         </div>
         <div class="flex flex-col p-6">
           <p class="label text-ouro">Espaço Kids</p>
@@ -270,18 +276,18 @@ const MODELO={
   endereco:'R. Prof. Mário Roxo, 248 - Alto da Boa Vista, Ribeirão Preto - SP',
   abre:'18:00', dias:[1,2,3,4,5,6],          /* segunda a sábado, a partir das 18h (0 = domingo) */
   horasReserva:['18:00','18:30','19:00','19:30','20:00','20:30','21:00','21:30','22:00'],
-  /* Vitrine: f = foto (Unsplash), n = nome, d = descrição */
+  /* Vitrine: f = foto (arquivo em imagens/ ou id do Unsplash 'photo-...'), p = enquadramento opcional, n = nome, d = descrição */
   cardapio:{
     rodizio:[
-      {f:'photo-1551504734-5ee1c4a1479b',n:'Tacos à vontade',d:'Tortilhas quentinhas com recheios que giram a noite toda: carne, frango, porco desfiado, cebola roxa, coentro e limão.'},
-      {f:'photo-1618040996337-56904b7850b9',n:'Quesadillas',d:'Tortilha dourada na chapa, queijo puxando e recheio caprichado. Sai da cozinha e vem direto pra sua mesa.'},
-      {f:'photo-1600335895229-6e75511892c8',n:'Guacamole & molhos',d:'Abacate amassado na hora, pico de gallo fresquinho e molhos da casa do suave ao bem apimentado.'}
+      {f:'imagens/empanados-com-molhos.jpg',n:'Empanados com molhos',d:'Crocantes por fora e recheados por dentro, servidos com pico de gallo, sour cream e guacamole para mergulhar.'},
+      {f:'imagens/papas-recheadas.jpg',n:'Papas recheadas',d:'Batatas recheadas e gratinadas com queijo e bacon crocante por cima. Sai quentinha da cozinha direto pra sua mesa.'},
+      {f:'imagens/nachos-com-feijao.jpg',p:'center 78%',n:'Nachos com feijão',d:'Tortilhas crocantes com feijão temperado e molhos da casa: a combinação perfeita do seu rodízio.'}
     ],
     nachos:[
-      {f:'photo-1513456852971-30c0b8199d4d',n:'Nachos supremos',d:'Montanha de tortilhas crocantes com queijo derretido, carne, feijão, sour cream, guacamole e jalapeño.'},
-      {f:'photo-1626700051175-6818013e1d4f',n:'Burritos recheados',d:'Tortilha grande enrolada com arroz, feijão, carne temperada e queijo. Pra quem chegou com fome de verdade.'},
-      {f:'photo-1599974579688-8dbdd335c77f',n:'Combinados mexicanos',d:'Um pouco de tudo pra dividir com a galera: tacos, nachos e molhos no centro da mesa.'}
+      {f:'imagens/chiles-empanados.jpg',n:'Chiles empanados',d:'Pimentas recheadas, empanadas e douradas, com molho cremoso para acompanhar. Para quem gosta de um toque picante.'},
+      {f:'imagens/bolinhos-mexicanos.jpg',n:'Bolinhos mexicanos',d:'Bolinhos sequinhos e bem temperados, servidos com molho da casa. Difícil comer um só.'}
     ],
+    /* drinks: ainda com fotos ilustrativas do Unsplash, até chegarem as fotos reais dos drinks */
     drinks:[
       {f:'photo-1556855810-ac404aa91e85',n:'Margarita clássica',d:'Tequila, licor de laranja e limão espremido na hora, com a borda de sal que todo mundo ama.'},
       {f:'photo-1551538827-9c037cb4f32a',n:'Margaritas de frutas',d:'Versões geladas e coloridas com frutas, perfeitas pra brindar o começo da noite.'},
@@ -300,7 +306,7 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&qu
 Object.entries(MODELO.cardapio).forEach(([aba,itens])=>{
   $(`[data-painel="${aba}"]`).innerHTML=itens.map(i=>`
     <article class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-grafite2">
-      <div class="foto aspect-[4/3]"><img src="https://images.unsplash.com/${i.f}?auto=format&fit=crop&w=700&q=70" alt="${esc(i.n)}" loading="lazy"
+      <div class="foto aspect-[4/3]"><img src="${i.f.startsWith('photo-')?`https://images.unsplash.com/${i.f}?auto=format&fit=crop&w=700&q=70`:i.f}" alt="${esc(i.n)}" loading="lazy"${i.p?` style="object-position:${i.p}"`:''}
         onerror="this.onerror=null;this.parentNode.classList.add('sem-foto');this.remove()"></div>
       <div class="flex flex-1 flex-col p-5">
         <h3 class="font-display text-2xl">${esc(i.n)}</h3>
