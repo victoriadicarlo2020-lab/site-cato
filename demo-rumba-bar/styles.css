@@ -29,7 +29,7 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased;background:var(--grafite
 
 /* foto que não carregou: fica um fundo temático em vez do brilho infinito */
 .foto.sem-foto{animation:none;background:radial-gradient(circle at 30% 30%,rgba(242,180,65,.35),transparent 60%),linear-gradient(135deg,#3a1f12,#212126)}
-.foto.sem-foto::after{content:'🌮';position:absolute;inset:0;display:grid;place-items:center;font-size:56px;opacity:.85}
+.foto.sem-foto::after{content:'\1F32E';position:absolute;inset:0;display:grid;place-items:center;font-size:56px;opacity:.85}
 
 /* abas do cardápio */
 .aba{flex:none;border-radius:999px;border:1px solid rgba(243,237,226,.2);padding:12px 18px;font-size:14px;font-weight:700;color:rgba(243,237,226,.8);white-space:nowrap;transition:background .2s,color .2s}

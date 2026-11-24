@@ -332,8 +332,18 @@ if(form){
     if(msg){erro.textContent=msg;erro.classList.remove('hidden');(!nome?form.nome:form.data).classList.add('erro');(!nome?form.nome:form.data).focus();return}
     erro.classList.add('hidden');
     const dataTxt=dt.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});
-    const texto=`Olá, Rumba Bar! Quero reservar uma mesa 🌮\n\n`+
-      `👤 Nome: ${nome}\n📅 Data: ${dataTxt}\n⏰ Horário: ${hora.replace(':00','h').replace(':','h')}\n👥 Pessoas: ${n}\n🍽️ Opção: ${opcao}\n\nAguardo a confirmação. Obrigado!`;
+    /* mensagem só com texto (sem emojis), uma informação por linha; zap() aplica encodeURIComponent (\n vira %0A) */
+    const texto=[
+      'Olá, Rumba Bar! Quero reservar uma mesa.',
+      '',
+      '- Nome: '+nome,
+      '- Data: '+dataTxt,
+      '- Horário: '+hora.replace(':00','h').replace(':','h'),
+      '- Pessoas: '+n,
+      '- Opção: '+opcao,
+      '',
+      'Aguardo a confirmação. Obrigado!'
+    ].join('\n');
     location.href=zap(texto);
   });
 }
