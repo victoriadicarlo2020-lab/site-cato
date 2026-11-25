@@ -23,12 +23,16 @@ tailwind.config={theme:{extend:{
 }}};
 </script>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<link rel="stylesheet" href="styles.css">
+<!-- ?v= força o navegador/hospedagem a baixar a versão nova do CSS (troque a data a cada mudança no styles.css) -->
+<link rel="stylesheet" href="styles.css?v=2026-11-25">
 </head>
 <body class="font-sans text-creme">
-<!-- Fundo fixo: fachada do Rumba ocupando a tela toda, atrás de tudo (sem desfoque) + véu leve para leitura -->
-<img src="imagens/fachada-noite.jpg" width="1200" height="1433" alt="" aria-hidden="true" class="fundo-fixo" fetchpriority="high">
-<div class="fundo-veu" aria-hidden="true"></div>
+<!-- Fundo fixo: fachada do Rumba ocupando a tela toda, atrás de tudo (sem desfoque) + véu leve para leitura.
+     Estilos essenciais direto no HTML: mesmo se o styles.css chegar atrasado ou em cache antigo,
+     a foto nunca vira uma imagem solta empurrando o conteúdo. -->
+<img src="imagens/fachada-noite.jpg" width="1200" height="1433" alt="" aria-hidden="true" class="fundo-fixo" fetchpriority="high"
+     style="position:fixed;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:16% 40%;pointer-events:none">
+<div class="fundo-veu" aria-hidden="true" style="position:fixed;inset:0;z-index:-1;background:rgba(0,0,0,.35);pointer-events:none"></div>
 
 <main>
 <!-- ============ HERO ============ -->
@@ -45,21 +49,25 @@ tailwind.config={theme:{extend:{
         </span>
       </div>
       <!-- menu de navegação: rola de lado no celular, em linha no desktop -->
-      <nav class="menu -mx-5 mt-4 flex gap-2 overflow-x-auto px-5 pb-1" aria-label="Seções do site">
-        <a href="#cardapio" class="vidro menu-link">Cardápio</a>
-        <a href="#reserva" class="vidro menu-link">Reservar</a>
-        <a href="#videos" class="vidro menu-link"><i data-lucide="play" class="h-3.5 w-3.5 fill-current text-ouro"></i>Vídeos</a>
-        <a href="#local" class="vidro menu-link">Como chegar</a>
+      <!-- todos os links com as mesmas classes (Tailwind), então ficam na mesma linha e altura -->
+      <nav class="menu -mx-5 mt-4 flex flex-nowrap items-center gap-2 overflow-x-auto px-5 pb-1" aria-label="Seções do site">
+        <a href="#cardapio" class="menu-link inline-flex h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-creme/20 bg-[rgba(15,15,18,.72)] px-4 text-[13px] font-bold leading-none backdrop-blur">Cardápio</a>
+        <a href="#reserva" class="menu-link inline-flex h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-creme/20 bg-[rgba(15,15,18,.72)] px-4 text-[13px] font-bold leading-none backdrop-blur">Reservar</a>
+        <a href="#videos-rumba" class="menu-link inline-flex h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-creme/20 bg-[rgba(15,15,18,.72)] px-4 text-[13px] font-bold leading-none backdrop-blur"><i data-lucide="play" class="h-3.5 w-3.5 shrink-0 fill-current text-ouro"></i>Vídeos</a>
+        <a href="#local" class="menu-link inline-flex h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-creme/20 bg-[rgba(15,15,18,.72)] px-4 text-[13px] font-bold leading-none backdrop-blur">Como chegar</a>
       </nav>
     </div>
 
-    <p class="texto-solto label mt-24 text-ouro">Rodízio mexicano · Ribeirão Preto</p>
-    <h1 id="h-hero" class="font-display mt-3 text-[clamp(42px,12vw,92px)] leading-[.92] [text-wrap:balance]">
-      O verdadeiro <span class="text-ouro">rodízio mexicano</span> de Ribeirão Preto.
-    </h1>
-    <p class="texto-solto mt-5 max-w-md text-base leading-relaxed text-creme/90">
-      Tacos, nachos e burritos à vontade, drinks especiais para brindar e espaço kids para a família inteira curtir a noite.
-    </p>
+    <!-- caixa de vidro escuro atrás do texto principal: contraste garantido sobre a foto colorida da fachada -->
+    <div class="mt-24 rounded-3xl border border-white/10 bg-[rgba(15,15,18,.62)] p-5 backdrop-blur-md sm:max-w-2xl sm:p-7">
+      <p class="label text-ouro">Rodízio mexicano · Ribeirão Preto</p>
+      <h1 id="h-hero" class="font-display mt-3 text-[clamp(38px,11vw,84px)] leading-[.92] [text-wrap:balance]">
+        O verdadeiro <span class="text-ouro">rodízio mexicano</span> de Ribeirão Preto.
+      </h1>
+      <p class="mt-4 max-w-md text-base leading-relaxed text-creme/90">
+        Tacos, nachos e burritos à vontade, drinks especiais para brindar e espaço kids para a família inteira curtir a noite.
+      </p>
+    </div>
 
     <a href="#" data-zap data-cta-principal
        class="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-ouro px-6 py-5 text-lg font-extrabold text-grafite shadow-[0_8px_0_#B70223] transition active:translate-y-1 active:shadow-[0_4px_0_#B70223] sm:w-auto sm:self-start">
@@ -243,37 +251,39 @@ tailwind.config={theme:{extend:{
   </div>
 </section>
 
-<!-- ============ VÍDEOS (reels do Instagram) ============ -->
-<section id="videos" class="px-5 pb-16" aria-labelledby="h-videos">
-  <div class="mx-auto max-w-5xl">
-    <div class="vidro rounded-3xl p-5">
-      <p class="label text-ouro">Vídeos</p>
-      <h2 id="h-videos" class="font-display mt-2 text-4xl leading-[.95]">Vem curtir o clima do Rumba</h2>
-      <p class="mt-2 text-sm text-creme/85">Rodízio, drinks e muita festa: dá o play e sente a energia da casa.</p>
+<!-- ============ VÍDEOS (reels do Instagram) ============
+     Seção isolada: só usa classes vr-* e o CSS dela no styles.css começa sempre por #videos-rumba,
+     então nada aqui afeta o resto da página. -->
+<section id="videos-rumba" class="vr-secao" aria-labelledby="vr-titulo">
+  <div class="vr-container">
+    <div class="vr-cabecalho">
+      <p class="vr-rotulo">Vídeos</p>
+      <h2 id="vr-titulo" class="vr-titulo">Vem curtir o clima do Rumba</h2>
+      <p class="vr-texto">Rodízio, drinks e muita festa: dá o play e sente a energia da casa.</p>
     </div>
 
-    <!-- Embeds oficiais do Instagram. O blockquote é transformado em vídeo pelo embed.js (carregado uma única vez no fim da página).
+    <!-- Embeds oficiais do Instagram: o embed.js (carregado uma única vez no fim da página) troca cada blockquote pelo vídeo.
          Se o script não carregar, o card mostra o link para abrir o reel no Instagram. -->
-    <div class="mt-5 grid gap-5 md:grid-cols-3">
-      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+    <div class="vr-grade">
+      <div class="vr-card">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYSwXgkArF6/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/DYSwXgkArF6/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+          <a href="https://www.instagram.com/reel/DYSwXgkArF6/" target="_blank" rel="noopener" class="vr-reserva"><i data-lucide="instagram"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
         </blockquote>
       </div>
-      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+      <div class="vr-card">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKR0CrPN7Rt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/DKR0CrPN7Rt/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+          <a href="https://www.instagram.com/reel/DKR0CrPN7Rt/" target="_blank" rel="noopener" class="vr-reserva"><i data-lucide="instagram"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
         </blockquote>
       </div>
-      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+      <div class="vr-card">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxyqKNfPrSF/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/CxyqKNfPrSF/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+          <a href="https://www.instagram.com/reel/CxyqKNfPrSF/" target="_blank" rel="noopener" class="vr-reserva"><i data-lucide="instagram"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
         </blockquote>
       </div>
     </div>
 
-    <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="vidro mt-5 flex w-full items-center justify-center gap-2 rounded-2xl border border-ouro/60 px-6 py-4 font-bold text-ouro sm:mx-auto sm:w-auto sm:max-w-sm">
-      <i data-lucide="instagram" class="h-5 w-5"></i> Seguir @rumbabaroficial
+    <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="vr-seguir">
+      <i data-lucide="instagram"></i> Seguir @rumbabaroficial
     </a>
   </div>
 </section>
