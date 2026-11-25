@@ -24,7 +24,7 @@ tailwind.config={theme:{extend:{
 </script>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <!-- ?v= força o navegador/hospedagem a baixar a versão nova do CSS (troque a data a cada mudança no styles.css) -->
-<link rel="stylesheet" href="styles.css?v=2026-11-25">
+<link rel="stylesheet" href="styles.css?v=2026-11-25b">
 </head>
 <body class="font-sans text-creme">
 <!-- Fundo fixo: fachada do Rumba ocupando a tela toda, atrás de tudo (sem desfoque) + véu leve para leitura.
@@ -59,7 +59,8 @@ tailwind.config={theme:{extend:{
     </div>
 
     <!-- caixa de vidro escuro atrás do texto principal: contraste garantido sobre a foto colorida da fachada -->
-    <div class="mt-24 rounded-3xl border border-white/10 bg-[rgba(15,15,18,.62)] p-5 backdrop-blur-md sm:max-w-2xl sm:p-7">
+    <!-- .caixa-hero = CSS puro no styles.css (fundo, desfoque, borda, cantos, espaçamento): funciona mesmo sem o Tailwind -->
+    <div class="caixa-hero sm:max-w-2xl">
       <p class="label text-ouro">Rodízio mexicano · Ribeirão Preto</p>
       <h1 id="h-hero" class="font-display mt-3 text-[clamp(38px,11vw,84px)] leading-[.92] [text-wrap:balance]">
         O verdadeiro <span class="text-ouro">rodízio mexicano</span> de Ribeirão Preto.

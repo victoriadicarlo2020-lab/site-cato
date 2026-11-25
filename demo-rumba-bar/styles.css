@@ -28,6 +28,17 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased}
 .veu{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.3) 60%,rgba(0,0,0,0) 100%)}
 #h-hero{text-shadow:0 2px 18px rgba(0,0,0,.55)}
 
+/* caixa de vidro fosco atrás do texto principal da capa (CSS puro, não depende do Tailwind) */
+.caixa-hero {
+  background: rgba(15, 15, 18, 0.78) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
 /* blocos e textos soltos por cima da fachada: vidro escuro para leitura 100% nítida */
 .vidro{background:rgba(15,15,18,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 /* menu de navegação do topo (o layout está nas classes Tailwind do HTML; aqui só o que falta) */
