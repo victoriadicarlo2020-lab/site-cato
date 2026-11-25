@@ -1,0 +1,5 @@
+/* Entrada do Tailwind do demo Rumba Bar. Não edite tailwind.css à mão: ele é gerado a partir daqui
+   (comando no topo do tailwind.config.js). Estilos próprios continuam no styles.css. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

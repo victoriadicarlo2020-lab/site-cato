@@ -14,17 +14,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<script>
-tailwind.config={theme:{extend:{
-  /* grafite2 = cartões de vidro fosco (translúcidos; o desfoque está no styles.css) */
-  colors:{grafite:'#16161A',grafite2:'rgba(22,22,26,.42)',ouro:'#F2B441',creme:'#F3EDE2',zap:'#25D366',ambar:'#FCA001',verm:'#B70223'},
-  fontFamily:{sans:['Montserrat','Arial','sans-serif']}
-}}};
-</script>
+<!-- Tailwind compilado dentro do projeto (tailwind.css), sem CDN. Cores e fonte em tailwind.config.js;
+     para regenerar depois de mudar classes, veja o comando no topo do tailwind.config.js. -->
+<link rel="stylesheet" href="tailwind.css?v=2026-11-25">
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <!-- ?v= força o navegador/hospedagem a baixar a versão nova do CSS (troque a data a cada mudança no styles.css) -->
-<link rel="stylesheet" href="styles.css?v=2026-11-25b">
+<link rel="stylesheet" href="styles.css?v=2026-11-25c">
 </head>
 <body class="font-sans text-creme">
 <!-- Fundo fixo: fachada do Rumba ocupando a tela toda, atrás de tudo (sem desfoque) + véu leve para leitura.
