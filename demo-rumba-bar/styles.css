@@ -30,6 +30,17 @@ body{overflow-x:clip;-webkit-font-smoothing:antialiased}
 
 /* blocos e textos soltos por cima da fachada: vidro escuro para leitura 100% nítida */
 .vidro{background:rgba(15,15,18,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+/* menu de navegação do topo */
+.menu{scrollbar-width:none}.menu::-webkit-scrollbar{display:none}
+.menu-link{flex:none;display:inline-flex;align-items:center;gap:6px;border-radius:999px;border:1px solid rgba(243,237,226,.18);padding:9px 16px;font-size:13px;font-weight:700;color:var(--creme);white-space:nowrap;transition:border-color .2s,color .2s}
+.menu-link:hover{border-color:var(--ouro);color:var(--ouro)}
+html{scroll-padding-top:16px}
+
+/* vídeos do Instagram: embed ocupa o card inteiro, com cantos arredondados, sem estourar a tela no celular */
+.reel-card{overflow:hidden}
+.reel-card .instagram-media{margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important;border-radius:18px!important;overflow:hidden}
+.reel-card blockquote.instagram-media{background:rgba(15,15,18,.6);border:0;padding:0}
+.reel-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:9/14;padding:24px;text-align:center;font-size:14px;font-weight:700;color:var(--creme)}
 .texto-solto{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 14px rgba(0,0,0,.75)}
 
 /* fotos: brilho enquanto carregam */

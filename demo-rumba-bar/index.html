@@ -37,11 +37,20 @@ tailwind.config={theme:{extend:{
   <div class="veu absolute inset-0 -z-10" aria-hidden="true"></div>
 
   <div class="mx-auto flex min-h-[88svh] max-w-5xl flex-col justify-end px-5 pb-10 pt-6">
-    <div class="mb-auto flex items-center justify-between gap-3">
-      <span class="font-display text-2xl tracking-wider">Rumba<span class="text-ouro"> Bar</span></span>
-      <span class="inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1.5 text-xs font-semibold backdrop-blur" data-status>
-        <span class="ponto text-creme/50"></span>Seg a sáb, a partir das 18h
-      </span>
+    <div class="mb-auto">
+      <div class="flex items-center justify-between gap-3">
+        <span class="font-display text-2xl tracking-wider">Rumba<span class="text-ouro"> Bar</span></span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1.5 text-xs font-semibold backdrop-blur" data-status>
+          <span class="ponto text-creme/50"></span>Seg a sáb, a partir das 18h
+        </span>
+      </div>
+      <!-- menu de navegação: rola de lado no celular, em linha no desktop -->
+      <nav class="menu -mx-5 mt-4 flex gap-2 overflow-x-auto px-5 pb-1" aria-label="Seções do site">
+        <a href="#cardapio" class="vidro menu-link">Cardápio</a>
+        <a href="#reserva" class="vidro menu-link">Reservar</a>
+        <a href="#videos" class="vidro menu-link"><i data-lucide="play" class="h-3.5 w-3.5 fill-current text-ouro"></i>Vídeos</a>
+        <a href="#local" class="vidro menu-link">Como chegar</a>
+      </nav>
     </div>
 
     <p class="texto-solto label mt-24 text-ouro">Rodízio mexicano · Ribeirão Preto</p>
@@ -233,6 +242,41 @@ tailwind.config={theme:{extend:{
     </div>
   </div>
 </section>
+
+<!-- ============ VÍDEOS (reels do Instagram) ============ -->
+<section id="videos" class="px-5 pb-16" aria-labelledby="h-videos">
+  <div class="mx-auto max-w-5xl">
+    <div class="vidro rounded-3xl p-5">
+      <p class="label text-ouro">Vídeos</p>
+      <h2 id="h-videos" class="font-display mt-2 text-4xl leading-[.95]">Vem curtir o clima do Rumba</h2>
+      <p class="mt-2 text-sm text-creme/85">Rodízio, drinks e muita festa: dá o play e sente a energia da casa.</p>
+    </div>
+
+    <!-- Embeds oficiais do Instagram. O blockquote é transformado em vídeo pelo embed.js (carregado uma única vez no fim da página).
+         Se o script não carregar, o card mostra o link para abrir o reel no Instagram. -->
+    <div class="mt-5 grid gap-5 md:grid-cols-3">
+      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYSwXgkArF6/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+          <a href="https://www.instagram.com/reel/DYSwXgkArF6/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+        </blockquote>
+      </div>
+      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKR0CrPN7Rt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+          <a href="https://www.instagram.com/reel/DKR0CrPN7Rt/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+        </blockquote>
+      </div>
+      <div class="reel-card bg-grafite2 rounded-3xl border border-white/10 p-2">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxyqKNfPrSF/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+          <a href="https://www.instagram.com/reel/CxyqKNfPrSF/" target="_blank" rel="noopener" class="reel-fallback"><i data-lucide="instagram" class="h-8 w-8 text-ouro"></i><span>Ver esse reel do @rumbabaroficial no Instagram</span></a>
+        </blockquote>
+      </div>
+    </div>
+
+    <a href="https://instagram.com/rumbabaroficial" target="_blank" rel="noopener" class="vidro mt-5 flex w-full items-center justify-center gap-2 rounded-2xl border border-ouro/60 px-6 py-4 font-bold text-ouro sm:mx-auto sm:w-auto sm:max-w-sm">
+      <i data-lucide="instagram" class="h-5 w-5"></i> Seguir @rumbabaroficial
+    </a>
+  </div>
+</section>
 </main>
 
 <!-- ============ RODAPÉ ============ -->
@@ -387,5 +431,7 @@ if(barra&&alvo&&'IntersectionObserver'in window){
 try{lucide.createIcons()}catch(e){}
 }
 </script>
+<!-- Instagram: um único embed.js para os 3 reels da seção Vídeos -->
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
