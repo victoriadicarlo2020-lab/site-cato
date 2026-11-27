@@ -95,6 +95,13 @@ h1,h2,h3,p{margin:0}
 .slide-retrato{background:var(--fundo)}
 .slide-retrato .slide-img{left:auto;right:0;width:min(62%,1000px);object-position:center 20%;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
+/* slide com respiro: a foto começa abaixo do menu e se funde ao fundo pela borda de cima */
+.slide-respiro{--respiro:calc(var(--topbar-h) + var(--nav-h) - 20px)}
+.slide-respiro .slide-img{top:var(--respiro);height:calc(100% - var(--respiro));object-position:center top;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%),linear-gradient(180deg,transparent 0%,#000 14%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0%,#000 28%),linear-gradient(180deg,transparent 0%,#000 14%);
+  mask-composite:intersect}
 .slide-retrato-claro::after{background:linear-gradient(90deg,rgba(20,28,26,.94) 0%,rgba(18,63,51,.84) 36%,rgba(18,63,51,.3) 60%,rgba(0,0,0,0) 80%),linear-gradient(180deg,rgba(10,20,17,.5) 0%,rgba(10,20,17,0) 22%)}
 
 .slide-txt{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:calc(var(--topbar-h) + var(--nav-h))}
@@ -135,6 +142,7 @@ h1,h2,h3,p{margin:0}
   .slide-txt{justify-content:flex-end;padding-bottom:110px}
   .slide::after{background:linear-gradient(0deg,rgba(18,30,27,.95) 0%,rgba(18,63,51,.75) 40%,rgba(18,63,51,.15) 70%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(10,20,17,.55) 0%,rgba(10,20,17,0) 22%)}
   .slide-retrato .slide-img{width:100%;-webkit-mask-image:none;mask-image:none;object-position:center 15%}
+  .slide-respiro .slide-img{object-position:center top;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%);mask-image:linear-gradient(180deg,transparent 0%,#000 14%)}
 }
 
 /* ---------- Botões e títulos ---------- */
