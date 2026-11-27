@@ -103,6 +103,30 @@
     revelar.forEach(function (el) { el.classList.add('is-visivel'); });
   }
 
+  /* ---------- Vídeos: carregam perto da tela, pausam fora dela ---------- */
+  var videos = document.querySelectorAll('video[data-src]');
+  function carregar(v) {
+    if (v.src) return;
+    v.addEventListener('loadeddata', function () { v.classList.add('is-pronto'); });
+    v.addEventListener('error', function () { v.removeAttribute('src'); v.load(); }); // falhou: fica a capa verde
+    v.src = v.getAttribute('data-src');
+    v.load();
+  }
+  function tocar(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  if ('IntersectionObserver' in window) {
+    var io3 = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) { carregar(v); if (!reduzMovimento) tocar(v); }
+        else if (v.src) v.pause();
+      });
+    }, { rootMargin: '200px 0px' });
+    videos.forEach(function (v) { io3.observe(v); });
+  } else {
+    videos.forEach(function (v) { carregar(v); if (!reduzMovimento) tocar(v); });
+  }
+  if (reduzMovimento) videos.forEach(function (v) { v.removeAttribute('autoplay'); v.setAttribute('controls', ''); });
+
   /* ---------- Menu: marca a seção atual ---------- */
   var links = menu.querySelectorAll('a');
   var alvos = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
