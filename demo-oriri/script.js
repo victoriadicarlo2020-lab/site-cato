@@ -195,28 +195,60 @@
     revela.forEach(function (el) { el.classList.add('is-visivel'); });
   }
 
-  /* ---------- Faixas de fotos: movimento ligado ao scroll ---------- */
+  /* ---------- Parallax horizontal das faixas (ligado ao scroll) ----------
+     Descendo a página: fileira de cima → direita, fileira de baixo → esquerda.
+     Subindo: o movimento inverte. Suavizado com requestAnimationFrame. */
   var secFaixas = document.querySelector('[data-faixas]');
-  var faixaD = document.querySelector('[data-faixa="direita"]');
-  var faixaE = document.querySelector('[data-faixa="esquerda"]');
-  var pedido = false;
-  function moverFaixas() {
-    pedido = false;
+  var fileiras = [
+    { el: document.querySelector('[data-faixa="direita"] .faixa-trilho'), dir: 1 },
+    { el: document.querySelector('[data-faixa="esquerda"] .faixa-trilho'), dir: -1 }
+  ];
+  fileiras.forEach(function (f) { f.modelo = Array.prototype.slice.call(f.el.children); f.atual = null; });
+  var curso = 0;        // quanto cada fileira percorre (px) enquanto a seção atravessa a tela
+  var rodando = false;
+
+  // duplica os cards até a fileira cobrir a tela + o percurso, sem buracos nas pontas
+  function preencher() {
+    var vw = document.documentElement.clientWidth;
+    curso = Math.round(Math.min(vw * 0.55, 700));
+    fileiras.forEach(function (f) {
+      var precisa = vw + curso * 2 + 200;
+      var guarda = 0;
+      while (f.el.scrollWidth < precisa && guarda++ < 12) {
+        f.modelo.forEach(function (t) {
+          var c = t.cloneNode(true);
+          f.el.appendChild(c);
+        });
+      }
+      f.base = -(f.el.scrollWidth - vw) / 2; // centraliza: sobra igual dos dois lados
+    });
+  }
+
+  function progresso() {
     var r = secFaixas.getBoundingClientRect();
     var vh = window.innerHeight;
-    if (r.bottom < 0 || r.top > vh) return;
-    var prog = (vh - r.top) / (vh + r.height); // 0 → 1 enquanto a seção atravessa a tela
-    var sobraD = Math.max(0, faixaD.scrollWidth - window.innerWidth);
-    var sobraE = Math.max(0, faixaE.scrollWidth - window.innerWidth);
-    faixaD.style.transform = 'translate3d(' + (-sobraD + sobraD * prog) + 'px,0,0)'; // vai para a direita
-    faixaE.style.transform = 'translate3d(' + (-sobraE * prog) + 'px,0,0)';           // vai para a esquerda
+    var p = (vh - r.top) / (vh + r.height); // 0 quando a seção entra por baixo, 1 quando sai por cima
+    return Math.max(0, Math.min(1, p));
   }
-  function agendar() { if (!pedido) { pedido = true; requestAnimationFrame(moverFaixas); } }
-  if (!reduz) {
-    window.addEventListener('scroll', agendar, { passive: true });
-    window.addEventListener('resize', agendar);
+
+  function quadro() {
+    var p = progresso() - 0.5; // -0,5 … 0,5
+    var continuar = false;
+    fileiras.forEach(function (f) {
+      var alvo = f.base + f.dir * p * curso;
+      if (f.atual === null) f.atual = alvo;
+      f.atual += (alvo - f.atual) * 0.12; // suavização
+      if (Math.abs(alvo - f.atual) > 0.3) continuar = true; else f.atual = alvo;
+      f.el.style.transform = 'translate3d(' + f.atual.toFixed(2) + 'px,0,0)';
+    });
+    if (continuar) requestAnimationFrame(quadro); else rodando = false;
   }
-  moverFaixas();
+  function mover() { if (!rodando) { rodando = true; requestAnimationFrame(quadro); } }
+
+  preencher();
+  mover();
+  window.addEventListener('scroll', mover, { passive: true });
+  window.addEventListener('resize', function () { preencher(); mover(); });
 
   /* ---------- Contadores (count-up ao entrar na tela) ---------- */
   var numFmt = new Intl.NumberFormat('pt-BR');

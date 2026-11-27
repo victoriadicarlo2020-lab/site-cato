@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="styles.css?v=2026-11-27b">
+<link rel="stylesheet" href="styles.css?v=2026-11-28-parallax">
 </head>
 <body>
 
@@ -96,27 +96,24 @@
   <div class="wrap">
     <p class="manifesto-txt revela">Nossa trajetória contempla <span class="t">artes cênicas</span>, <span class="t">patrimônio histórico</span>, <span class="t">literatura</span> e <span class="t">formação</span>, sempre articulando cultura, memória e transformação social.</p>
   </div>
-  <!-- Para usar fotos reais: salve em imagens/ como faixa-01.jpg … faixa-08.jpg -->
+  <!-- Parallax horizontal: as fileiras andam conforme a rolagem (script.js duplica os cards para não abrir buraco).
+       Fotos reais: salve em imagens/ como faixa-01.jpg … faixa-08.jpg -->
   <div class="faixas" aria-hidden="true">
     <div class="faixa" data-faixa="direita">
-      <div class="tile"><div class="ph ph-terra"><span>Espetáculos</span></div><img src="imagens/faixa-01.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-cafe"><span>Patrimônio</span></div><img src="imagens/faixa-02.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-areia"><span>Rodas de conversa</span></div><img src="imagens/faixa-03.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-ocre"><span>Festivais</span></div><img src="imagens/faixa-04.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-terra"><span>Circulação</span></div><img src="imagens/faixa-05.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-cafe"><span>Memória</span></div><img src="imagens/faixa-06.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-areia"><span>Ancestralidade</span></div><img src="imagens/faixa-07.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-ocre"><span>Palco</span></div><img src="imagens/faixa-08.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="faixa-trilho">
+        <div class="tile"><div class="ph ph-terra"><span>Espetáculos</span></div><img src="imagens/faixa-01.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-cafe"><span>Patrimônio</span></div><img src="imagens/faixa-02.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-areia"><span>Rodas de conversa</span></div><img src="imagens/faixa-03.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-ocre"><span>Festivais</span></div><img src="imagens/faixa-04.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      </div>
     </div>
     <div class="faixa" data-faixa="esquerda">
-      <div class="tile"><div class="ph ph-ocre"><span>Oficinas</span></div><img src="imagens/faixa-05.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-cafe"><span>Literatura</span></div><img src="imagens/faixa-06.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-terra"><span>Bastidores</span></div><img src="imagens/faixa-07.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-areia"><span>Formação</span></div><img src="imagens/faixa-08.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-ocre"><span>Mostras</span></div><img src="imagens/faixa-01.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-cafe"><span>Território</span></div><img src="imagens/faixa-02.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-terra"><span>Encontros</span></div><img src="imagens/faixa-03.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-      <div class="tile"><div class="ph ph-areia"><span>Cena</span></div><img src="imagens/faixa-04.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="faixa-trilho">
+        <div class="tile"><div class="ph ph-ocre"><span>Oficinas</span></div><img src="imagens/faixa-05.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-cafe"><span>Literatura</span></div><img src="imagens/faixa-06.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-terra"><span>Bastidores</span></div><img src="imagens/faixa-07.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="tile"><div class="ph ph-areia"><span>Formação</span></div><img src="imagens/faixa-08.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -237,6 +234,6 @@
   </div>
 </dialog>
 
-<script src="script.js?v=2026-11-27b"></script>
+<script src="script.js?v=2026-11-28-parallax"></script>
 </body>
 </html>
