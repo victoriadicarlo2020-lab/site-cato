@@ -13,83 +13,24 @@
   }
 
   /* =========================================================
-     PROJETOS: edite aqui. Fotos: salve em imagens/ com o nome
-     indicado em "capa" e "galeria". Vídeo: cole o link do
-     YouTube/Vimeo em "video" (formato embed).
+     PROJETOS: fonte oficial = docs/BASE_ORIRI.md (seção 5).
+     Fotos: imagens/projeto-<id>.jpg (capa) e imagens/<id>-1.jpg … -4.jpg.
+     Vídeo: link de incorporação do YouTube/Vimeo em "video".
+     Ano vazio = não informado na base (o campo some do modal).
      ========================================================= */
   var PROJETOS = [
-    {
-      id: 'ekaabo',
-      titulo: 'E Káàbo – Travessia de Nós',
-      sub: 'Grupo Corpo Negro',
-      categoria: 'Artes cênicas',
-      ano: 'A confirmar',
-      parceiros: 'Grupo Corpo Negro',
-      cor: 'terra',
-      capa: 'imagens/projeto-ekaabo.jpg',
-      resumo: 'Produção e circulação do espetáculo teatral do Grupo Corpo Negro, que mergulha em memória e ancestralidade afro-brasileira. A Oriri atuou na estruturação do projeto, na gestão dos recursos e na articulação de espaços e plateias para a circulação.',
-      ficha: [['Realização', 'Grupo Corpo Negro'], ['Produção e gestão', 'Oriri Agência Cultural'], ['Coordenação', 'Nathália Fernandes'], ['Linguagem', 'Teatro · memória e ancestralidade']]
-    },
-    {
-      id: 'mundo-na-cabeca',
-      titulo: 'Mundo na Cabeça',
-      sub: 'Literatura e educação antirracista',
-      categoria: 'Artes cênicas · Educação',
-      ano: 'A confirmar',
-      parceiros: 'Escolas e redes de ensino',
-      cor: 'ocre',
-      capa: 'imagens/projeto-mundo-na-cabeca.jpg',
-      resumo: 'Montagem voltada à literatura infantil, à identidade e à educação antirracista, levada para dentro das escolas. A Oriri cuidou da produção, do diálogo com as instituições de ensino e da logística das apresentações.',
-      ficha: [['Produção', 'Oriri Agência Cultural'], ['Coordenação', 'Nathália Fernandes'], ['Público', 'Crianças e comunidade escolar'], ['Eixos', 'Literatura · identidade · antirracismo']]
-    },
-    {
-      id: 'patrimonio',
-      titulo: 'Semana de Preservação do Patrimônio',
-      sub: 'Gestão Criativa',
-      categoria: 'Patrimônio · Formação',
-      ano: 'A confirmar',
-      parceiros: 'Semana de Preservação do Patrimônio',
-      cor: 'cafe',
-      capa: 'imagens/projeto-patrimonio.jpg',
-      resumo: 'Mediação e bate-papo sobre Gestão Criativa e Preservação Cultural, aproximando o público das discussões sobre memória, patrimônio material e imaterial e o papel da gestão na salvaguarda da cultura.',
-      ficha: [['Atuação', 'Mediação e bate-papo'], ['Convidada', 'Nathália Fernandes'], ['Tema', 'Gestão Criativa e Preservação Cultural'], ['Formato', 'Encontro formativo']]
-    },
-    {
-      id: 'diario-de-producao',
-      titulo: 'Diário de Produção',
-      sub: 'Mulheres Produtoras',
-      categoria: 'Formação · Conteúdo',
-      ano: 'A confirmar',
-      parceiros: 'Mulheres Produtoras',
-      cor: 'areia',
-      capa: 'imagens/projeto-diario-de-producao.jpg',
-      resumo: 'Série de conteúdo formativo que compartilha os bastidores da gestão cultural: rotinas, desafios e aprendizados de quem produz cultura, fortalecendo a rede de mulheres na produção.',
-      ficha: [['Realização', 'Mulheres Produtoras'], ['Conteúdo', 'Nathália Fernandes'], ['Formato', 'Série em vídeo'], ['Foco', 'Bastidores e formação']]
-    },
-    {
-      id: 'sesc-usp',
-      titulo: 'Circulação e Ações Formativas',
-      sub: 'Parcerias Sesc e USP',
-      categoria: 'Produção · Formação',
-      ano: 'A confirmar',
-      parceiros: 'Sesc · USP Ribeirão Preto',
-      cor: 'terra',
-      capa: 'imagens/projeto-sesc-usp.jpg',
-      resumo: 'Produção de oficinas, festivais e eventos culturais de grande alcance em parceria com o Sesc e a USP Ribeirão Preto, da programação à execução e ao relacionamento com as instituições.',
-      ficha: [['Parceiros', 'Sesc · USP Ribeirão Preto'], ['Produção', 'Oriri Agência Cultural'], ['Formatos', 'Oficinas · festivais · eventos'], ['Alcance', 'Ribeirão Preto e região']]
-    },
-    {
-      id: 'editais',
-      titulo: 'Projetos Incentivados e Editais',
-      sub: 'Gestão de recursos',
-      categoria: 'Gestão · Captação',
-      ano: 'Contínuo',
-      parceiros: 'Artistas, coletivos e patrocinadores',
-      cor: 'cafe',
-      capa: 'imagens/projeto-editais.jpg',
-      resumo: 'Elaboração e gestão de projetos para leis de incentivo e editais (Rouanet, ProAC, Paulo Gustavo, Aldir Blanc), conexão com patrocinadores e acompanhamento completo até a prestação de contas.',
-      ficha: [['Leis e editais', 'Rouanet · ProAC · PNAB · Paulo Gustavo'], ['Etapas', 'Escrita · captação · execução · prestação de contas'], ['Gestão', 'Oriri Agência Cultural'], ['Para quem', 'Artistas, coletivos e empresas']]
-    }
+    { id: 'afrocirco', titulo: 'AfroCirco: Rir, Resistir e Recriar', grupo: '', categoria: 'Circo', edital: 'Rumos Itaú Cultural', ano: '2023–2024', cor: 'terra', capa: 'imagens/projeto-afrocirco.jpg' },
+    { id: 'o-mundo-comeca-na-cabeca', titulo: 'O Mundo Começa na Cabeça', grupo: 'Grupo Corpo Negro', categoria: 'Teatro', edital: 'Edital Território SESI-SP (2024) · Viagem Teatral SESI · ProAC', ano: '2024', cor: 'ocre', capa: 'imagens/projeto-o-mundo-comeca-na-cabeca.jpg' },
+    { id: 'madame-misteria', titulo: 'Madame M / Madame Mistéria', grupo: 'Cia. Teatro de Riscos', categoria: 'Teatro', edital: 'Edital Território SESI-SP (2024) · Viagem Teatral SESI · ProAC Editais', ano: '2024', cor: 'cafe', capa: 'imagens/projeto-madame-misteria.jpg' },
+    { id: 'fernanda-marx', titulo: 'Fernanda Marx canta Alcione & Flor de Café 10 anos', grupo: 'Fernanda Marx', categoria: 'Música', edital: 'Edital Território SESI-SP · ProAC', ano: '', cor: 'areia', capa: 'imagens/projeto-fernanda-marx.jpg' },
+    { id: 'um-tanto-de-sonho', titulo: 'Um Tanto de Sonho', grupo: 'Coletivo CabarElas', categoria: 'Circo', edital: 'Programação Mundo Circo SP', ano: '2024', cor: 'verde', capa: 'imagens/projeto-um-tanto-de-sonho.jpg' },
+    { id: 'e-kaabo', titulo: 'E Káàbo, o futuro é preto', grupo: 'Grupo Corpo Negro', categoria: 'Teatro', edital: 'ProAC Editais', ano: '', cor: 'terra', capa: 'imagens/projeto-e-kaabo.jpg' },
+    { id: 'electra-vida-e-sonho', titulo: 'Electra Enlutada & A Vida é Sonho', grupo: 'Cia. Teatral Boccaccione / Cia. Teatro de Riscos', categoria: 'Teatro', edital: 'ProAC · Circuito TUSP', ano: '', cor: 'cafe', capa: 'imagens/projeto-electra-vida-e-sonho.jpg' },
+    { id: 'danca-rotina', titulo: 'Circulação de Dança Rotina', grupo: 'Funk Fockers e Coletivo Fuligem', categoria: 'Dança', edital: 'ProAC Editais', ano: '', cor: 'ocre', capa: 'imagens/projeto-danca-rotina.jpg' },
+    { id: 'acervo-cedep', titulo: 'Digitalização do Acervo CEDEP – Cerâmica São Luiz', grupo: 'ONG Vivacidade', categoria: 'Memória e patrimônio', edital: 'ProAC LAB · Lei Aldir Blanc', ano: '', cor: 'areia', capa: 'imagens/projeto-acervo-cedep.jpg' },
+    { id: 'mundo-sonha-mundo', titulo: 'Mundo Sonha Mundo', grupo: 'Grupo Teatro de Sobras', categoria: 'Teatro', edital: 'Lei Federal de Incentivo à Cultura', ano: '', cor: 'verde', capa: 'imagens/projeto-mundo-sonha-mundo.jpg' },
+    { id: 'guerra-dos-barbaros', titulo: 'A Guerra dos Bárbaros e a árvore encantada da Jurema', grupo: 'Cia. São Jorge de Variedades', categoria: 'Teatro', edital: 'Prêmio Zé Renato', ano: '', cor: 'terra', capa: 'imagens/projeto-guerra-dos-barbaros.jpg' },
+    { id: 'hamlet-cunqueiro', titulo: 'Clásicas Desfeitas: Hamlet, o de Cunqueiro', grupo: 'Coprodução internacional Brasil/Espanha', categoria: 'Internacional', edital: 'Cidade da Cultura da Galícia (Espanha)', ano: '', cor: 'cafe', capa: 'imagens/projeto-hamlet-cunqueiro.jpg' }
   ];
 
   function ph(cor, texto) {
@@ -101,15 +42,31 @@
 
   /* ---------- Monta os cards ---------- */
   var grade = document.querySelector('[data-grade]');
+  var VISIVEIS = 6; // quantos cartazes aparecem antes de "Ver Todos os Projetos"
   grade.innerHTML = PROJETOS.map(function (p, i) {
+    var extra = i >= VISIVEIS ? ' data-extra hidden' : '';
     var n = (i + 1 < 10 ? '0' : '') + (i + 1);
-    return '<li class="revela"><button class="cartaz" type="button" data-projeto="' + i + '" aria-haspopup="dialog">' +
+    return '<li class="revela"' + extra + '><button class="cartaz" type="button" data-projeto="' + i + '" aria-haspopup="dialog">' +
       '<span class="cartaz-foto">' + ph(p.cor, 'Foto do projeto') + img(p.capa, p.titulo, true) +
       '<span class="cartaz-num" aria-hidden="true">' + n + '</span>' +
       '<span class="cartaz-ver" aria-hidden="true">Ver projeto <svg class="ic"><use href="#i-seta"/></svg></span></span>' +
-      '<span class="cartaz-info"><small>' + p.categoria + '</small><strong>' + p.titulo + '</strong><span>' + p.sub + '</span></span>' +
+      '<span class="cartaz-info"><small>' + p.categoria + (p.ano ? ' · ' + p.ano : '') + '</small><strong>' + p.titulo + '</strong><span>' + (p.grupo || p.edital) + '</span></span>' +
       '</button></li>';
   }).join('');
+
+  /* ---------- Ver todos os projetos ---------- */
+  var btnTodos = document.querySelector('[data-ver-todos]');
+  if (PROJETOS.length <= VISIVEIS) btnTodos.parentNode.hidden = true;
+  btnTodos.addEventListener('click', function () {
+    var aberto = btnTodos.getAttribute('aria-expanded') === 'true';
+    grade.querySelectorAll('[data-extra]').forEach(function (li) {
+      li.hidden = aberto;
+      if (!aberto) requestAnimationFrame(function () { li.classList.add('is-visivel'); });
+    });
+    btnTodos.setAttribute('aria-expanded', String(!aberto));
+    btnTodos.firstChild.textContent = aberto ? 'Ver Todos os Projetos ' : 'Mostrar menos ';
+    if (aberto) document.getElementById('projetos').scrollIntoView();
+  });
 
   /* ---------- Modal do projeto ---------- */
   var modal = document.querySelector('[data-modal]');
@@ -119,11 +76,18 @@
   function abrir(p) {
     q('[data-m-capa]').innerHTML = ph(p.cor, '') + img(p.capa, p.titulo);
     q('[data-m-cat]').textContent = p.categoria;
-    q('[data-m-titulo]').textContent = p.titulo + (p.sub ? ' · ' + p.sub : '');
+    q('[data-m-titulo]').textContent = p.titulo;
+    q('[data-m-grupo]').textContent = p.grupo || '—';
+    q('[data-m-edital]').textContent = p.edital;
     q('[data-m-ano]').textContent = p.ano;
-    q('[data-m-parceiros]').textContent = p.parceiros;
-    q('[data-m-resumo]').textContent = p.resumo;
-    q('[data-m-ficha]').innerHTML = p.ficha.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join('');
+    q('[data-m-ano]').parentNode.hidden = !p.ano;
+    q('[data-m-resumo]').textContent = (p.grupo ? 'Projeto de ' + p.grupo : 'Projeto') +
+      ' aprovado em: ' + p.edital.split(' · ').join(', ') + (p.ano && p.edital.indexOf(p.ano) < 0 ? ' (' + p.ano + ')' : '') +
+      '. Integra o portfólio de projetos, editais e grupos agenciados da Oriri Agência Cultural.';
+    var ficha = [['Linguagem', p.categoria], ['Grupo / artista', p.grupo || '—'], ['Edital / fomento', p.edital]];
+    if (p.ano) ficha.push(['Ano', p.ano]);
+    ficha.push(['Agência', 'Oriri Agência Cultural']);
+    q('[data-m-ficha]').innerHTML = ficha.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join('');
     var base = 'imagens/' + p.id;
     var video = p.video
       ? '<figure><iframe src="' + p.video + '" title="Vídeo: ' + p.titulo + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></figure>'
