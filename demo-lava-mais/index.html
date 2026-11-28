@@ -87,6 +87,26 @@
   .faq-item.open .faq-icon { transform: rotate(45deg); background: #16A34A; color: #fff; }
   .faq-icon { transition: transform .3s, background .3s, color .3s; }
 
+  /* Simulador de orçamento */
+  .opt { cursor: pointer; user-select: none; transition: border-color .2s, background .2s, transform .15s, box-shadow .2s; }
+  .opt:hover { border-color: #7DD3FC; transform: translateY(-2px); }
+  .opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .opt:has(input:focus-visible) { outline: 3px solid #0284C7; outline-offset: 2px; }
+  .opt.sel { border-color: #16A34A; background: #F0FDF4; box-shadow: 0 8px 20px -10px rgba(22,163,74,.6); }
+  .opt .tick { opacity: 0; transform: scale(.5); transition: .2s; }
+  .opt.sel .tick { opacity: 1; transform: scale(1); }
+  .qty { display: none; }
+  .opt.sel .qty { display: inline-flex; }
+  .switch { width: 52px; height: 30px; border-radius: 9999px; background: #CBD5E1; position: relative; transition: background .2s; flex-shrink: 0; }
+  .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 9999px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .2s; }
+  #imper:checked + .switch { background: #16A34A; }
+  #imper:checked + .switch::after { transform: translateX(22px); }
+  #imper:focus-visible + .switch { outline: 3px solid #0284C7; outline-offset: 2px; }
+  @keyframes pop { 0% { transform: scale(1) } 40% { transform: scale(1.06) } 100% { transform: scale(1) } }
+  .pop { animation: pop .3s ease; }
+  @keyframes shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-6px) } 75% { transform: translateX(6px) } }
+  .shake { animation: shake .35s ease 2; }
+
   /* Revelação suave ao rolar */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -104,10 +124,6 @@
 <div class="bg-navy text-white text-sm">
   <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
     <p class="leading-snug">✨ Sofá manchado ou colchão pedindo socorro? <span class="font-semibold text-sky-300">Atendemos a domicílio em toda Ribeirão Preto!</span></p>
-    <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener"
-       class="btn-zap !shadow-none text-xs px-4 py-1.5 whitespace-nowrap">
-      <i data-lucide="message-circle" class="w-4 h-4"></i> Chamar no Whats
-    </a>
   </div>
 </div>
 
@@ -210,13 +226,12 @@
         <li class="flex items-start gap-3"><span class="mt-0.5 grid place-items-center w-6 h-6 rounded-full bg-zap shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span>Produtos seguros para crianças e animais</li>
       </ul>
 
-      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="mt-9 flex">
         <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener"
-           class="btn-zap px-8 py-5 text-base sm:text-lg">
+           class="btn-zap w-full sm:w-auto px-8 py-5 text-base sm:text-lg">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Zm-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88Zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41Z"/></svg>
           CHAMAR NO WHATSAPP AGORA
         </a>
-        <p class="text-sm text-sky-100 flex items-center gap-2"><i data-lucide="camera" class="w-4 h-4"></i> Manda uma foto e recebe o valor na hora</p>
       </div>
     </div>
 
@@ -304,7 +319,7 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Elimina ácaros e odores</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Revitaliza a cor e a maciez do tecido</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20de%20Sof%C3%A1!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
@@ -322,7 +337,7 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Remove manchas e cheiro de suor</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Ideal para dormir leve e respirar bem</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Higieniza%C3%A7%C3%A3o%20de%20Colch%C3%A3o!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
@@ -340,7 +355,7 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Produtos hipoalergênicos e 100% seguros</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Proteção total para a saúde do seu bebê</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Carrinho%20de%20Beb%C3%AA%20%2F%20Beb%C3%AA%20Conforto!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
@@ -358,7 +373,7 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Remove pelos de pets e poeira acumulada</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Cores vivas de volta</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Poltronas%2C%20Cadeiras%20ou%20Tapetes!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
@@ -376,7 +391,7 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Protege contra manchas permanentes</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Mantém o toque original do tecido</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Impermeabiliza%C3%A7%C3%A3o%20de%20Estofados!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
@@ -394,11 +409,153 @@
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Remove manchas e cheiro de fechado</li>
             <li class="flex gap-2.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-zap shrink-0 mt-0.5"></i>Sensação de carro novo de novo</li>
           </ul>
-          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
+          <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Estofados%20Automotivos!" target="_blank" rel="noopener" class="btn-zap mt-6 py-3.5 text-sm"><i data-lucide="message-circle" class="w-4 h-4"></i> ORÇAMENTO RÁPIDO</a>
         </div>
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     5.1 SIMULADOR: MONTE SEU ORÇAMENTO EM 10 SEGUNDOS
+     ========================================================= -->
+<section id="orcamento" class="bg-white py-20 md:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-2 text-brand font-bold uppercase tracking-widest text-xs bg-brand-ice px-4 py-1.5 rounded-full"><i data-lucide="timer" class="w-4 h-4"></i> Rapidinho</span>
+      <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-black text-navy leading-tight">Monte seu Orçamento em <span class="text-zap">10 Segundos</span> ⏱️</h2>
+      <p class="mt-4 text-lg">Toca no que você quer deixar limpinho, escolhe a quantidade e pronto: a mensagem chega montadinha no nosso WhatsApp.</p>
+    </div>
+
+    <form id="simulador" class="reveal mt-12 grid lg:grid-cols-[1fr_340px] gap-8 items-start" novalidate>
+      <div>
+        <fieldset>
+          <legend class="font-display font-extrabold text-navy text-lg mb-4 flex items-center gap-2"><span class="grid place-items-center w-7 h-7 rounded-full bg-brand text-white text-sm">1</span> O que vamos limpar?</legend>
+          <div id="opcoes" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Sofá 2 lugares">
+            <input type="checkbox" value="Sofá 2 lugares">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🛋️</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Sofá 2 lugares</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Sofá 2 lugares">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Sofá 2 lugares">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Sofá 3 lugares">
+            <input type="checkbox" value="Sofá 3 lugares">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🛋️</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Sofá 3 lugares</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Sofá 3 lugares">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Sofá 3 lugares">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Sofá Retrátil">
+            <input type="checkbox" value="Sofá Retrátil">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🛋️</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Sofá Retrátil</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Sofá Retrátil">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Sofá Retrátil">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Colchão Solteiro">
+            <input type="checkbox" value="Colchão Solteiro">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🛏️</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Colchão Solteiro</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Colchão Solteiro">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Colchão Solteiro">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Colchão Casal">
+            <input type="checkbox" value="Colchão Casal">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🛏️</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Colchão Casal</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Colchão Casal">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Colchão Casal">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Poltrona / Cadeira">
+            <input type="checkbox" value="Poltrona / Cadeira">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🪑</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Poltrona / Cadeira</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Poltrona / Cadeira">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Poltrona / Cadeira">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Tapete">
+            <input type="checkbox" value="Tapete">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🧶</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Tapete</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Tapete">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Tapete">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Carrinho de Bebê">
+            <input type="checkbox" value="Carrinho de Bebê">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">👶</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Carrinho de Bebê</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Carrinho de Bebê">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Carrinho de Bebê">+</button>
+            </span>
+          </label>
+          <label class="opt relative flex flex-col justify-between gap-3 rounded-2xl border-2 border-sky-100 bg-white p-4 min-h-[118px]" data-item="Bancos de Carro">
+            <input type="checkbox" value="Bancos de Carro">
+            <span class="tick absolute top-3 right-3 grid place-items-center w-6 h-6 rounded-full bg-zap text-white"><i data-lucide="check" class="w-4 h-4"></i></span>
+            <span><span class="text-3xl leading-none" aria-hidden="true">🚗</span><span class="block mt-2 font-display font-extrabold text-navy leading-tight">Bancos de Carro</span></span>
+            <span class="qty items-center gap-2 self-start bg-white rounded-full border border-green-200 p-1">
+              <button type="button" class="q-minus grid place-items-center w-7 h-7 rounded-full bg-green-100 text-zap-dark font-black" aria-label="Diminuir quantidade de Bancos de Carro">−</button>
+              <span class="q-val w-5 text-center font-bold text-navy" aria-live="polite">1</span>
+              <button type="button" class="q-plus grid place-items-center w-7 h-7 rounded-full bg-zap text-white font-black" aria-label="Aumentar quantidade de Bancos de Carro">+</button>
+            </span>
+          </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-8">
+          <legend class="font-display font-extrabold text-navy text-lg mb-4 flex items-center gap-2"><span class="grid place-items-center w-7 h-7 rounded-full bg-brand text-white text-sm">2</span> Quer um escudo extra?</legend>
+          <label class="flex items-center justify-between gap-4 rounded-2xl border-2 border-sky-100 bg-brand-ice p-4 sm:p-5 cursor-pointer">
+            <span class="flex items-center gap-3">
+              <span class="text-3xl" aria-hidden="true">🛡️</span>
+              <span><span class="block font-display font-extrabold text-navy">Adicionar Impermeabilização</span><span class="block text-sm">Derramou suco? Escorre e não mancha.</span></span>
+            </span>
+            <input id="imper" type="checkbox" class="sr-only">
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+        </fieldset>
+      </div>
+
+      <!-- Resumo -->
+      <aside class="lg:sticky lg:top-24 rounded-3xl bg-navy text-white p-6 shadow-2xl shadow-sky-900/20">
+        <p class="font-display font-extrabold text-lg flex items-center gap-2"><i data-lucide="clipboard-list" class="w-5 h-5 text-sky-300"></i> Seu pedido</p>
+        <ul id="resumo" class="mt-4 space-y-2 text-sm min-h-[72px]" aria-live="polite">
+          <li class="text-slate-400">Nada escolhido ainda. Toca nos itens ao lado 👈</li>
+        </ul>
+        <div class="mt-5 rounded-2xl bg-white/5 border border-white/10 p-4 text-xs text-slate-300 leading-relaxed">
+          📸 Depois é só mandar uma foto rapidinha no WhatsApp que a gente fecha o valor certinho.
+        </div>
+        <p id="simAviso" class="hidden mt-4 text-sm font-semibold text-amber-300">Escolhe pelo menos um item pra gente montar seu pedido 😉</p>
+        <button id="simEnviar" type="submit" class="btn-zap w-full mt-5 py-4 text-base">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45c6.55 0 11.89-5.34 11.89-11.89S18.6 0 12.05 0Zm5.42 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49 2.54 1.1 3.05.88 3.6.83.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+          Enviar pedido no WhatsApp
+        </button>
+        <button id="simLimpar" type="button" class="w-full mt-3 text-sm text-slate-400 hover:text-white underline underline-offset-4">Limpar seleção</button>
+      </aside>
+    </form>
   </div>
 </section>
 
@@ -421,7 +578,7 @@
         <li class="flex gap-3"><i data-lucide="file-text" class="w-5 h-5 text-zap-light shrink-0 mt-0.5"></i>Orçamento sob medida para a quantidade de peças</li>
         <li class="flex gap-3"><i data-lucide="repeat" class="w-5 h-5 text-zap-light shrink-0 mt-0.5"></i>Possibilidade de manutenção periódica</li>
       </ul>
-      <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-9 px-8 py-4 text-base">
+      <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20empresa!" target="_blank" rel="noopener" class="btn-zap mt-9 px-8 py-4 text-base">
         <i data-lucide="building-2" class="w-5 h-5"></i> ORÇAMENTO PARA EMPRESA
       </a>
     </div>
@@ -511,7 +668,7 @@
         <div class="bg-white rounded-2xl p-4 border border-sky-100"><i data-lucide="clock" class="w-7 h-7 mx-auto text-zap"></i><p class="mt-2 text-sm font-bold text-navy">Pontualidade</p></div>
         <div class="bg-white rounded-2xl p-4 border border-sky-100"><i data-lucide="droplets" class="w-7 h-7 mx-auto text-zap"></i><p class="mt-2 text-sm font-bold text-navy">Equipamento pro</p></div>
       </div>
-      <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener" class="btn-zap mt-8 px-8 py-4 text-base">
+      <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20a%20Lava%20Mais%20Service!" target="_blank" rel="noopener" class="btn-zap mt-8 px-8 py-4 text-base">
         <i data-lucide="message-circle" class="w-5 h-5"></i> FALAR DIRETO COM A GENTE
       </a>
     </div>
@@ -636,7 +793,7 @@
 
 <!-- BOTÃO FLUTUANTE WHATSAPP -->
 <a href="https://wa.me/5516997413197?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20pedir%20um%20or%C3%A7amento!" target="_blank" rel="noopener"
-   class="fixed bottom-5 right-5 z-50 group flex items-center gap-3" aria-label="Chamar no WhatsApp">
+   id="waFloat" class="fixed bottom-5 right-5 z-50 group flex items-center gap-3 transition duration-300" aria-label="Chamar no WhatsApp">
   <span class="hidden md:block bg-white text-navy text-sm font-bold px-4 py-2 rounded-full shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition">Bora deixar tudo limpinho? 💧</span>
   <span class="relative grid place-items-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-xl shadow-green-900/30 hover:scale-110 transition">
     <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
@@ -682,6 +839,93 @@
       }
     });
   });
+
+  // Rolagem suave para links internos (desconta o cabeçalho fixo)
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const alvo = id.length > 1 && document.querySelector(id);
+    if (!alvo) return;
+    e.preventDefault();
+    const y = alvo.getBoundingClientRect().top + scrollY - header.offsetHeight - 8;
+    scrollTo({ top: id === '#inicio' ? 0 : y, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    history.replaceState(null, '', id);
+  }));
+
+  // Simulador de orçamento
+  (() => {
+    const WA = 'https://wa.me/5516997413197?text=';
+    const form = document.getElementById('simulador');
+    const resumo = document.getElementById('resumo');
+    const imper = document.getElementById('imper');
+    const aviso = document.getElementById('simAviso');
+    const opts = [...form.querySelectorAll('.opt')];
+
+    const selecionados = () => opts.filter(o => o.classList.contains('sel')).map(o => {
+      const q = +o.querySelector('.q-val').textContent;
+      return (q > 1 ? q + 'x ' : '') + o.dataset.item;
+    });
+
+    const render = () => {
+      const itens = selecionados();
+      if (imper.checked) itens.push('Impermeabilização');
+      resumo.innerHTML = itens.length
+        ? itens.map(t => `<li class="flex items-start gap-2"><span class="text-green-400 font-black">✓</span><span>${t}</span></li>`).join('')
+        : '<li class="text-slate-400">Nada escolhido ainda. Toca nos itens ao lado 👈</li>';
+      resumo.classList.remove('pop'); void resumo.offsetWidth; resumo.classList.add('pop');
+      if (itens.length) aviso.classList.add('hidden');
+    };
+
+    opts.forEach(o => {
+      const cb = o.querySelector('input');
+      const val = o.querySelector('.q-val');
+      cb.addEventListener('change', () => {
+        o.classList.toggle('sel', cb.checked);
+        if (!cb.checked) val.textContent = 1;
+        render();
+      });
+      o.querySelector('.q-plus').addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        val.textContent = Math.min(+val.textContent + 1, 10); render();
+      });
+      o.querySelector('.q-minus').addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        const n = +val.textContent - 1;
+        if (n < 1) { cb.checked = false; o.classList.remove('sel'); val.textContent = 1; }
+        else val.textContent = n;
+        render();
+      });
+    });
+    imper.addEventListener('change', render);
+
+    document.getElementById('simLimpar').addEventListener('click', () => {
+      opts.forEach(o => { o.querySelector('input').checked = false; o.classList.remove('sel'); o.querySelector('.q-val').textContent = 1; });
+      imper.checked = false; aviso.classList.add('hidden'); render();
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const itens = selecionados();
+      if (!itens.length) {
+        aviso.classList.remove('hidden');
+        const grade = document.getElementById('opcoes');
+        grade.classList.remove('shake'); void grade.offsetWidth; grade.classList.add('shake');
+        return;
+      }
+      if (imper.checked) itens.push('Impermeabilização');
+      const msg = `Olá! Vim pelo site e gostaria de orçamento para: ${itens.join(' + ')}`;
+      window.open(WA + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+  })();
+
+  // Esconde o botão flutuante quando o botão do simulador está na tela (evita sobreposição no celular)
+  if ('IntersectionObserver' in window) {
+    const waFloat = document.getElementById('waFloat');
+    new IntersectionObserver(([e]) => {
+      waFloat.classList.toggle('opacity-0', e.isIntersecting);
+      waFloat.classList.toggle('pointer-events-none', e.isIntersecting);
+      waFloat.classList.toggle('translate-y-4', e.isIntersecting);
+    }).observe(document.getElementById('simEnviar'));
+  }
 
   // Fallback elegante caso alguma foto externa não carregue
   document.querySelectorAll('.img-wrap img').forEach(img => {
