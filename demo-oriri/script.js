@@ -102,10 +102,12 @@
   /* ---------- Monta os cards ---------- */
   var grade = document.querySelector('[data-grade]');
   grade.innerHTML = PROJETOS.map(function (p, i) {
-    return '<li class="revela"><button class="card" type="button" data-projeto="' + i + '" aria-haspopup="dialog">' +
-      ph(p.cor, 'Foto do projeto') + img(p.capa, p.titulo, true) +
-      '<span class="card-tarja"><span><strong>' + p.titulo + '</strong><small>' + p.sub + '</small></span>' +
-      '<span class="card-abre" aria-hidden="true"><svg class="ic"><use href="#i-seta"/></svg></span></span>' +
+    var n = (i + 1 < 10 ? '0' : '') + (i + 1);
+    return '<li class="revela"><button class="cartaz" type="button" data-projeto="' + i + '" aria-haspopup="dialog">' +
+      '<span class="cartaz-foto">' + ph(p.cor, 'Foto do projeto') + img(p.capa, p.titulo, true) +
+      '<span class="cartaz-num" aria-hidden="true">' + n + '</span>' +
+      '<span class="cartaz-ver" aria-hidden="true">Ver projeto <svg class="ic"><use href="#i-seta"/></svg></span></span>' +
+      '<span class="cartaz-info"><small>' + p.categoria + '</small><strong>' + p.titulo + '</strong><span>' + p.sub + '</span></span>' +
       '</button></li>';
   }).join('');
 
@@ -255,7 +257,6 @@
   var contadores = document.querySelectorAll('[data-conta]');
   function contar(el) {
     var fim = +el.getAttribute('data-conta');
-    if (reduz) { el.textContent = numFmt.format(fim); return; }
     var dur = 2000, t0 = null;
     function passo(t) {
       if (!t0) t0 = t;

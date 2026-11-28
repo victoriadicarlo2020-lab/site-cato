@@ -6,18 +6,18 @@
 <title>Oriri Agência Cultural | Gestão criativa e articulação cultural · Franca</title>
 <meta name="description" content="A Oriri Agência Cultural une gestão criativa e articulação para transformar sonhos artísticos em realidade. Editais, leis de incentivo, produção e gestão de recursos. Liderada por Nathália Fernandes, em Franca (SP).">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#161412">
+<meta name="theme-color" content="#162B23">
 <meta property="og:title" content="Oriri Agência Cultural">
-<meta property="og:description" content="Gestão criativa e articulação para transformar sonhos artísticos em realidade.">
+<meta property="og:description" content="Gestão criativa e articulação para transformar sonhos artísticos em realidade. De Franca para o Brasil.">
 <meta property="og:type" content="website">
 <!-- garante a barra no fim da rota (/demo-oriri/) para os caminhos relativos funcionarem em qualquer hospedagem -->
 <script>if(!/\/$|\.html$/.test(location.pathname))location.replace(location.pathname+'/'+location.search+location.hash)</script>
 <link rel="icon" href="imagens/oriri-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="styles.css?v=2026-11-28-parallax">
+<link rel="stylesheet" href="styles.css?v=2026-11-28-autoral">
 </head>
 <body>
 
@@ -29,6 +29,7 @@
     <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5L8 5.5Z"/></symbol>
     <symbol id="i-traco" viewBox="30 24 60 78"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="55.5" cy="34.5" r="5.2"/><path d="M46 43.5c2 .3 3.2.9 4 1.6-12 6-13.6 27 7.8 50.9"/><path d="M49.5 46.5c11.5.4 22-3.4 30.8-13.6 5 14.6-1.8 37.6-22.5 63.1"/><path d="M60.5 46.8 58 60.5l-.2 35.5"/><path d="M53.5 48.5 52.6 70c0 9 2.6 17.5 5.2 26"/></g></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></g></symbol>
   </defs>
 </svg>
 
@@ -39,62 +40,78 @@
   <div class="faixa-cato"><a href="https://catomidias.com.br" target="_blank" rel="noopener">Prévia exclusiva desenvolvida pela <strong>Cato Mídias</strong></a></div>
   <div class="wrap nav">
     <a href="#home" class="logo" aria-label="Oriri Agência Cultural, início">
-      <img src="imagens/oriri-simbolo.svg" alt="" width="40" height="40">
-      <span class="logo-txt"><strong>ORIRI</strong><small>Agência Cultural</small></span>
+      <img src="imagens/oriri-simbolo.svg" alt="" width="42" height="42">
+      <span class="logo-txt"><strong>Oriri</strong><small>Agência Cultural</small></span>
     </a>
     <nav id="menu" class="menu" aria-label="Seções do site">
       <a href="#home">Home</a>
       <a href="#quem-somos">Quem Somos</a>
       <a href="#projetos">Projetos</a>
       <a href="#fundadora">A Fundadora</a>
-      <a class="pilula pilula-linha menu-cta" href="#contato" data-whats="Olá, Oriri! Vim pelo site e gostaria de conversar.">Fale Conosco</a>
+      <a class="pilula pilula-ocre menu-cta" href="#contato" data-whats="Olá, Oriri! Vim pelo site e gostaria de conversar.">Fale Conosco</a>
     </nav>
-    <a class="pilula pilula-linha nav-cta" href="#contato" data-whats="Olá, Oriri! Vim pelo site e gostaria de conversar.">Fale Conosco</a>
+    <a class="pilula pilula-ocre-linha nav-cta" href="#contato" data-whats="Olá, Oriri! Vim pelo site e gostaria de conversar.">Fale Conosco</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn><span></span><span></span><span class="sr">Abrir menu</span></button>
   </div>
 </header>
 
 <main id="conteudo">
 
-<!-- ============ HERO ============ -->
-<section id="home" class="hero escuro">
+<!-- ============ HERO (assimétrico) ============ -->
+<section id="home" class="hero">
+  <svg class="hero-traco" aria-hidden="true"><use href="#i-traco"/></svg>
   <div class="wrap hero-grid">
     <div class="hero-txt">
-      <span class="ponto" aria-hidden="true"></span>
-      <h1 class="hero-titulo">A Oriri Agência Cultural une <span class="t">gestão criativa</span> e <span class="t">articulação</span> para transformar <span class="t">sonhos artísticos</span> em realidade.</h1>
-      <div class="hero-rodape">
-        <p>Editais, leis de incentivo, produção executiva e gestão de recursos tangíveis e intangíveis. De Franca para o Brasil.</p>
-        <a class="rolar" href="#quem-somos"><span class="rolar-linha" aria-hidden="true"></span>Role para conhecer</a>
+      <p class="sobretitulo"><svg class="ic"><use href="#i-sol"/></svg>Agência cultural · gestão · articulação</p>
+      <h1 class="hero-titulo">A Oriri une <em>gestão criativa</em> e <em class="ocre">articulação</em> para transformar sonhos artísticos em realidade.</h1>
+      <p class="hero-sub">Editais, leis de incentivo, produção executiva e gestão de recursos tangíveis e intangíveis para artistas, coletivos, empresas e poder público.</p>
+      <div class="hero-acoes">
+        <a class="pilula pilula-terra" href="#projetos">Conheça os projetos <svg class="ic"><use href="#i-seta"/></svg></a>
+        <a class="pilula pilula-ocre-linha" href="#contato" data-whats="Olá, Oriri! Quero conversar sobre um projeto cultural.">Fale com a Oriri</a>
       </div>
     </div>
-    <figure class="hero-foto">
-      <div class="ph ph-terra" aria-hidden="true"><svg><use href="#i-traco"/></svg><span>Foto editorial<br>Nathália Fernandes</span></div>
-      <img src="imagens/nathalia-hero.jpg" alt="Nathália Fernandes, fundadora da Oriri Agência Cultural" width="800" height="1000" fetchpriority="high" onerror="this.remove()">
-      <figcaption><span class="ponto ponto-p" aria-hidden="true"></span><strong>Nathália Fernandes</strong> Fundadora e gestora cultural</figcaption>
-    </figure>
+    <div class="hero-visual">
+      <figure class="hero-foto">
+        <div class="ph ph-terra" aria-hidden="true"><svg><use href="#i-traco"/></svg><span>Foto editorial<br>Nathália Fernandes</span></div>
+        <img src="imagens/nathalia-hero.jpg" alt="Nathália Fernandes, fundadora da Oriri Agência Cultural" width="800" height="1000" fetchpriority="high" onerror="this.remove()">
+      </figure>
+      <div class="selo" aria-label="De Franca para o Brasil">
+        <svg class="selo-giro" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="selo-circulo" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
+          <text><textPath href="#selo-circulo" textLength="446" lengthAdjust="spacing">De Franca para o Brasil · Oriri ·</textPath></text>
+        </svg>
+        <img src="imagens/oriri-simbolo.svg" alt="" width="64" height="64">
+      </div>
+      <p class="hero-legenda"><strong>Nathália Fernandes</strong>Fundadora e gestora cultural</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ INSTITUCIONAL ============ -->
-<section id="quem-somos" class="inst claro">
-  <div class="wrap inst-grid">
-    <div class="inst-txt revela">
-      <p class="rotulo">Sobre a Oriri</p>
-      <p class="inst-impacto">Atuamos em parceria com <span class="t">artistas, coletivos, iniciativa privada e poder público</span> por meio de editais, leis de incentivo e gestão de recursos tangíveis e intangíveis.</p>
-      <p class="inst-apoio">Cuidamos do caminho inteiro de um projeto cultural: da concepção e escrita à captação, produção, prestação de contas e circulação.</p>
-      <a class="pilula pilula-terra" href="#fundadora">Saiba Mais <svg class="ic"><use href="#i-seta"/></svg></a>
+<!-- ============ SOBRE (foto à esquerda) ============ -->
+<section id="quem-somos" class="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-visual revela">
+      <p class="legenda-vertical">Bastidores · Patrimônio · Teatro</p>
+      <figure class="sobre-foto">
+        <div class="ph ph-verde" aria-hidden="true"><svg><use href="#i-traco"/></svg><span>Bastidores culturais</span></div>
+        <img src="imagens/institucional.jpg" alt="Bastidores de um espetáculo produzido pela Oriri" loading="lazy" onerror="this.remove()">
+      </figure>
     </div>
-    <figure class="inst-foto revela">
-      <div class="ph ph-cafe" aria-hidden="true"><svg><use href="#i-traco"/></svg><span>Bastidores · teatro · patrimônio</span></div>
-      <img src="imagens/institucional.jpg" alt="Bastidores de um espetáculo produzido pela Oriri" loading="lazy" onerror="this.remove()">
-    </figure>
+    <div class="sobre-txt revela">
+      <p class="rotulo">Sobre a Oriri</p>
+      <h2 class="titulo">Cultura feita <em>em rede</em>, do papel ao palco.</h2>
+      <div class="divisor" aria-hidden="true"><span></span></div>
+      <p class="sobre-impacto">Atuamos em parceria com artistas, coletivos, iniciativa privada e poder público por meio de editais, leis de incentivo e gestão de recursos tangíveis e intangíveis.</p>
+      <p class="sobre-apoio">Cuidamos do caminho inteiro de um projeto cultural: concepção, escrita, captação, produção, prestação de contas e circulação. Com rigor técnico para quem investe e afeto para quem cria.</p>
+      <a class="link-seta" href="#fundadora">Saiba mais sobre a Oriri <svg class="ic"><use href="#i-seta"/></svg></a>
+    </div>
   </div>
 </section>
 
 <!-- ============ MANIFESTO + FAIXAS ============ -->
-<section class="manifesto claro" data-faixas>
+<section class="manifesto" data-faixas>
   <div class="wrap">
-    <p class="manifesto-txt revela">Nossa trajetória contempla <span class="t">artes cênicas</span>, <span class="t">patrimônio histórico</span>, <span class="t">literatura</span> e <span class="t">formação</span>, sempre articulando cultura, memória e transformação social.</p>
+    <p class="manifesto-txt revela">Nossa trajetória contempla <em>artes cênicas</em>, <em>patrimônio histórico</em>, <em>literatura</em> e <em>formação</em>, sempre articulando cultura, memória e transformação social.</p>
   </div>
   <!-- Parallax horizontal: as fileiras andam conforme a rolagem (script.js duplica os cards para não abrir buraco).
        Fotos reais: salve em imagens/ como faixa-01.jpg … faixa-08.jpg -->
@@ -119,14 +136,16 @@
 </section>
 
 <!-- ============ PROJETOS ============ -->
-<section id="projetos" class="projetos claro">
+<section id="projetos" class="projetos">
   <div class="wrap">
-    <div class="centro revela">
-      <span class="ponto" aria-hidden="true"></span>
-      <p class="rotulo">Conheça alguns de nossos projetos</p>
-      <h2 class="titulo-xl">Projetos</h2>
+    <div class="projetos-topo revela">
+      <div>
+        <p class="rotulo">Conheça alguns de nossos projetos</p>
+        <h2 class="titulo-xl">Projetos</h2>
+      </div>
+      <p>Cada projeto é uma travessia. Clique em um cartaz para ver a atuação da Oriri, a ficha técnica e a galeria.</p>
     </div>
-    <!-- Os cards são gerados pelo script.js a partir da lista PROJETOS (fácil de editar) -->
+    <!-- Os cartazes são gerados pelo script.js a partir da lista PROJETOS (fácil de editar) -->
     <ul class="grade" data-grade></ul>
     <div class="centro">
       <a class="pilula pilula-terra" href="https://www.instagram.com/oririagenciacultural/" target="_blank" rel="noopener">Ver Todos os Projetos <svg class="ic"><use href="#i-seta"/></svg></a>
@@ -135,56 +154,57 @@
 </section>
 
 <!-- ============ IMPACTO ============ -->
-<section class="impacto escuro" data-impacto>
+<section class="impacto" data-impacto>
   <div class="wrap">
-    <h2 class="titulo-xl centro revela">Impacto e <span class="t">Resultados</span></h2>
+    <h2 class="titulo-xl centro revela">Impacto e <em class="ocre">Resultados</em></h2>
     <ul class="numeros">
-      <li class="revela"><p class="num"><span class="mais">+ de</span> <span data-conta="10">0</span></p><p>Anos de atuação cultural</p></li>
-      <li class="revela"><p class="num"><span class="mais">+ de</span> <span data-conta="40">0</span></p><p>Projetos realizados e aprovados</p></li>
-      <li class="revela"><p class="num"><span class="mais">+ de</span> <span data-conta="100000">0</span></p><p>Pessoas alcançadas</p></li>
+      <li class="revela"><span class="mais">+ de</span><p class="num" data-conta="10">0</p><p class="num-leg">Anos de atuação cultural</p></li>
+      <li class="revela"><span class="mais">+ de</span><p class="num" data-conta="40">0</p><p class="num-leg">Projetos realizados e aprovados</p></li>
+      <li class="revela"><span class="mais">+ de</span><p class="num" data-conta="100000">0</p><p class="num-leg">Pessoas alcançadas</p></li>
     </ul>
   </div>
 </section>
 
 <!-- ============ FUNDADORA ============ -->
-<section id="fundadora" class="fundadora claro">
+<section id="fundadora" class="fundadora">
   <div class="wrap fund-grid">
+    <div class="fund-txt revela">
+      <p class="rotulo">A Fundadora</p>
+      <h2 class="titulo">Nathália <em>Fernandes</em></h2>
+      <blockquote class="citacao">Cultura não é só entretenimento. É identidade, memória, economia criativa e transformação social.</blockquote>
+      <p>Fundadora da Oriri, Nathália é gestora de recursos tangíveis e intangíveis, finalista do <strong>Projeto Legado</strong> e referência na articulação cultural em Franca e região.</p>
+      <p>Conhece os bastidores por dentro, do primeiro cachê até a gestão de grandes projetos incentivados, e une rigor técnico, afeto e visão estratégica para que cada ideia ganhe estrutura, recurso e caminho.</p>
+      <a class="link-seta" href="https://www.instagram.com/nath.oriri/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@nath.oriri</a>
+    </div>
     <figure class="fund-foto revela">
       <div class="ph ph-cafe" aria-hidden="true"><svg><use href="#i-traco"/></svg><span>Foto da Nathália<br>em palco / ambiente cultural</span></div>
       <img src="imagens/nathalia-palco.jpg" alt="Nathália Fernandes em ambiente cultural" loading="lazy" onerror="this.remove()">
       <figcaption>Finalista · Projeto Legado</figcaption>
     </figure>
-    <div class="fund-txt revela">
-      <p class="rotulo">A Fundadora</p>
-      <h2 class="titulo-l">Nathália <span class="t">Fernandes</span></h2>
-      <blockquote class="citacao">“Cultura não é só entretenimento. É identidade, memória, economia criativa e transformação social.”</blockquote>
-      <p>Fundadora da Oriri, Nathália é gestora de recursos tangíveis e intangíveis, finalista do <strong>Projeto Legado</strong> e referência na articulação cultural em Franca e região.</p>
-      <p>Conhece os bastidores por dentro, do primeiro cachê até a gestão de grandes projetos incentivados, e une rigor técnico, afeto e visão estratégica para que cada ideia ganhe estrutura, recurso e caminho.</p>
-      <a class="link-seta" href="https://www.instagram.com/nath.oriri/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@nath.oriri</a>
-    </div>
   </div>
 </section>
 
-<!-- ============ CHAMADA FINAL ============ -->
-<section id="contato" class="cta claro">
-  <div class="wrap cta-grid revela">
-    <div>
-      <span class="ponto" aria-hidden="true"></span>
-      <h2 class="titulo-l">Cultura se faz em <span class="t">parceria.</span></h2>
+<!-- ============ CHAMADA FINAL (centralizada) ============ -->
+<section id="contato" class="cta">
+  <div class="wrap cta-in revela">
+    <svg class="cta-traco" aria-hidden="true"><use href="#i-traco"/></svg>
+    <h2 class="cta-titulo">Cultura se faz em <em>parceria</em>.</h2>
+    <p>Tem um projeto artístico, quer inscrever uma ideia em edital ou investir em cultura pelas leis de incentivo? A gente estrutura o caminho junto com você.</p>
+    <div class="cta-acoes">
+      <a class="pilula pilula-terra pilula-g" href="#contato" data-whats="Olá, Oriri! Quero saber como podemos fazer um projeto cultural juntos."><svg class="ic"><use href="#i-whats"/></svg>Conversar no WhatsApp</a>
+      <a class="pilula pilula-verde-linha pilula-g" href="https://www.instagram.com/oririagenciacultural/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@oririagenciacultural</a>
     </div>
-    <p>Tem um projeto artístico, quer inscrever uma ideia em edital ou investir em cultura por meio das leis de incentivo? A gente estrutura o caminho junto com você, da primeira conversa à prestação de contas.</p>
-    <a class="pilula pilula-terra pilula-g" href="#contato" data-whats="Olá, Oriri! Quero saber como podemos fazer um projeto cultural juntos.">Saiba Mais <svg class="ic"><use href="#i-seta"/></svg></a>
   </div>
 </section>
 </main>
 
 <!-- ============ RODAPÉ ============ -->
-<footer class="rodape escuro">
+<footer class="rodape">
   <div class="wrap rodape-grid">
     <div class="rodape-marca">
       <a href="#home" class="logo" aria-label="Oriri Agência Cultural, voltar ao início">
         <img src="imagens/oriri-simbolo.svg" alt="" width="48" height="48">
-        <span class="logo-txt"><strong>ORIRI</strong><small>Agência Cultural</small></span>
+        <span class="logo-txt"><strong>Oriri</strong><small>Agência Cultural</small></span>
       </a>
       <p>Gestão criativa e articulação cultural.<br>Franca · SP · Atuação Nacional</p>
     </div>
@@ -234,6 +254,6 @@
   </div>
 </dialog>
 
-<script src="script.js?v=2026-11-28-parallax"></script>
+<script src="script.js?v=2026-11-28-autoral"></script>
 </body>
 </html>
